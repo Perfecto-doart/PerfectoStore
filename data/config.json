@@ -180,7 +180,7 @@
  "giveaway": {
   "enabled": true,
   "every": 100,
-  "discount": 70,
+  "discount": 90,
   "namespace": "perfecto-doart-store",
   "redeemed": []
  },
