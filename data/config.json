@@ -91,7 +91,23 @@
   }
  ],
  "assign": {},
- "order": {},
+ "order": {
+  "winter": [
+   "winterpufferdruffle",
+   "winterpuffernovakfn",
+   "winterpuffernorthenaspil",
+   "freewinteroutfitnova",
+   "snowfallcloud"
+  ],
+  "christmas": [
+   "santanova",
+   "santaoutfitshawn",
+   "novabeastchristmasoutfit",
+   "legatopartynew",
+   "partyoutfitnovakfn",
+   "ashbeastchristmas"
+  ]
+ },
  "hidden": [],
  "groups": [
   [
@@ -201,5 +217,10 @@
   }
  ],
  "discordInvite": "https://discord.gg/PrbGGBWMS",
- "hiddenReviews": []
+ "hiddenReviews": [
+  "g-W2KNuEVcCPpTBlCvUtJ6gQ==",
+  "g-K--Gu_gqhc0rCQbe6Pj3XA==",
+  "g-ril3GzJOOupDC42UIdS5Qg==",
+  "g-6oexLhZtSw-vPhE1r8EVaQ=="
+ ]
 }
