@@ -1,0 +1,60 @@
+name: Update store
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: update-store
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Pull products and WIP images
+        id: sync
+        continue-on-error: true
+        run: node scripts/sync.mjs
+        env:
+          JINXXY_API_KEY: ${{ secrets.JINXXY_API_KEY }}
+          GUMROAD_TOKEN: ${{ secrets.GUMROAD_TOKEN }}
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_CHANNEL_ID: ${{ secrets.DISCORD_CHANNEL_ID }}
+
+      - name: Save changes
+        run: |
+          git config user.name "store-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A data wip
+          git diff --cached --quiet || (git commit -m "Update products and WIP images" && git push)
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deploy
+        uses: actions/deploy-pages@v4
+
+      - name: Report sync problems
+        if: steps.sync.outcome == 'failure'
+        run: |
+          echo "::error::Syncing failed. Open the 'Pull products and WIP images' step above to see why."
+          exit 1
