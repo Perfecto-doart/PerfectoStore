@@ -58,6 +58,18 @@ const range = (nums, cur, inCents) => {
   return lo === hi ? a : `${a}–${money(hi, cur).replace(/^\$/, "$")}`;
 };
 
+/* grab the og:image (cover picture) from a public product page */
+async function pageImage(url) {
+  try {
+    const r = await fetch(url, { headers: { "user-agent": "Mozilla/5.0 (store-sync)" } });
+    if (!r.ok) return "";
+    const html = await r.text();
+    const m = html.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i)
+      || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i);
+    return m ? m[1].replace(/&amp;/g, "&") : "";
+  } catch { return ""; }
+}
+
 /* ---------- Jinxxy ---------- */
 async function fetchJinxxy() {
   if (!JINXXY_API_KEY) { console.log("No JINXXY_API_KEY, skipping Jinxxy"); return null; }
@@ -89,20 +101,29 @@ async function fetchJinxxy() {
       catch (e) { console.log("detail failed for", s.id, e.message); }
       await sleep(550);
     }
-    if (out.length === 0) console.log("Jinxxy product fields:", Object.keys(d));
+    if (out.length === 0) console.log("Jinxxy sample product:", JSON.stringify(d).slice(0, 1500));
     const vis = String(pick(d, "visibility", "status") || "").toLowerCase();
     if (/private|hidden|draft|archiv|unlisted/.test(vis) || d.published === false) continue;
     const name = pick(d, "name", "title");
     if (!name) continue;
+    let url = pick(d, "url", "url.href", "store_url", "product_url", "public_url");
+    if (url && typeof url === "object") url = url.href || url.url || "";
+    url = String(url || "");
+    if (url && !/^https?:\/\//.test(url)) url = url.startsWith("/") ? "https://jinxxy.com" + url : "https://" + url;
     const slug = pick(d, "slug", "url_slug", "permalink");
-    const url = pick(d, "url", "store_url", "product_url", "public_url") || (slug ? `https://jinxxy.com/${JINXXY_STORE}/${slug}` : "");
-    const cur = pick(d, "currency_code", "currency", "price.currency") || "USD";
-    const versions = d.versions || d.variants || [];
-    const prices = [pick(d, "price"), ...versions.map(v => pick(v, "price", "price.amount"))].map(Number).filter(n => !isNaN(n));
-    const inCents = prices.some(n => n >= 100) || /cents/i.test(JSON.stringify(Object.keys(d)));
-    const img = pick(d, "cover_image.url", "cover.url", "cover_image", "thumbnail.url", "thumbnail_url", "image_url", "image",
-      "images.0.url", "images.0", "gallery_images.0.url", "media.0.url");
-    out.push({ name, url, price: range(prices, cur, inCents), image: typeof img === "string" ? img : "" });
+    if (!url && slug) url = `https://jinxxy.com/${JINXXY_STORE}/${slug}`;
+    const cur = pick(d, "currency_code", "currency") || "USD";
+    const num = v => (v == null || v === "" || typeof v === "object") ? NaN : Number(v);
+    const versions = Array.isArray(d.versions) ? d.versions : [];
+    let prices = [num(pick(d, "base_price", "price", "price.amount")),
+      ...versions.map(v => num(pick(v, "price", "base_price", "price.amount")))].filter(n => !isNaN(n));
+    const pwyw = d.pwyw_pricing && typeof d.pwyw_pricing === "object" ? d.pwyw_pricing : null;
+    if (pwyw && (pwyw.enabled ?? true)) { const m = num(pick(pwyw, "minimum_price", "min_price", "minimum")); if (!isNaN(m)) prices.push(m); }
+    const inCents = prices.some(n => n >= 100 && Number.isInteger(n));
+    let img = pick(d, "cover_image.url", "cover.url", "thumbnail_url", "image_url", "images.0.url");
+    if (typeof img !== "string") img = "";
+    if (!img && url) img = await pageImage(url);
+    out.push({ name, url, price: range(prices, cur, inCents), image: img });
   }
   console.log("Jinxxy products:", out.length);
   return out;
@@ -111,10 +132,17 @@ async function fetchJinxxy() {
 /* ---------- Gumroad ---------- */
 async function fetchGumroad() {
   if (!GUMROAD_TOKEN) { console.log("No GUMROAD_TOKEN, skipping Gumroad"); return null; }
-  const r = await fetch("https://api.gumroad.com/v2/products", { headers: { Authorization: `Bearer ${GUMROAD_TOKEN}` } });
-  if (!r.ok) throw new Error(`Gumroad -> ${r.status} ${(await r.text()).slice(0, 300)}`);
-  const j = await r.json();
-  if (!j.success) throw new Error("Gumroad: " + (j.message || "request failed"));
+  let next = "https://api.gumroad.com/v2/products", all = [];
+  for (let n = 0; next && n < 20; n++) {
+    const r = await fetch(next, { headers: { Authorization: `Bearer ${GUMROAD_TOKEN}` } });
+    if (!r.ok) throw new Error(`Gumroad -> ${r.status} ${(await r.text()).slice(0, 300)}`);
+    const j = await r.json();
+    if (!j.success) throw new Error("Gumroad: " + (j.message || "request failed"));
+    all.push(...(j.products || []));
+    next = j.next_page_url ? new URL(j.next_page_url, "https://api.gumroad.com").href : null;
+  }
+  console.log("Gumroad products from API (incl. unpublished):", all.length);
+  const j = { products: all };
   const out = (j.products || []).filter(p => p.published !== false && !p.deleted).map(p => {
     const perma = p.custom_permalink || slugOf(p.short_url);
     return {
