@@ -2,8 +2,8 @@ name: Update store
 
 on:
   schedule:
-    - cron: "17 * * * *"
-  workflow_dispatch:
+    - cron: "17 * * * *"   # every hour
+  workflow_dispatch:        # "Run workflow" button
   push:
     branches: [main]
 
@@ -17,17 +17,14 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  update:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Pull products and WIP images
         id: sync
@@ -41,21 +38,33 @@ jobs:
 
       - name: Save changes
         run: |
+          mkdir -p wip && touch wip/.gitkeep
           git config user.name "store-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          mkdir -p wip && touch wip/.gitkeep
           git add -A data wip
           git diff --cached --quiet || (git commit -m "Update products and WIP images" && git pull --rebase && git push)
+
+      - name: Collect website files
+        run: |
+          mkdir -p _site
+          cp index.html _site/
+          for d in data images wip fonts; do [ -d "$d" ] && cp -r "$d" _site/; done; true
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
-      - id: deploy
-        uses: actions/deploy-pages@v4
+          path: _site
 
       - name: Report sync problems
         if: steps.sync.outcome == 'failure'
-        run: |
-          echo "::error::Syncing failed. Open the 'Pull products and WIP images' step above to see why."
-          exit 1
+        run: echo "::warning::Syncing failed. Open 'Pull products and WIP images' to see why. The site was published with the last good data."
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4
