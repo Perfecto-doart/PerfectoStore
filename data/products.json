@@ -8,7 +8,13 @@
   "image": "https://public-files.gumroad.com/5pomj17qmutzfc1mi6aunksjikt6",
   "bases": [
    "Druffle"
-  ]
+  ],
+  "key": "winterpufferdruffle",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "4037673602810644322",
+   "gumroad": "EzyWJ_WeRe7X8UiS30jkNg=="
+  }
  },
  {
   "name": "Wrestler Outfit For Druffle Avatar",
@@ -19,7 +25,13 @@
   "image": "https://public-files.gumroad.com/lsdco39ge829f3mi2a99wf0hd94w",
   "bases": [
    "Druffle"
-  ]
+  ],
+  "key": "wrestlerdruffle",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "4036941468013692813",
+   "gumroad": "KQuNTUkbQGTidTQ9ULpX8Q=="
+  }
  },
  {
   "name": "Beach Outfit For Femcanine, MascCanine & Feline",
@@ -32,7 +44,13 @@
    "Femcanine",
    "MascCanine",
    "Feline"
-  ]
+  ],
+  "key": "winterpawbeachoutfit",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "4036310057195931455",
+   "gumroad": "IbnPoZdIRPJ4Y81zaEF4vw=="
+  }
  },
  {
   "name": "Robinhood Outfit For Novabeast",
@@ -43,7 +61,13 @@
   "image": "https://public-files.gumroad.com/20uzyo5bie9c0zkp5iv1f4ceyw0o",
   "bases": [
    "Novabeast"
-  ]
+  ],
+  "key": "robinhoodnovabeast",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "4031928334941161424",
+   "gumroad": "BrOfgreNUbyOPPKZuXOf6w=="
+  }
  },
  {
   "name": "Beach Outfit For Viwi",
@@ -54,7 +78,13 @@
   "image": "https://public-files.gumroad.com/kbxwty2ajldosjcl7a6pph0di7sn",
   "bases": [
    "Viwi"
-  ]
+  ],
+  "key": "beachoutfitviwi",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "4020311929187730892",
+   "gumroad": "yvj5E0hLOHdV-nvVVHa6qQ=="
+  }
  },
  {
   "name": "Robinhood Outfit For Druffle",
@@ -65,7 +95,13 @@
   "image": "https://public-files.gumroad.com/7s2luiiednip3rj5xk9od8y4uztf",
   "bases": [
    "Druffle"
-  ]
+  ],
+  "key": "robinhoodoutfitdruffle",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "4019688166238717900",
+   "gumroad": "MU4c1UzApI7znZOmKcRlvA=="
+  }
  },
  {
   "name": "Flutty Pumpkin Outfit For Druffle",
@@ -76,7 +112,13 @@
   "image": "https://public-files.gumroad.com/nxom2m15g7kaai3p48aeyr2idk8i",
   "bases": [
    "Druffle"
-  ]
+  ],
+  "key": "fluttypumpkindruffle",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "4015677072407004360",
+   "gumroad": "xf1Z5Z5tVv_21JiYpcryeg=="
+  }
  },
  {
   "name": "FREE Ghost Halloween Outfit For Novabeast 1.2",
@@ -87,7 +129,13 @@
   "image": "https://public-files.gumroad.com/tu8j0dwmy6h0dtinuvu1khkzya24",
   "bases": [
    "Novabeast 1.2"
-  ]
+  ],
+  "key": "ghosthalloweenoutfit",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "4013669398333097532",
+   "gumroad": "Bct-l0yqmjwPvWsN9vF-Ow=="
+  }
  },
  {
   "name": "Yoga Outfit For Vulrix",
@@ -98,7 +146,13 @@
   "image": "https://public-files.gumroad.com/9aswepohjzlpi7c1oqwtmmud5okt",
   "bases": [
    "Vulrix"
-  ]
+  ],
+  "key": "yogaoutfitvulrix",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "4010886395840169238",
+   "gumroad": "rOMHY2v_7xzWx3rLcaDOfQ=="
+  }
  },
  {
   "name": "Beach Outfit For Vulrix",
@@ -109,7 +163,13 @@
   "image": "https://public-files.gumroad.com/4ueohpf2otwt11q7rdoiem6nheho",
   "bases": [
    "Vulrix"
-  ]
+  ],
+  "key": "vulrixbeachoutfit",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "4010789231927493719",
+   "gumroad": "e4oe7QUNLXXrWIrZCV80Ow=="
+  }
  },
  {
   "name": "Beach Outfit For Druffle",
@@ -120,7 +180,13 @@
   "image": "https://public-files.gumroad.com/bxzhualt1p0x38tr1dax6saa7qik",
   "bases": [
    "Druffle"
-  ]
+  ],
+  "key": "beachoutfitdruffle",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3994111946923181498",
+   "gumroad": "Un-9HhckqRXCKd0x5krchA=="
+  }
  },
  {
   "name": "Halloween Fall Outfit For Novabeast 1.2",
@@ -131,7 +197,13 @@
   "image": "https://public-files.gumroad.com/34f30sj7yn8ostknj2juipq0hnqm",
   "bases": [
    "Novabeast 1.2"
-  ]
+  ],
+  "key": "falloutfitnova",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3994083921204610701",
+   "gumroad": "pcowRG_pRzt9J4uEaa2IZA=="
+  }
  },
  {
   "name": "Yoga Outfit For Femcanine, MascCanine & Feline",
@@ -144,7 +216,13 @@
    "Femcanine",
    "MascCanine",
    "Feline"
-  ]
+  ],
+  "key": "winterpawyogaoutfit",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3989222484749583829",
+   "gumroad": "gAI1DZq7t2QlXHWQgt3lgg=="
+  }
  },
  {
   "name": "Beach Outfit For Novabeast 1.2",
@@ -155,7 +233,13 @@
   "image": "https://public-files.gumroad.com/067ogh575jx4ya2mk4esjbgjtrlr",
   "bases": [
    "Novabeast 1.2"
-  ]
+  ],
+  "key": "beachoutfitnova",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3985491596756911407",
+   "gumroad": "p9bvbCSxyeoEjAouqlTXOQ=="
+  }
  },
  {
   "name": "School Outfit For Foxmoth & Shaienne",
@@ -167,7 +251,13 @@
   "bases": [
    "Foxmoth",
    "Shaienne"
-  ]
+  ],
+  "key": "schooloutfitdarbi",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3983417909085996243",
+   "gumroad": "2gmjsuk0YnM1K_kb6tq4ow=="
+  }
  },
  {
   "name": "Yoga Outfit For Druffle",
@@ -178,7 +268,13 @@
   "image": "https://public-files.gumroad.com/r2mhzzmh0xqp71ylzjenxaqxqbn3",
   "bases": [
    "Druffle"
-  ]
+  ],
+  "key": "druffleyogaoutfit",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3976829943987308169",
+   "gumroad": "fM_7oVZw7jDdfqAwifPqdQ=="
+  }
  },
  {
   "name": "School Outfit For Novabeast 1.2",
@@ -189,7 +285,13 @@
   "image": "https://public-files.gumroad.com/df6zu4xp5w1vj79r7jvveyjwzeuo",
   "bases": [
    "Novabeast 1.2"
-  ]
+  ],
+  "key": "schooloutfitnova",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3969273816495948874",
+   "gumroad": "ialkKd6aUthum6K3_KLzGA=="
+  }
  },
  {
   "name": "Yoga Outfit For Fluffgan & Nyxian",
@@ -201,7 +303,13 @@
   "bases": [
    "Fluffgan",
    "Nyxian"
-  ]
+  ],
+  "key": "fluffgannyxianyogaoutfit",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3963812005353096398",
+   "gumroad": "TBHoAUW1FE6rCLUrrumX0Q=="
+  }
  },
  {
   "name": "Yoga Outfit For Viwi",
@@ -212,7 +320,13 @@
   "image": "https://public-files.gumroad.com/9kso73s8l6sffzd249vb80iu9goj",
   "bases": [
    "Viwi"
-  ]
+  ],
+  "key": "yogaoutfitviwi",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3963079595300750849",
+   "gumroad": "-BVa-f-NG8jmwSAayXT1lQ=="
+  }
  },
  {
   "name": "Yoga Outfit For Nardoragon 3.1",
@@ -223,7 +337,13 @@
   "image": "https://public-files.gumroad.com/6gffoshgqfo5qun18rqx6nfhqwtp",
   "bases": [
    "Nardoragon 3.1"
-  ]
+  ],
+  "key": "nardoyogaoutfit",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3955057405674390954",
+   "gumroad": "0hkXLzjHayJrJoPSr_8kTA=="
+  }
  },
  {
   "name": "Yoga Outfit For Foxmoth, Shaienne & Shawn The Shark",
@@ -236,7 +356,13 @@
    "Foxmoth",
    "Shaienne",
    "Shawn The Shark"
-  ]
+  ],
+  "key": "yogafoxmothshawn",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3949930906940081888",
+   "gumroad": "jAv-bKs6jXfEpCpWQzygmQ=="
+  }
  },
  {
   "name": "Yoga Outfit For Novabeast 1.2, KFN & PsyFN",
@@ -249,7 +375,13 @@
    "Novabeast 1.2",
    "KFN",
    "PsyFN"
-  ]
+  ],
+  "key": "yogaoutfitnova",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3936746906264274590",
+   "gumroad": "6kMVrmIjmZcfgHUsmD2jRw=="
+  }
  },
  {
   "name": "Lidus Outfit For Shawn The Shark (Darbi)",
@@ -260,7 +392,13 @@
   "image": "https://public-files.gumroad.com/xniorttuouywt3004cnb81h73jlj",
   "bases": [
    "Shawn The Shark"
-  ]
+  ],
+  "key": "lidusshawn",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3913008475940063175",
+   "gumroad": "P2z6kh04NDI6zdPNcDYz1w=="
+  }
  },
  {
   "name": "Refrence Sheet For Viwi | VRChat Art",
@@ -271,7 +409,13 @@
   "image": "https://public-files.gumroad.com/7rzc00rppmspurzvhaki4a44s49p",
   "bases": [
    "Viwi"
-  ]
+  ],
+  "key": "viwirefsheet",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3903539605726561336",
+   "gumroad": "sCWZRDVpb51y7eotnU5Vww=="
+  }
  },
  {
   "name": "Perfecto's Ultra FREE NovaRaider Outfit For Novabeast 1.2",
@@ -282,7 +426,13 @@
   "image": "https://public-files.gumroad.com/3htb4re4fbku9sqidbfdsuxg12qg",
   "bases": [
    "Novabeast 1.2"
-  ]
+  ],
+  "key": "tombnova",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3899272193313342890",
+   "gumroad": "8CmqElIQ_4WM_wpgGOATSQ=="
+  }
  },
  {
   "name": "Sports Jacket Outfit For Spaceyeen, Foxmoth & Legato",
@@ -295,7 +445,13 @@
    "Spaceyeen",
    "Foxmoth",
    "Legato"
-  ]
+  ],
+  "key": "spaceyeenfoxmothlegatosportsjacket",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3886948408316921012",
+   "gumroad": "dsZgI0EV_SH1udcNAORL7Q=="
+  }
  },
  {
   "name": "Sports Jacket Outfit For Novabeast 1.2 & KFN",
@@ -307,7 +463,13 @@
   "bases": [
    "Novabeast 1.2",
    "KFN"
-  ]
+  ],
+  "key": "sportsjacketnovakfn",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3876097969329538236",
+   "gumroad": "lGgOcO-zCMLnJq4rVYSIXA=="
+  }
  },
  {
   "name": "Blazer Outfit For Nardo",
@@ -318,7 +480,13 @@
   "image": "https://public-files.gumroad.com/ajqvlulnmycm4wszwvvmek37fvi4",
   "bases": [
    "Nardoragon"
-  ]
+  ],
+  "key": "nardoblazeroutfit",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3870001319422985678",
+   "gumroad": "D45PvY9w5WIyhB9ZQzrZLQ=="
+  }
  },
  {
   "name": "Maki JJK Outfit For Novabeast 1.2",
@@ -329,7 +497,13 @@
   "image": "https://public-files.gumroad.com/e559gjp9cqssihxlohkj3cfgvoqn",
   "bases": [
    "Novabeast 1.2"
-  ]
+  ],
+  "key": "novabeastmakioutfit",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3865223934462920591",
+   "gumroad": "4wyN_vWT8Iye41wEPqrLJQ=="
+  }
  },
  {
   "name": "Valentine’s Day Dress For Novabeast 1.2 & KFN",
@@ -341,7 +515,13 @@
   "bases": [
    "Novabeast 1.2",
    "KFN"
-  ]
+  ],
+  "key": "valantinedress2026",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3831208538982582079",
+   "gumroad": "iK1VMcAF6WgZOLanM9O14Q=="
+  }
  },
  {
   "name": "Brooklyn Sweater Meme Outfit For Novabeast",
@@ -352,7 +532,13 @@
   "image": "https://public-files.gumroad.com/cgagk5ew7h3yem3s45yfcmgisgre",
   "bases": [
    "Novabeast"
-  ]
+  ],
+  "key": "brooklynnovabeast",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3813061093459232615",
+   "gumroad": "phUxZslhC8pMCFscoIt0sA=="
+  }
  },
  {
   "name": "Brooklyn Sweater Meme Outfit For Space Yeen",
@@ -363,7 +549,13 @@
   "image": "https://public-files.gumroad.com/psgxgh0iibgbvezskjmmhnp915m9",
   "bases": [
    "Spaceyeen"
-  ]
+  ],
+  "key": "brooklynspaceyeen",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3802098853176411197",
+   "gumroad": "u_esupOCbBbnC7S5Gr5Uvg=="
+  }
  },
  {
   "name": "New Year Party Outfit For Legato Avatar",
@@ -374,7 +566,13 @@
   "image": "https://public-files.gumroad.com/bzum4h5yvgh4ons1r466w7x6xub0",
   "bases": [
    "Legato"
-  ]
+  ],
+  "key": "legatopartynew",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3798902241054688603",
+   "gumroad": "YGgOFeEjMQfHRUGU8K26Bw=="
+  }
  },
  {
   "name": "New Year Party Outfit For Novabeast 1.2 & KFN Avatar",
@@ -386,7 +584,13 @@
   "bases": [
    "Novabeast 1.2",
    "KFN"
-  ]
+  ],
+  "key": "partyoutfitnovakfn",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3798142016458589793",
+   "gumroad": null
+  }
  },
  {
   "name": "Christmas New Year Party Outfit For Ashbeast",
@@ -397,7 +601,13 @@
   "image": "https://public-files.gumroad.com/jkyq51qwlfvnkyr13vjgz2xdodja",
   "bases": [
    "Ashbeast"
-  ]
+  ],
+  "key": "ashbeastchristmas",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3794293010884200116",
+   "gumroad": "YSrtKslT12Owo00j8UyutQ=="
+  }
  },
  {
   "name": "Christmas Santa Outfit For Novabeast 1.2",
@@ -408,7 +618,13 @@
   "image": "https://public-files.gumroad.com/rkceqxk4agial3ybm42ik2jgkh0m",
   "bases": [
    "Novabeast 1.2"
-  ]
+  ],
+  "key": "santanova",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3794242047087478253",
+   "gumroad": "eI7VR0M6bpLSlHGL3yEKiA=="
+  }
  },
  {
   "name": "Christmas Santa Outfit for Shawn The Shark (Darbi)",
@@ -419,7 +635,13 @@
   "image": "https://public-files.gumroad.com/17sc9mh2btoy4jaxmpr03euxqxht",
   "bases": [
    "Shawn The Shark"
-  ]
+  ],
+  "key": "santaoutfitshawn",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3793273648001844462",
+   "gumroad": "QH5XcssFZY2Yk13FEMrtxA=="
+  }
  },
  {
   "name": "Winter Puffer Jacket Outfit For Novabeast 1.2 & KFN Avatar",
@@ -431,7 +653,13 @@
   "bases": [
    "Novabeast 1.2",
    "KFN"
-  ]
+  ],
+  "key": "winterpuffernovakfn",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3786933844444185611",
+   "gumroad": null
+  }
  },
  {
   "name": "Winter Puffer Jacket Outfit For Northern Aspil Avatar",
@@ -442,7 +670,13 @@
   "image": "https://public-files.gumroad.com/7gi1c51q7k8hym8ji7emqks6kkex",
   "bases": [
    "Northern Aspil"
-  ]
+  ],
+  "key": "winterpuffernorthenaspil",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3784141689057183400",
+   "gumroad": "tP2EwT-zaOVby7MO97RkUw=="
+  }
  },
  {
   "name": "Halloween Mummy Outfit For Foxmoth",
@@ -453,7 +687,13 @@
   "image": "https://public-files.gumroad.com/gsqmxwemknwk0o6z7e9hc9shvght",
   "bases": [
    "Foxmoth"
-  ]
+  ],
+  "key": "foxmothmummy",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3754294398360224908",
+   "gumroad": "tKh9uAawN-NEcONqW8XBeQ=="
+  }
  },
  {
   "name": "Halloween Mummy Outfit For Novabeast 1.2 & KFN",
@@ -465,7 +705,13 @@
   "bases": [
    "Novabeast 1.2",
    "KFN"
-  ]
+  ],
+  "key": "mummynovakfn",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3749796367191508968",
+   "gumroad": "Ihy5LVJHBQpivME307HJjA=="
+  }
  },
  {
   "name": "Wrestler Outfit For Novabeast 1.2 & KFN",
@@ -477,7 +723,13 @@
   "bases": [
    "Novabeast 1.2",
    "KFN"
-  ]
+  ],
+  "key": "wrestlernovakfn",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3743968148840252938",
+   "gumroad": "l67Gn1C95mfiYAO-lkK70w=="
+  }
  },
  {
   "name": "Wrestler Outfit For Northern Aspil Avatar",
@@ -488,7 +740,13 @@
   "image": "https://public-files.gumroad.com/n6g6pnbt3wk03c9igc2uvd0hamny",
   "bases": [
    "Northern Aspil"
-  ]
+  ],
+  "key": "wrestleroutfitna",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3741894353736434977",
+   "gumroad": "g_sB4CVVLEH9aq7RWvR2jA=="
+  }
  },
  {
   "name": "Summer Outfit For Foxmoth",
@@ -499,7 +757,13 @@
   "image": "https://public-files.gumroad.com/i9qsrhhchgesbddbjgtzf0jvit9m",
   "bases": [
    "Foxmoth"
-  ]
+  ],
+  "key": "foxmothsummer",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3716643482949911672",
+   "gumroad": "EpnXG0YcLMU9cKyKQFe2aA=="
+  }
  },
  {
   "name": "Summer Outfit For Novabeast",
@@ -510,7 +774,13 @@
   "image": "https://public-files.gumroad.com/3273jz14lzh406ng8a1494mbuyge",
   "bases": [
    "Novabeast"
-  ]
+  ],
+  "key": "summeroutfitnovabeast",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3705045593530303814",
+   "gumroad": "u9930hzn8g0niLSeipBM4w=="
+  }
  },
  {
   "name": "Nurse Outfit For Winterpaw Male & Female",
@@ -521,7 +791,13 @@
   "image": "https://public-files.gumroad.com/2hz77ohrl09w9cyzcpr909j40otf",
   "bases": [
    "Winterpaw"
-  ]
+  ],
+  "key": "nursewinterpaw",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3683339706877084808",
+   "gumroad": "V1tBEgSlwAuSdD6BtnQgVQ=="
+  }
  },
  {
   "name": "Pride Outfit For Masc Canine & Fem Canine",
@@ -533,7 +809,13 @@
   "bases": [
    "MascCanine",
    "Femcanine"
-  ]
+  ],
+  "key": "winterpawpridemascfem",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3664534335110776292",
+   "gumroad": "lu6wHOaY5YBsbQn3W8pUqg=="
+  }
  },
  {
   "name": "Pride Outfit For Novabeast & Foxmoth",
@@ -545,7 +827,13 @@
   "bases": [
    "Novabeast",
    "Foxmoth"
-  ]
+  ],
+  "key": "prideoutfitnovafox",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3657155814499550272",
+   "gumroad": "umMCPLrp9Zkv93mCVH2srQ=="
+  }
  },
  {
   "name": "Blazer Outfit For Viwi",
@@ -556,7 +844,13 @@
   "image": "https://public-files.gumroad.com/vox2s6u7phz635u0l6jw4pj53unm",
   "bases": [
    "Viwi"
-  ]
+  ],
+  "key": "viwiblazeroutfit",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3637581232016983243",
+   "gumroad": "4FE9DkbDktpgmVykD1WoFg=="
+  }
  },
  {
   "name": "Anime / Furality Dress For Foxmoth",
@@ -567,7 +861,13 @@
   "image": "https://public-files.gumroad.com/vlk8o6yk9r1vnhr2tpfwlcdec0p9",
   "bases": [
    "Foxmoth"
-  ]
+  ],
+  "key": "foxmothjapaneseoutfit",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3629444805622236864",
+   "gumroad": "ilFDaDM3gCge2_bs3_Rc_A=="
+  }
  },
  {
   "name": "Cafe / Furality Apron For Novabeast",
@@ -578,7 +878,13 @@
   "image": "https://public-files.gumroad.com/rnfkc7a8qp5kkf81i87ob4t3elpk",
   "bases": [
    "Novabeast"
-  ]
+  ],
+  "key": "cafeapronnova",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3619990525991454484",
+   "gumroad": "oYaSndXES68XHxTMgsuDGw=="
+  }
  },
  {
   "name": "Nurse Outfit For Nova, Foxmoth, Hyenid",
@@ -591,7 +897,13 @@
    "Novabeast",
    "Foxmoth",
    "Hyenid"
-  ]
+  ],
+  "key": "nursenovafoxmothhyenid",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3595538239991056347",
+   "gumroad": "OczDdyomI1Pbv8Qd_vyHSg=="
+  }
  },
  {
   "name": "Nurse Outfit For Milyeena",
@@ -602,7 +914,13 @@
   "image": "https://public-files.gumroad.com/2a6cp5sg2if5w65bewo7wq0uluu0",
   "bases": [
    "Milyeena"
-  ]
+  ],
+  "key": "nursemilyeena",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3591967475727599194",
+   "gumroad": "-_EfYaKN5VQcywtlqgMKIg=="
+  }
  },
  {
   "name": "Blazer Outfit For Novabeast",
@@ -613,7 +931,13 @@
   "image": "https://public-files.gumroad.com/dt090afnqfkfw9x1sharx0keir9z",
   "bases": [
    "Novabeast"
-  ]
+  ],
+  "key": "blazeroutfitnovabeast",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3572952908276171908",
+   "gumroad": "DlLtDiaiC9uKYQppGojMBg=="
+  }
  },
  {
   "name": "Outfit For Foxmoth (Cute and Goth Themed)",
@@ -624,7 +948,13 @@
   "image": "https://public-files.gumroad.com/ns746y09ffzbrx4x1my1veeczama",
   "bases": [
    "Foxmoth"
-  ]
+  ],
+  "key": "cuteoutfitfoxmoth",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3548552938995582113",
+   "gumroad": "3JFz_-cKZD_erPEuR5rxqA=="
+  }
  },
  {
   "name": "Laced Collar (Cute and Goth Themed) | VRChat Accessory",
@@ -633,7 +963,13 @@
   "jinxxy": "https://jinxxy.com/perfecto/LacedCollar",
   "gumroad": "https://perfectodoart.gumroad.com/l/LacedCollar",
   "image": "https://public-files.gumroad.com/qj0b4s1lv6kt458rcuouhtxgowm3",
-  "bases": []
+  "bases": [],
+  "key": "lacedcollar",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3545685007282472086",
+   "gumroad": "KsRj01BKS7vnOTsUxg0XlA=="
+  }
  },
  {
   "name": "Snowfall Cloud Follower and Avatar Particle VRChat (Can be used on any avatar)",
@@ -644,7 +980,13 @@
   "image": "https://public-files.gumroad.com/o20p299zghbq2c3i5zo6fov457j1",
   "bases": [
    "Any avatar"
-  ]
+  ],
+  "key": "snowfallcloud",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3529729274309248778",
+   "gumroad": "F3iWZ7GKTAf8yOm84TP-zg=="
+  }
  },
  {
   "name": "Christmas Outfit For Novabeast | VRChat Outfit (With Loafe's Thicc Addon)",
@@ -655,7 +997,13 @@
   "image": "https://public-files.gumroad.com/92qc7if1q5a18wnn4cblbre6i94u",
   "bases": [
    "Novabeast"
-  ]
+  ],
+  "key": "novabeastchristmasoutfit",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3527157009621190267",
+   "gumroad": "sfMg85INQ2_wjB4vaW8iwg=="
+  }
  },
  {
   "name": "Anime Sunglasses For Novabeast | VRChat Accessory (Anime)",
@@ -666,7 +1014,13 @@
   "image": "https://public-files.gumroad.com/m2ldd9lgvjw4qjwgq8dtzqlp1vir",
   "bases": [
    "Novabeast"
-  ]
+  ],
+  "key": "animeglasses",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": "3510328435777995869",
+   "gumroad": "-NQKwoQuvO863VgvD2K0Dg=="
+  }
  },
  {
   "name": "Football Outfit For Novabeast 1.2",
@@ -677,7 +1031,13 @@
   "image": "https://public-files.gumroad.com/44c6i1w7co8k9i5l22sd60qkstwe",
   "bases": [
    "Novabeast 1.2"
-  ]
+  ],
+  "key": "footballoutfitnova",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": null,
+   "gumroad": "cpFEMn6jHPEKpQd5ufN5Pw=="
+  }
  },
  {
   "name": "FREE Uro JJK Outfit For Novabeast 1.2",
@@ -688,7 +1048,13 @@
   "image": "https://public-files.gumroad.com/gcshf73jnzkcvfpohdnmzoo2kbbh",
   "bases": [
    "Novabeast 1.2"
-  ]
+  ],
+  "key": "jjkurooutfitnova",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": null,
+   "gumroad": "bs_pqcMvORhPloromQB57w=="
+  }
  },
  {
   "name": "Free Winter Outfit For Novabeast 1.2",
@@ -699,7 +1065,13 @@
   "image": "https://public-files.gumroad.com/im0q3y0dawarj5hkcnj1q3fgvuur",
   "bases": [
    "Novabeast 1.2"
-  ]
+  ],
+  "key": "freewinteroutfitnova",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": null,
+   "gumroad": "DuubJ3HvTUuJAF7cWO1ZeA=="
+  }
  },
  {
   "name": "Wrestler Outfit For Milbase",
@@ -710,7 +1082,13 @@
   "image": "https://public-files.gumroad.com/y10u5kpym9vm2jkbr0vntmmftg7z",
   "bases": [
    "Milbase"
-  ]
+  ],
+  "key": "wrestlermilbase",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": null,
+   "gumroad": "wHG5R2dwGR-7dZqy1hnnSw=="
+  }
  },
  {
   "name": "Free St Patrick's Day Outfit For Novabeast",
@@ -721,7 +1099,13 @@
   "image": "https://public-files.gumroad.com/a83tzbipvdoz4qax8zfgs303bxj3",
   "bases": [
    "Novabeast"
-  ]
+  ],
+  "key": "stpatrickoufit",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": null,
+   "gumroad": "7AcuxiEz3vPYYZ-OEPNLSQ=="
+  }
  },
  {
   "name": "FREE Plumbob With Moods and Audiolink | VRChat Accessory",
@@ -730,7 +1114,13 @@
   "jinxxy": "",
   "gumroad": "https://perfectodoart.gumroad.com/l/FreePlumbob",
   "image": "https://public-files.gumroad.com/yd8s2kosxnm0ewnq6d19e2wo8ncm",
-  "bases": []
+  "bases": [],
+  "key": "freeplumbob",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": null,
+   "gumroad": "phUvxLn7-VZ8HFXJKJh9VQ=="
+  }
  },
  {
   "name": "FREE Halo With Audiolink | VRChat Accessory",
@@ -739,7 +1129,13 @@
   "jinxxy": "",
   "gumroad": "https://perfectodoart.gumroad.com/l/HaloFree",
   "image": "https://public-files.gumroad.com/s34dxxoqyz3rxs26o3ok3kdeo0ow",
-  "bases": []
+  "bases": [],
+  "key": "halofree",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": null,
+   "gumroad": "8aMiBzzX4M4asDKO-aDg3w=="
+  }
  },
  {
   "name": "Maul Collar | VRChat",
@@ -748,7 +1144,13 @@
   "jinxxy": "",
   "gumroad": "https://perfectodoart.gumroad.com/l/MaulCollar",
   "image": "https://public-files.gumroad.com/9s18ufnkosa3dmvrao20vph6pnzc",
-  "bases": []
+  "bases": [],
+  "key": "maulcollar",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": null,
+   "gumroad": "PIPGyjDODQrDUQFnU5GaXQ=="
+  }
  },
  {
   "name": "Anime Collar For Novabeast | VRChat Accessory (Anime)",
@@ -759,7 +1161,13 @@
   "image": "https://public-files.gumroad.com/s0daj0b9bhhxrdpp72u2xo9ba3xs",
   "bases": [
    "Novabeast"
-  ]
+  ],
+  "key": "animecollar",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": null,
+   "gumroad": "d_wtJtFWNwnwdqZNIYa1Ug=="
+  }
  },
  {
   "name": "FREE Naruto Headband For Novabeast | VRChat Accessory (Anime)",
@@ -770,7 +1178,13 @@
   "image": "https://public-files.gumroad.com/dbm7k2k8sxzl5wru27zjwvmaupww",
   "bases": [
    "Novabeast"
-  ]
+  ],
+  "key": "narutoheadband",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": null,
+   "gumroad": "hohGrwmF_JcYkqCcSJX2Kw=="
+  }
  },
  {
   "name": "Bat Particle Warframe Inspired Ephemera | Halloween-Themed Avatar Particle VRChat",
@@ -779,7 +1193,13 @@
   "jinxxy": "",
   "gumroad": "https://perfectodoart.gumroad.com/l/BatParticle",
   "image": "https://public-files.gumroad.com/cvc3y1yobcr7y7i71ln2nf1cke4u",
-  "bases": []
+  "bases": [],
+  "key": "batparticle",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": null,
+   "gumroad": "fQlt5WgTx20w9lwW_jL7-A=="
+  }
  },
  {
   "name": "Zombie Nova – VRChat Novabeast Texture (SDK3) | Novabeast Halloween Avatar Skin",
@@ -788,7 +1208,13 @@
   "jinxxy": "",
   "gumroad": "https://perfectodoart.gumroad.com/l/ZombieNova",
   "image": "https://public-files.gumroad.com/x2yqxjqpr40it3tij1s9ahb252gn",
-  "bases": []
+  "bases": [],
+  "key": "zombienova",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": null,
+   "gumroad": "DPEaAc_iwVWvMRObwwBAyw=="
+  }
  },
  {
   "name": "Karlach Kimono Lineart",
@@ -797,7 +1223,13 @@
   "jinxxy": "",
   "gumroad": "https://perfectodoart.gumroad.com/l/KarlachKimono",
   "image": "https://public-files.gumroad.com/5px8ensr48llpl01zirg3hyulxbn",
-  "bases": []
+  "bases": [],
+  "key": "karlachkimono",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": null,
+   "gumroad": "3llr6L6cqZL1DpoEW2lkzg=="
+  }
  },
  {
   "name": "ShadowHeart Kimono Lineart",
@@ -806,6 +1238,12 @@
   "jinxxy": "",
   "gumroad": "https://perfectodoart.gumroad.com/l/ShadowHeartKimonoLineart",
   "image": "https://public-files.gumroad.com/hxrr25ut2xegn6tkqosgvenh5eyg",
-  "bases": []
+  "bases": [],
+  "key": "shadowheartkimonolineart",
+  "firstSeen": "earlier",
+  "ids": {
+   "jinxxy": null,
+   "gumroad": "40ULvnsEWKgPLEew7h8NgA=="
+  }
  }
 ]
