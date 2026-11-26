@@ -43,6 +43,7 @@ jobs:
         run: |
           git config user.name "store-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+                    mkdir -p wip && touch wip/.gitkeep
           git add -A data wip
           git diff --cached --quiet || (git commit -m "Update products and WIP images" && git push)
 
