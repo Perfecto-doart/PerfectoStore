@@ -140,19 +140,19 @@
  ],
  "profile": {
   "name": "Perfecto",
-  "tagline": "VRChat clothing, props and textures",
+  "tagline": "VRChat Clothing, Props and Textures",
   "skills": [
    "Clothing",
    "3D modeling",
    "Textures",
    "Refitting",
-   "2D art",
-   "Graphic design"
+   "Graphic design",
+   "2D art"
   ],
   "banner": {
-   "src": "",
+   "src": "images/banner-1795672571989.jpg",
    "x": 50,
-   "y": 50
+   "y": 0
   }
  },
  "commission": {
