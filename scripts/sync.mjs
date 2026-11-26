@@ -108,24 +108,31 @@ async function fetchJinxxy() {
     if (!name) continue;
     let url = pick(d, "url", "url.href", "store_url", "product_url", "public_url");
     if (url && typeof url === "object") url = url.href || url.url || "";
-    url = String(url || "");
-    if (url && !/^https?:\/\//.test(url)) url = url.startsWith("/") ? "https://jinxxy.com" + url : "https://" + url;
+    url = String(url || "").trim();
+    // Jinxxy sends just the product slug (e.g. "WinterPufferDruffle")
+    if (url && !/^https?:\/\//.test(url)) {
+      if (/^[\w-]+$/.test(url)) url = `https://jinxxy.com/${JINXXY_STORE}/${url}`;
+      else if (url.startsWith("/")) url = "https://jinxxy.com" + url;
+      else if (/^(www\.)?jinxxy\.com\//.test(url)) url = "https://" + url;
+      else url = "";
+    }
     const slug = pick(d, "slug", "url_slug", "permalink");
     if (!url && slug) url = `https://jinxxy.com/${JINXXY_STORE}/${slug}`;
     const cur = pick(d, "currency_code", "currency") || "USD";
-    const num = v => (v == null || v === "" || typeof v === "object") ? NaN : Number(v);
+    const num = v => (v == null || v === "" || typeof v === "object" || typeof v === "boolean") ? NaN : Number(v);
     const versions = Array.isArray(d.versions) ? d.versions : [];
-    // versions carry the real prices; base_price is often 0 when versions exist
-    const vPrices = versions.map(v => num(pick(v, "price", "base_price", "price.amount"))).filter(n => !isNaN(n));
-    let prices = vPrices.some(n => n > 0) ? vPrices : [num(pick(d, "base_price", "price", "price.amount")), ...vPrices].filter(n => !isNaN(n));
-    const pwyw = d.pwyw_pricing && typeof d.pwyw_pricing === "object" ? d.pwyw_pricing : null;
-    if (pwyw && pwyw.enabled === true) { const m = num(pick(pwyw, "minimum_price", "min_price", "minimum")); if (!isNaN(m)) prices.push(m); }
-    if (/^free\b/i.test(name) && prices.length) prices.push(0);
-    const inCents = prices.some(n => n >= 100 && Number.isInteger(n));
+    // Show only the standard price: the version named "Standard", else the cheapest paid version, else base price
+    const vp = versions.map(v => ({ n: String(v.name || ""), p: num(pick(v, "price", "base_price", "price.amount")) })).filter(v => !isNaN(v.p));
+    const freeItem = /^\s*free\b/i.test(name) && vp.some(v => v.p === 0);
+    const std = freeItem ? { p: 0 } : vp.find(v => /standard/i.test(v.n)) || vp.filter(v => v.p > 0).sort((x, y) => x.p - y.p)[0] || vp[0];
+    const base = num(d.base_price ?? d.price);
+    const cents = std ? std.p : base;
+    const inCents = [cents, ...vp.map(v => v.p)].some(n => n >= 100 && Number.isInteger(n));
+    const price = isNaN(cents) ? null : cents === 0 ? "Free" : money(inCents ? cents : cents * 100, cur);
     let img = pick(d, "cover_image.url", "cover.url", "thumbnail_url", "image_url", "images.0.url");
     if (typeof img !== "string") img = "";
     if (!img && url) { img = await pageImage(url); await sleep(300); }
-    out.push({ name, url, price: range(prices, cur, inCents), image: img });
+    out.push({ name, url, price, image: img });
   }
   console.log(`Jinxxy products: ${out.length} | with link from API: ${out.filter(p => p.url).length} | with picture: ${out.filter(p => p.image).length}`);
   return out;
@@ -150,7 +157,7 @@ async function fetchGumroad() {
     return {
       name: p.name,
       url: perma ? `https://${GUMROAD_STORE}.gumroad.com/l/${perma}` : p.short_url,
-      price: p.price === 0 ? "Free" : (p.formatted_price || null),
+      price: p.price === 0 ? "Free" : (typeof p.price === "number" ? money(p.price, (p.currency || "usd").toUpperCase()) : (p.formatted_price || null)),
       image: p.thumbnail_url || p.preview_url || ""
     };
   });
@@ -219,7 +226,7 @@ function merge(jx, gr, old, overrides, seed) {
       price: j?.price || g?.price || o.price || "",
       jinxxy: j ? (j.url || o.jinxxy || sd.jinxxy || "") : "",
       gumroad: g ? (g.url || o.gumroad || sd.gumroad || "") : "",
-      image: j?.image || g?.image || o.image || "",
+      image: g?.image || j?.image || o.image || "",
       bases: ov.bases || bases,
       ...(ov.hide ? { hide: true } : {})
     };
