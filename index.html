@@ -75,6 +75,7 @@ button{font:inherit;color:inherit}
 .fhead h2{font-size:34px}
 .fhead p{margin:0;color:var(--soft);font-weight:700}
 .back{min-height:44px;padding:0 16px;border-radius:999px;border:2px solid var(--line);background:var(--bg);cursor:pointer;font-weight:800}
+.morehead{font-size:clamp(30px,3.6vw,44px);margin:14px 0 22px;padding-top:26px;border-top:2px solid var(--line)}
 .empty{padding:40px 20px;text-align:center;background:var(--panel);border-radius:20px;color:var(--soft);font-weight:700}
 /* wip */
 .wip p{margin:-4px 0 12px;color:var(--soft);font-size:14px}
@@ -232,6 +233,12 @@ const render = () => {
       ${list.length ? `<div class="grid">${list.map(card).join("")}</div>` : `<div class="empty">Nothing matches that yet.</div>`}`;
     return;
   }
+  const seasonKeys = SEASONS.map(s => s[0]);
+  const rail = (title, badge, items, i) => `<section class="season"><div class="shead"><h2>${esc(title)}</h2>${badge}
+        <div class="arrows"><button data-r="${i}" data-d="-1" aria-label="Previous ${esc(title)} outfits">‹</button><button data-r="${i}" data-d="1" aria-label="Next ${esc(title)} outfits">›</button></div></div>
+      <div class="rail" id="rail${i}" tabindex="0" aria-label="${esc(title)} outfits">${items.map(card).join("")}</div></section>`;
+  const more = Object.keys(COLS).filter(k => !seasonKeys.includes(k))
+    .map((k, n) => { const items = P.filter(p => colOf(p) === k); return items.length ? rail(COLS[k][0], "", items, 100 + n) : ""; }).join("");
   main.innerHTML = orderedSeasons().map(({ s, live, days }, i) => {
     const items = P.filter(p => colOf(p) === s[0]);
     if (!items.length) return "";
@@ -239,7 +246,7 @@ const render = () => {
     return `<section class="season"><div class="shead"><h2>${esc(s[1])}</h2>${when}
         <div class="arrows"><button data-r="${i}" data-d="-1" aria-label="Previous ${esc(s[1])} outfits">‹</button><button data-r="${i}" data-d="1" aria-label="Next ${esc(s[1])} outfits">›</button></div></div>
       <div class="rail" id="rail${i}" tabindex="0" aria-label="${esc(s[1])} outfits">${items.map(card).join("")}</div></section>`;
-  }).join("");
+  }).join("") + (more ? `<h2 class="morehead">More outfits</h2>${more}` : "");
 };
 
 document.querySelector(".side").addEventListener("click", e => {
