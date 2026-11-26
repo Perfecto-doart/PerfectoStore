@@ -191,36 +191,82 @@ async function fetchGumroad() {
 /* ---------- Discord WIP ---------- */
 async function fetchDiscord() {
   if (!DISCORD_BOT_TOKEN || !DISCORD_CHANNEL_ID) { console.log("No Discord secrets, skipping WIP"); return null; }
-  const r = await fetch(`https://discord.com/api/v10/channels/${DISCORD_CHANNEL_ID}/messages?limit=100`,
-    { headers: { Authorization: `Bot ${DISCORD_BOT_TOKEN}` } });
-  if (!r.ok) throw new Error(`Discord -> ${r.status} ${(await r.text()).slice(0, 300)}`);
-  const msgs = await r.json(); // newest first
-  const imgs = [];
-  if (!DISCORD_AUTHOR_ID) console.log("No DISCORD_AUTHOR_ID set: taking images from everyone in the channel");
+  const H = { Authorization: `Bot ${DISCORD_BOT_TOKEN}` };
+  const api = async path => {
+    for (let t = 0; t < 3; t++) {
+      const r = await fetch("https://discord.com/api/v10" + path, { headers: H });
+      if (r.status === 429) { await sleep((Number(r.headers.get("retry-after")) || 2) * 1000); continue; }
+      if (!r.ok) throw new Error(`Discord ${path} -> ${r.status} ${(await r.text()).slice(0, 200)}`);
+      return r.json();
+    }
+    throw new Error("Discord rate limited");
+  };
+  const ch = await api(`/channels/${DISCORD_CHANNEL_ID}`);
+  const TYPES = { 0: "text", 5: "announcement", 11: "thread", 15: "forum", 16: "media" };
+  console.log(`Discord channel: #${ch.name} (${TYPES[ch.type] || "type " + ch.type})`);
+
+  // gather messages: normal channels directly; forum/media channels from their posts (threads)
+  let msgs = [];
+  if (ch.type === 15 || ch.type === 16) {
+    const active = await api(`/guilds/${ch.guild_id}/threads/active`).catch(e => { console.log(e.message); return { threads: [] }; });
+    const archived = await api(`/channels/${ch.id}/threads/archived/public?limit=50`).catch(e => { console.log(e.message); return { threads: [] }; });
+    const threads = [...(active.threads || []).filter(t => t.parent_id === ch.id), ...(archived.threads || [])]
+      .sort((a, b) => (b.id.length - a.id.length) || (b.id > a.id ? 1 : -1)).slice(0, 25);
+    console.log(`Forum posts found: ${threads.length}`);
+    for (const t of threads) {
+      try { msgs.push(...await api(`/channels/${t.id}/messages?limit=20`)); } catch (e) { console.log("thread", t.id, e.message); }
+      await sleep(300);
+    }
+  } else {
+    msgs = await api(`/channels/${DISCORD_CHANNEL_ID}/messages?limit=100`);
+  }
+  msgs.sort((a, b) => (b.id.length - a.id.length) || (b.id > a.id ? 1 : -1)); // newest first
+
   const hasLink = t => /https?:\/\/|discord\.gg\/|www\./i.test(t || "");
+  const isImg = a => /\.(png|jpe?g|webp|gif)$/i.test(a.filename || "") || (a.content_type || "").startsWith("image/");
+  const stat = { messages: msgs.length, forwarded: msgs.filter(m => (m.message_snapshots || []).length).length, withAttachments: 0, byYou: 0, bots: 0, otherPeople: 0, hadLinks: 0, nonImage: 0, spoilers: 0 };
+  const authors = {};
+  if (!DISCORD_AUTHOR_ID) console.log("No DISCORD_AUTHOR_ID set: taking images from everyone in the channel");
+  const imgs = [];
+  // forwarded messages keep their images and text inside message_snapshots
+  const attsOf = m => [...(m.attachments || []), ...(m.message_snapshots || []).flatMap(s => s.message?.attachments || [])];
+  const textOf = m => [m.content, ...(m.message_snapshots || []).map(s => s.message?.content)].join(" ");
+  const embedsOf = m => [...(m.embeds || []), ...(m.message_snapshots || []).flatMap(s => s.message?.embeds || [])];
   for (const m of msgs) {
-    if (m.author?.bot) continue;                                          // never other bots
-    if (DISCORD_AUTHOR_ID && m.author?.id !== DISCORD_AUTHOR_ID) continue; // only your posts
-    if (hasLink(m.content) || (m.embeds || []).some(e => e.url)) continue; // skip posts with links
-    for (const a of m.attachments || []) {
-    const ext = ((a.filename || "").match(/\.(png|jpe?g|webp|gif)$/i) || [])[1];
-    if (!ext && !(a.content_type || "").startsWith("image/")) continue;
-    if (a.spoiler || /^SPOILER_/i.test(a.filename || "")) continue;
-    imgs.push({ id: a.id, url: a.url, ext: (ext || "png").toLowerCase().replace("jpeg", "jpg") });
+    const atts = attsOf(m);
+    if (atts.length) { stat.withAttachments++; authors[m.author?.id] = m.author?.username; }
+    if (m.author?.bot) { stat.bots++; continue; }
+    if (DISCORD_AUTHOR_ID && m.author?.id !== DISCORD_AUTHOR_ID) { stat.otherPeople++; continue; }
+    stat.byYou++;
+    if (hasLink(textOf(m)) || embedsOf(m).some(e => e.url && e.type !== "image")) { stat.hadLinks++; continue; }
+    for (const a of atts) {
+      if (!isImg(a)) { stat.nonImage++; continue; }
+      if (a.spoiler || /^SPOILER_/i.test(a.filename || "")) { stat.spoilers++; continue; }
+      const ext = (((a.filename || "").match(/\.(png|jpe?g|webp|gif)$/i) || [])[1] || "png").toLowerCase().replace("jpeg", "jpg");
+      imgs.push({ id: a.id, url: a.url, ext });
     }
   }
+  console.log("Discord check:", JSON.stringify(stat));
+  console.log("People who posted attachments (id: name):", JSON.stringify(authors));
+  if (msgs.length && !msgs.some(m => attsOf(m).length || m.content)) {
+    console.log("HINT: messages arrive empty. Turn ON 'Message Content Intent' on the Bot page of the Discord Developer Portal.");
+  }
+  if (DISCORD_AUTHOR_ID && stat.withAttachments && !stat.byYou) {
+    console.log(`HINT: none of the image posts are by DISCORD_AUTHOR_ID (${DISCORD_AUTHOR_ID}). Check it matches your id in the list above.`);
+  }
+
   const keep = imgs.slice(0, WIP_COUNT);
   await fs.mkdir("wip", { recursive: true });
   const wanted = new Set(keep.map(i => `${i.id}.${i.ext}`));
   for (const i of keep) {
     const f = `wip/${i.id}.${i.ext}`;
     if (await fs.access(f).then(() => true, () => false)) continue;
-    const b = await fetch(i.url);
-    if (b.ok) { await fs.writeFile(f, Buffer.from(await b.arrayBuffer())); console.log("saved", f); }
+    const r = await fetch(i.url);
+    if (r.ok) { await fs.writeFile(f, Buffer.from(await r.arrayBuffer())); console.log("saved", f); }
   }
-  for (const f of await fs.readdir("wip")) if (f !== ".gitkeep" && !wanted.has(f)) await fs.unlink(`wip/${f}`);
+  if (keep.length) for (const f of await fs.readdir("wip")) if (f !== ".gitkeep" && !wanted.has(f)) await fs.unlink(`wip/${f}`);
   console.log("WIP images:", keep.length);
-  return keep.map(i => ({ src: `wip/${i.id}.${i.ext}` }));
+  return keep.length ? keep.map(i => ({ src: `wip/${i.id}.${i.ext}` })) : null;
 }
 
 /* ---------- merge ---------- */
