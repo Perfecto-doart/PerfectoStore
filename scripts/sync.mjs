@@ -115,17 +115,19 @@ async function fetchJinxxy() {
     const cur = pick(d, "currency_code", "currency") || "USD";
     const num = v => (v == null || v === "" || typeof v === "object") ? NaN : Number(v);
     const versions = Array.isArray(d.versions) ? d.versions : [];
-    let prices = [num(pick(d, "base_price", "price", "price.amount")),
-      ...versions.map(v => num(pick(v, "price", "base_price", "price.amount")))].filter(n => !isNaN(n));
+    // versions carry the real prices; base_price is often 0 when versions exist
+    const vPrices = versions.map(v => num(pick(v, "price", "base_price", "price.amount"))).filter(n => !isNaN(n));
+    let prices = vPrices.some(n => n > 0) ? vPrices : [num(pick(d, "base_price", "price", "price.amount")), ...vPrices].filter(n => !isNaN(n));
     const pwyw = d.pwyw_pricing && typeof d.pwyw_pricing === "object" ? d.pwyw_pricing : null;
-    if (pwyw && (pwyw.enabled ?? true)) { const m = num(pick(pwyw, "minimum_price", "min_price", "minimum")); if (!isNaN(m)) prices.push(m); }
+    if (pwyw && pwyw.enabled === true) { const m = num(pick(pwyw, "minimum_price", "min_price", "minimum")); if (!isNaN(m)) prices.push(m); }
+    if (/^free\b/i.test(name) && prices.length) prices.push(0);
     const inCents = prices.some(n => n >= 100 && Number.isInteger(n));
     let img = pick(d, "cover_image.url", "cover.url", "thumbnail_url", "image_url", "images.0.url");
     if (typeof img !== "string") img = "";
-    if (!img && url) img = await pageImage(url);
+    if (!img && url) { img = await pageImage(url); await sleep(300); }
     out.push({ name, url, price: range(prices, cur, inCents), image: img });
   }
-  console.log("Jinxxy products:", out.length);
+  console.log(`Jinxxy products: ${out.length} | with link from API: ${out.filter(p => p.url).length} | with picture: ${out.filter(p => p.image).length}`);
   return out;
 }
 
@@ -184,7 +186,8 @@ async function fetchDiscord() {
 }
 
 /* ---------- merge ---------- */
-function merge(jx, gr, old, overrides) {
+function merge(jx, gr, old, overrides, seed) {
+  const seedBy = new Map(seed.map(s => [norm(s.name), s]));
   const oldBy = new Map();
   for (const o of old) {
     if (o.jinxxy) oldBy.set("j:" + slugOf(o.jinxxy), o);
@@ -208,13 +211,14 @@ function merge(jx, gr, old, overrides) {
     const o = (j && oldBy.get("j:" + slugOf(j.url))) || (g && oldBy.get("g:" + slugOf(g.url))) || oldBy.get("n:" + norm(src.name)) || {};
     const name = cleanName(src.name);
     const ov = overrides[name] || overrides[slugOf(j?.url)] || overrides[slugOf(g?.url)] || {};
-    const bases = o.bases?.length ? o.bases : parseBases(src.name);
+    const sd = seedBy.get(norm(src.name)) || {};
+    const bases = o.bases?.length ? o.bases : sd.bases?.length ? sd.bases : parseBases(src.name);
     return {
       name,
       collection: ov.collection || o.collection || guessCollection(src.name),
       price: j?.price || g?.price || o.price || "",
-      jinxxy: j?.url || "",
-      gumroad: g?.url || "",
+      jinxxy: j ? (j.url || o.jinxxy || sd.jinxxy || "") : "",
+      gumroad: g ? (g.url || o.gumroad || sd.gumroad || "") : "",
       image: j?.image || g?.image || o.image || "",
       bases: ov.bases || bases,
       ...(ov.hide ? { hide: true } : {})
@@ -226,10 +230,12 @@ function merge(jx, gr, old, overrides) {
 let failed = false;
 const old = await readJSON("data/products.json", []);
 const overrides = await readJSON("data/overrides.json", {});
+const seed = await readJSON("data/seed.json", []);
 try {
   const [jx, gr] = await Promise.all([fetchJinxxy(), fetchGumroad()]);
   if (jx || gr) {
-    const merged = merge(jx || [], gr || [], old, overrides);
+    const merged = merge(jx || [], gr || [], old, overrides, seed);
+    console.log(`Cards: ${merged.length} | with Jinxxy link: ${merged.filter(p => p.jinxxy).length} | with Gumroad link: ${merged.filter(p => p.gumroad).length} | with picture: ${merged.filter(p => p.image).length}`);
     if (merged.length) await writeIfChanged("data/products.json", merged);
     else console.log("Got 0 products, keeping the old list");
   }

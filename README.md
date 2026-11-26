@@ -79,7 +79,20 @@ Edit `data/overrides.json` on GitHub (pencil icon) and use the product's name as
 
 Collections you can use: `winter christmas valentine summer yoga halloween school sports wrestler robin nurse pride goth anime special fx`
 
-**Avatar preview pictures (left side):** upload images to an `images/avatars/` folder, then in
-`index.html` fill in `AVATAR_IMG`, for example `"Novabeast": "images/avatars/novabeast.png"`.
+**Coupon code box:** edit `data/coupons.json`. Each code hides itself after its `ends` date. To show no code, make the file `[]`.
+
+```json
+[{ "code": "BLACKFRIDAY2026", "title": "Black Friday sale", "details": "Use this code at checkout on Jinxxy or Gumroad.", "ends": "2026-11-30" }]
+```
+
+**Avatar icons (left side):** upload square pictures to `images/avatars/`, named after the avatar in lowercase with dashes,
+for example `winterpaw.png`, `novabeast.png`, `shawn-the-shark.png`. Until a picture exists, the avatar's initials show instead.
+
+**Avatars with more than one name:** in `index.html`, edit `GROUPS`. For example, Winterpaw already covers MascCanine, Femcanine and Feline.
 
 **Season dates:** in `index.html`, edit `SEASONS` (format: start month-day, end month-day).
+
+**Microgramma font:** the site uses Microgramma Extd D if it can find it, and Michroma (a free look-alike) until then.
+Upload your licensed font file to a `fonts/` folder named `microgramma.woff2`, `microgramma.otf` or `microgramma.ttf`.
+
+**Logo:** `images/logo.png` (white on transparent). The site fills it with the holo gradient automatically.
