@@ -1,0 +1,205 @@
+{
+ "collections": [
+  {
+   "key": "winter",
+   "label": "Winter",
+   "season": {
+    "title": "Winter",
+    "start": "11-01",
+    "end": "02-28"
+   }
+  },
+  {
+   "key": "christmas",
+   "label": "Christmas & New Year",
+   "season": {
+    "title": "Christmas",
+    "start": "12-01",
+    "end": "01-05"
+   }
+  },
+  {
+   "key": "valentine",
+   "label": "Valentine",
+   "season": {
+    "title": "Valentine's",
+    "start": "02-01",
+    "end": "02-14"
+   }
+  },
+  {
+   "key": "summer",
+   "label": "Summer & beach",
+   "season": {
+    "title": "Summer",
+    "start": "04-01",
+    "end": "08-31"
+   }
+  },
+  {
+   "key": "yoga",
+   "label": "Yoga",
+   "season": {
+    "title": "Yoga",
+    "start": "01-01",
+    "end": "03-31"
+   }
+  },
+  {
+   "key": "halloween",
+   "label": "Halloween"
+  },
+  {
+   "key": "school",
+   "label": "School & blazers"
+  },
+  {
+   "key": "sports",
+   "label": "Sports jackets"
+  },
+  {
+   "key": "wrestler",
+   "label": "Wrestler"
+  },
+  {
+   "key": "robin",
+   "label": "Robinhood"
+  },
+  {
+   "key": "nurse",
+   "label": "Nurse"
+  },
+  {
+   "key": "pride",
+   "label": "Pride"
+  },
+  {
+   "key": "goth",
+   "label": "Cute & goth"
+  },
+  {
+   "key": "anime",
+   "label": "Anime & Furality"
+  },
+  {
+   "key": "special",
+   "label": "Memes & specials"
+  },
+  {
+   "key": "fx",
+   "label": "Effects & art"
+  }
+ ],
+ "assign": {},
+ "order": {},
+ "hidden": [],
+ "groups": [
+  [
+   "Winterpaw",
+   [
+    "MascCanine",
+    "Masc Canine",
+    "Femcanine",
+    "Fem Canine",
+    "Feline",
+    "Winterpaw Male",
+    "Winterpaw Female",
+    "Winterpaw Male & Female"
+   ],
+   "MascCanine, Femcanine, Feline"
+  ],
+  [
+   "Novabeast",
+   [
+    "Nova"
+   ],
+   ""
+  ],
+  [
+   "Nardoragon",
+   [
+    "Nardo"
+   ],
+   ""
+  ],
+  [
+   "Spaceyeen",
+   [
+    "Space Yeen"
+   ],
+   ""
+  ],
+  [
+   "Shawn The Shark",
+   [
+    "Shawn",
+    "Shawn The Shark (Darbi)"
+   ],
+   ""
+  ]
+ ],
+ "profile": {
+  "name": "Perfecto",
+  "tagline": "VRChat clothing, props and textures",
+  "skills": [
+   "Clothing",
+   "3D modeling",
+   "Textures",
+   "Refitting",
+   "2D art",
+   "Graphic design"
+  ],
+  "banner": {
+   "src": "",
+   "x": 50,
+   "y": 50
+  }
+ },
+ "commission": {
+  "open": true,
+  "count": 553,
+  "text": "DM me on Discord to start a commission.",
+  "discord": "perfecto1205"
+ },
+ "giveaway": {
+  "enabled": true,
+  "every": 100,
+  "discount": 70,
+  "namespace": "perfecto-doart-store",
+  "redeemed": []
+ },
+ "socials": [
+  {
+   "name": "Discord",
+   "sub": "DM me: perfecto1205",
+   "icon": "discord",
+   "copy": "perfecto1205"
+  },
+  {
+   "name": "Discord server",
+   "sub": "WIP and updates",
+   "icon": "discord",
+   "url": "https://discord.gg/PrbGGBWMS"
+  },
+  {
+   "name": "ArtStation",
+   "sub": "perfecto_doart",
+   "icon": "artstation",
+   "url": "https://www.artstation.com/perfecto_doart"
+  },
+  {
+   "name": "Bluesky",
+   "sub": "@perfectodoart.bsky.social",
+   "icon": "bluesky",
+   "url": "https://bsky.app/profile/perfectodoart.bsky.social"
+  },
+  {
+   "name": "Twitter / X",
+   "sub": "@Perfecto_doart",
+   "icon": "x",
+   "url": "https://twitter.com/Perfecto_doart"
+  }
+ ],
+ "discordInvite": "https://discord.gg/PrbGGBWMS",
+ "hiddenReviews": []
+}

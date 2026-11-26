@@ -132,7 +132,7 @@ async function fetchJinxxy() {
     let img = pick(d, "cover_image.url", "cover.url", "thumbnail_url", "image_url", "images.0.url");
     if (typeof img !== "string") img = "";
     if (!img && url) { img = await pageImage(url); await sleep(300); }
-    out.push({ name, url, price, image: img });
+    out.push({ id: d.id || s.id, name, url, price, image: img });
   }
   console.log(`Jinxxy products: ${out.length} | with link from API: ${out.filter(p => p.url).length} | with picture: ${out.filter(p => p.image).length}`);
   return out;
@@ -178,6 +178,7 @@ async function fetchGumroad() {
   const out = (j.products || []).filter(p => p.published !== false && !p.deleted).map(p => {
     const perma = p.custom_permalink || slugOf(p.short_url);
     return {
+      id: p.id,
       name: p.name,
       url: perma ? `https://${GUMROAD_STORE}.gumroad.com/l/${perma}` : p.short_url,
       price: gumroadPrice(p),
@@ -269,6 +270,49 @@ async function fetchDiscord() {
   return keep.length ? keep.map(i => ({ src: `wip/${i.id}.${i.ext}` })) : null;
 }
 
+/* ---------- reviews (Gumroad + Jinxxy) ---------- */
+// Neither store documents a public reviews API clearly, so each source is tried once and skipped if unavailable.
+async function fetchReviews(products) {
+  const out = [];
+  const pickR = r => ({
+    rating: Number(r.rating ?? r.stars ?? r.score ?? 0) || null,
+    text: String(r.message ?? r.review ?? r.text ?? r.content ?? r.body ?? "").trim(),
+    name: String(r.rater?.name ?? r.user?.name ?? r.user?.username ?? r.author?.name ?? r.author?.username ?? r.name ?? "").trim(),
+    date: String(r.created_at ?? r.createdAt ?? r.date ?? "").slice(0, 10),
+    id: String(r.id ?? r.review_id ?? "")
+  });
+  const listOf = j => Array.isArray(j) ? j : (j.reviews || j.product_reviews || j.results || j.data || []);
+  // Gumroad
+  if (GUMROAD_TOKEN) {
+    let ok = 0, tried = 0;
+    for (const p of products.filter(p => p.ids?.gumroad)) {
+      tried++;
+      const r = await fetch(`https://api.gumroad.com/v2/products/${encodeURIComponent(p.ids.gumroad)}/reviews`, { headers: { Authorization: `Bearer ${GUMROAD_TOKEN}` } });
+      if (!r.ok) { if (tried === 1) { console.log(`Gumroad reviews not available (${r.status}), skipping`); break; } continue; }
+      const j = await r.json().catch(() => ({}));
+      if (tried === 1) console.log("Gumroad reviews sample:", JSON.stringify(j).slice(0, 400));
+      for (const x of listOf(j)) { const v = pickR(x); if (v.rating || v.text) out.push({ ...v, id: "g-" + (v.id || p.key + "-" + out.length), source: "gumroad", product: p.name, productKey: p.key, url: p.gumroad }); ok++; }
+      await sleep(250);
+    }
+    console.log(`Gumroad reviews: ${ok}`);
+  }
+  // Jinxxy
+  if (JINXXY_API_KEY) {
+    let ok = 0, tried = 0;
+    for (const p of products.filter(p => p.ids?.jinxxy)) {
+      tried++;
+      const r = await fetch(`https://api.creators.jinxxy.com/v1/products/${encodeURIComponent(p.ids.jinxxy)}/reviews`, { headers: { "x-api-key": JINXXY_API_KEY, accept: "application/json" } });
+      if (!r.ok) { if (tried === 1) { console.log(`Jinxxy reviews not available (${r.status}), skipping`); break; } continue; }
+      const j = await r.json().catch(() => ({}));
+      if (tried === 1) console.log("Jinxxy reviews sample:", JSON.stringify(j).slice(0, 400));
+      for (const x of listOf(j)) { const v = pickR(x); if (v.rating || v.text) out.push({ ...v, id: "j-" + (v.id || p.key + "-" + out.length), source: "jinxxy", product: p.name, productKey: p.key, url: p.jinxxy }); ok++; }
+      await sleep(550);
+    }
+    console.log(`Jinxxy reviews: ${ok}`);
+  }
+  return out.sort((a, b) => (b.date || "").localeCompare(a.date || "")).slice(0, 80);
+}
+
 /* ---------- merge ---------- */
 function merge(jx, gr, old, overrides, seed) {
   const seedBy = new Map(seed.map(s => [norm(s.name), s]));
@@ -294,6 +338,7 @@ function merge(jx, gr, old, overrides, seed) {
     const src = j || g;
     const o = (j && oldBy.get("j:" + slugOf(j.url))) || (g && oldBy.get("g:" + slugOf(g.url))) || oldBy.get("n:" + norm(src.name)) || {};
     const name = cleanName(src.name);
+    const today = new Date().toISOString().slice(0, 10);
     const ov = overrides[name] || overrides[slugOf(j?.url)] || overrides[slugOf(g?.url)] || {};
     const sd = seedBy.get(norm(src.name)) || {};
     const bases = o.bases?.length ? o.bases : sd.bases?.length ? sd.bases : parseBases(src.name);
@@ -305,6 +350,9 @@ function merge(jx, gr, old, overrides, seed) {
       gumroad: g ? (g.url || o.gumroad || sd.gumroad || "") : "",
       image: g?.image || j?.image || o.image || "",
       bases: ov.bases || bases,
+      key: slugOf(j?.url) || slugOf(g?.url) || norm(src.name).replace(/ /g, "-"),
+      firstSeen: o.firstSeen || (o.name ? "earlier" : today),
+      ids: { jinxxy: j?.id || null, gumroad: g?.id || null },
       ...(ov.hide ? { hide: true } : {})
     };
   });
@@ -321,6 +369,12 @@ try {
     const merged = merge(jx || [], gr || [], old, overrides, seed);
     console.log(`Cards: ${merged.length} | with Jinxxy link: ${merged.filter(p => p.jinxxy).length} | with Gumroad link: ${merged.filter(p => p.gumroad).length} | with picture: ${merged.filter(p => p.image).length}`);
     if (merged.length) await writeIfChanged("data/products.json", merged);
+    const hour = new Date().getUTCHours();
+    const haveReviews = await fs.access("data/reviews.json").then(() => true, () => false);
+    if (!haveReviews || hour % 6 === 0 || process.env.FORCE_REVIEWS) {
+      try { const rv = await fetchReviews(merged); if (rv.length || !haveReviews) await writeIfChanged("data/reviews.json", rv); }
+      catch (e) { console.log("Reviews skipped:", e.message); }
+    }
     else console.log("Got 0 products, keeping the old list");
   }
 } catch (e) { failed = true; console.error("Store sync failed, keeping the old product list:\n", e.message); }

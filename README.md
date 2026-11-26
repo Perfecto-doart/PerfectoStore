@@ -66,6 +66,23 @@ After that, it runs every hour by itself. If a run turns red, click it and open
 
 ---
 
+## Admin page (your control room)
+
+Open `https://YOUR-USERNAME.github.io/PerfectoStore/admin.html`. It isn't linked anywhere on the store.
+
+**First time: make an admin token (2 minutes)**
+1. GitHub → your picture → **Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token**.
+2. Name: `Store admin`. Expiration: up to you (for example 1 year).
+3. **Repository access → Only select repositories →** your store repo.
+4. **Permissions → Repository permissions → Contents → Read and write.**
+5. **Generate token**, copy it, and paste it into the admin sign-in. It's kept only in that browser. Never paste it anywhere else.
+
+**What you can do there:** reorder products (drag or arrows), move them between categories, hide them, add/rename/reorder/delete categories, turn categories into seasons with dates, group avatar names, upload and crop the banner, edit skills, set commission status and count, manage coupon codes, check and redeem giveaway codes, hide reviews, and edit your links. Click **Save and publish**: the site updates in about 2 minutes.
+
+**New products** are picked up automatically every hour, placed in a best-guess category, marked "New" for 3 weeks, and listed at the top of the Products tab so you can check them.
+
+**Giveaway:** every 100th visitor (counted once per browser) sees a 70% off code like `PF70-1300-ABCDE` and is asked to DM you. Paste it into **Giveaway → Check a code** before honouring it. Fake codes, numbers that aren't winners and already-used codes are all caught. The counter uses the free Abacus service; if it's ever down, the site works normally without the counter.
+
 ## Everyday changes
 
 **A product landed in the wrong collection, has the wrong avatar list, or should be hidden.**

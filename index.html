@@ -3,27 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#06050c">
-<title>Perfecto · VRChat outfits</title>
-<meta name="description" content="VRChat clothing, props and textures by Perfecto. Shop by season or avatar, buy on Jinxxy or Gumroad.">
+<meta name="theme-color" content="#07060d">
+<title>Perfecto · VRChat outfits & commissions</title>
+<meta name="description" content="VRChat clothing, props and textures by Perfecto. Shop by season or avatar, buy on Jinxxy or Gumroad. Commissions open.">
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-/* VOICE: a black shop window with holographic foil, like a chrome Y2K sticker
-   IDEA: frosted display glass over glowing holo light; the outfits carry the colour
-   PICTURE: holo-filled logo, holo season title, colour glows behind glass panels
-   COLOUR and TYPE: near-black, white, frost + holo (violet, ice blue, orchid); Microgramma Extd D (fallback Syncopate Bold) + Archivo
-   LAYOUT: avatars + types | wide season rails | coupon, links, WIP. Phones stack: avatars, coupon, rails, WIP, links
-   Rules from ui-ux-pro-max: glass blur 10-20px, 1px ~20% border, contrast 4.5:1, 44px targets, 150-300ms states, reduced motion, reserved image space */
-@font-face{font-family:"Microgramma Extd D";src:local("Microgramma D Extended Bold"),local("MicrogrammaDExtendedBold"),local("Microgramma D Extended"),url("fonts/microgramma.woff2") format("woff2"),url("fonts/microgramma.otf") format("opentype"),url("fonts/microgramma.ttf") format("truetype");font-weight:400 900;font-display:swap}
+/* VOICE: a creator's storefront that feels alive: bold, clean, a little foil-shiny
+   IDEA: a Discord-style profile card that opens the shop, then seasonal racks of outfits
+   PICTURE: cropped banner with the holo logo badge, name, skills and live stats; holo glow behind frosted glass
+   COLOUR and TYPE: near-black, white, frost + holo (violet, ice blue, orchid); Outfit 800 (ui-ux-pro-max "Geometric Modern") + Work Sans
+   LAYOUT: commissions + avatars + types | profile banner, season racks, reviews, idea box | code, giveaway, links, WIP
+   Rules (ui-ux-pro-max): glass blur 10-20px with 1px ~20% border, contrast 4.5:1, 44px targets, 150-300ms states, reduced motion, reserved image space, non-drag alternatives */
 :root{color-scheme:dark;
-  --bg:#06050c;--white:#fff;--soft:rgba(255,255,255,.78);--faint:rgba(255,255,255,.62);
-  --v:#9277ff;--b:#46cdff;--o:#ff7fdc;--holo:linear-gradient(115deg,var(--v) 0%,var(--b) 52%,var(--o) 100%);
-  --glass:rgba(255,255,255,.08);--glass-2:rgba(255,255,255,.13);--edge:rgba(255,255,255,.2);--edge-2:rgba(255,255,255,.32);
-  --blur:saturate(160%) blur(18px);--wide:"Microgramma Extd D",Syncopate,"Eurostile Extended",sans-serif;
-  --r-lg:24px;--r-md:16px;--r-sm:12px;--ease:cubic-bezier(.2,.7,.2,1);--t:.2s;
+  --bg:#07060d;--white:#fff;--soft:rgba(255,255,255,.8);--faint:rgba(255,255,255,.64);
+  --v:#9277ff;--b:#46cdff;--o:#ff7fdc;--ok:#3ee08f;
+  --holo:linear-gradient(115deg,var(--v) 0%,var(--b) 52%,var(--o) 100%);
+  --glass:rgba(255,255,255,.075);--glass-2:rgba(255,255,255,.13);--edge:rgba(255,255,255,.18);--edge-2:rgba(255,255,255,.32);
+  --blur:saturate(160%) blur(18px);
+  --head:Outfit,system-ui,sans-serif;--body:"Work Sans",system-ui,sans-serif;
+  --r-xl:28px;--r-lg:22px;--r-md:16px;--r-sm:12px;--ease:cubic-bezier(.2,.7,.2,1);--t:.2s;
   --ic-gumroad:url("data:image/svg+xml,%3Csvg role=%22img%22 viewBox=%220 0 24 24%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath d=%22M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0Zm-.007 5.12c4.48 0 5.995 3.025 6.064 4.744h-3.239c-.069-.962-.897-2.406-2.896-2.406-2.136 0-3.514 1.857-3.514 4.126 0 2.27 1.378 4.125 3.514 4.125 1.93 0 2.758-1.512 3.103-3.025h-3.103v-1.238h6.509v6.327h-2.855v-3.989c-.207 1.444-1.102 4.264-4.617 4.264-3.516 0-5.584-2.82-5.584-6.326 0-3.645 2.276-6.602 6.618-6.602z%22/%3E%3C/svg%3E");
   --ic-discord:url("data:image/svg+xml,%3Csvg role=%22img%22 viewBox=%220 0 24 24%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath d=%22M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z%22/%3E%3C/svg%3E");
   --ic-x:url("data:image/svg+xml,%3Csvg role=%22img%22 viewBox=%220 0 24 24%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath d=%22M14.234 10.162 22.977 0h-2.072l-7.591 8.824L7.251 0H.258l9.168 13.343L.258 24H2.33l8.016-9.318L16.749 24h6.993zm-2.837 3.299-.929-1.329L3.076 1.56h3.182l5.965 8.532.929 1.329 7.754 11.09h-3.182z%22/%3E%3C/svg%3E");
@@ -36,77 +37,115 @@
 *{box-sizing:border-box;min-width:0}
 html{scroll-padding-top:96px}
 @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
-body{margin:0;background:var(--bg);color:var(--white);font:16px/1.5 Archivo,system-ui,sans-serif;overflow-x:clip;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--white);font:16px/1.55 var(--body);overflow-x:clip;-webkit-font-smoothing:antialiased}
 a{color:inherit}
-button,input{font:inherit;color:inherit}
-a,button{cursor:pointer;transition:background-color var(--t) var(--ease),color var(--t),border-color var(--t),box-shadow var(--t),filter var(--t),transform var(--t) var(--ease)}
-:focus-visible{outline:2px solid var(--b);outline-offset:3px;border-radius:6px}
-h1,h2,h3{margin:0;line-height:1.1}
+button,input,textarea,select{font:inherit;color:inherit}
+a,button{cursor:pointer;transition:background-color var(--t) var(--ease),color var(--t),border-color var(--t),box-shadow var(--t),filter var(--t),transform var(--t) var(--ease),opacity var(--t)}
+:focus-visible{outline:2px solid var(--b);outline-offset:3px;border-radius:8px}
+h1,h2,h3{margin:0;font-family:var(--head);line-height:1.05;letter-spacing:-.01em}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.skip{position:fixed;left:12px;top:-60px;z-index:50;padding:10px 16px;border-radius:999px;background:var(--white);color:#000;font-weight:700;text-decoration:none}
+.skip{position:fixed;left:12px;top:-60px;z-index:60;padding:10px 16px;border-radius:999px;background:var(--white);color:#000;font-weight:700;text-decoration:none}
 .skip:focus{top:12px}
 .si{flex:none;display:inline-block;width:18px;height:18px;background:currentColor;-webkit-mask:var(--i) center/contain no-repeat;mask:var(--i) center/contain no-repeat}
-.si.img{background:none;-webkit-mask:none;mask:none}
-.si.img img{width:100%;height:100%;object-fit:contain;display:block}
-
-/* light behind the glass */
 .orbs{position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background:radial-gradient(42vw 42vw at 6% 8%,rgba(146,119,255,.45),transparent 70%),
-             radial-gradient(36vw 36vw at 96% 24%,rgba(70,205,255,.30),transparent 70%),
-             radial-gradient(44vw 44vw at 72% 104%,rgba(255,127,220,.28),transparent 70%),
-             radial-gradient(30vw 30vw at 30% 70%,rgba(146,119,255,.14),transparent 70%)}
-.glass{background:var(--glass);border:1px solid var(--edge);-webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur);box-shadow:inset 0 1px 0 rgba(255,255,255,.12)}
+  background:radial-gradient(42vw 42vw at 6% 8%,rgba(146,119,255,.42),transparent 70%),
+             radial-gradient(36vw 36vw at 96% 24%,rgba(70,205,255,.28),transparent 70%),
+             radial-gradient(44vw 44vw at 72% 104%,rgba(255,127,220,.26),transparent 70%)}
+.glass{background:var(--glass);border:1px solid var(--edge);-webkit-backdrop-filter:var(--blur);backdrop-filter:var(--blur);box-shadow:inset 0 1px 0 rgba(255,255,255,.1)}
+.btn-holo{background:var(--holo);color:#0a0714;border:0}
+.btn-holo:hover{filter:brightness(1.1)}
 
 /* top bar */
-.top{position:sticky;top:0;z-index:20;border-width:0 0 1px;border-radius:0;background:rgba(10,8,20,.55)}
-.top .in{max-width:1760px;margin:0 auto;padding:12px max(3vw,14px);display:flex;align-items:center;gap:12px 20px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;margin-inline-end:auto;border-radius:12px}
-.mark{flex:none;width:46px;height:46px;background:var(--holo);-webkit-mask:url(images/logo.png) center/contain no-repeat;mask:url(images/logo.png) center/contain no-repeat;filter:drop-shadow(0 0 14px rgba(146,119,255,.5))}
-.brand b{display:block;font:700 clamp(18px,2vw,24px)/1 var(--wide);letter-spacing:.04em}
-.brand span{display:block;font-size:13px;color:var(--soft);margin-top:5px}
-.search{position:relative;flex:0 1 360px}
+.top{position:sticky;top:0;z-index:20;border-width:0 0 1px;background:rgba(10,8,20,.6)}
+.top .in{max-width:1760px;margin:0 auto;padding:10px max(3vw,14px);display:flex;align-items:center;gap:12px 18px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-inline-end:auto;border-radius:12px}
+.mark{flex:none;width:40px;height:40px;background:var(--holo);-webkit-mask:url(images/logo.png) center/contain no-repeat;mask:url(images/logo.png) center/contain no-repeat;filter:drop-shadow(0 0 12px rgba(146,119,255,.5))}
+.brand b{font:800 22px/1 var(--head);letter-spacing:-.02em}
+.search{position:relative;flex:0 1 380px}
 .search .si{position:absolute;left:16px;top:50%;translate:0 -50%;width:16px;height:16px;color:var(--faint);pointer-events:none}
 .search input{width:100%;min-height:46px;padding:0 44px 0 42px;border-radius:999px;border:1px solid var(--edge);background:rgba(0,0,0,.35);font-size:16px}
 .search input::placeholder{color:var(--faint)}
 .search input:focus{border-color:var(--b);outline:none;box-shadow:0 0 0 3px rgba(70,205,255,.25)}
-.search kbd{position:absolute;right:14px;top:50%;translate:0 -50%;font:600 12px Archivo,sans-serif;color:var(--faint);border:1px solid var(--edge);border-radius:6px;padding:1px 7px}
+.search kbd{position:absolute;right:14px;top:50%;translate:0 -50%;font:600 12px var(--body);color:var(--faint);border:1px solid var(--edge);border-radius:6px;padding:1px 7px}
 .search input:focus~kbd,.search input:not(:placeholder-shown)~kbd{display:none}
 .stores{display:flex;gap:8px}
-.pill{display:inline-flex;align-items:center;gap:9px;min-height:46px;padding:0 18px;border-radius:999px;text-decoration:none;font:700 11px var(--wide);letter-spacing:.05em;border:1px solid var(--edge);background:var(--glass)}
+.pill{display:inline-flex;align-items:center;gap:9px;min-height:46px;padding:0 18px;border-radius:999px;text-decoration:none;font:700 15px var(--head);border:1px solid var(--edge);background:var(--glass)}
 .pill:hover{border-color:var(--edge-2);background:var(--glass-2)}
-.pill.holo{background:var(--holo);color:#0a0714;border-color:transparent;box-shadow:0 6px 24px -10px rgba(146,119,255,.8)}
-.pill.holo:hover{filter:brightness(1.08)}
+.pill.btn-holo{background:var(--holo);color:#0a0714;border:0;box-shadow:0 6px 24px -10px rgba(146,119,255,.8)}
+.pill.btn-holo:hover{filter:brightness(1.1);background:var(--holo)}
 
 /* layout */
-.shop{max-width:1760px;margin:0 auto;padding:24px max(3vw,14px) 56px;display:grid;grid-template-columns:236px minmax(0,1fr) 292px;gap:24px;align-items:start}
-.side,.aside{position:sticky;top:94px;max-height:calc(100vh - 110px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none}
+.shop{max-width:1760px;margin:0 auto;padding:22px max(3vw,14px) 56px;display:grid;grid-template-columns:248px minmax(0,1fr) 296px;gap:22px;align-items:start}
+.side,.aside{position:sticky;top:88px;max-height:calc(100vh - 104px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:none}
 .side::-webkit-scrollbar,.aside::-webkit-scrollbar{display:none}
+.side>*+*,.aside>*+*{margin-top:16px}
 .panel{border-radius:var(--r-lg);padding:16px}
-.aside>*+*{margin-top:16px}
-.ph{font:700 12px var(--wide);letter-spacing:.05em;margin:2px 4px 12px}
+.ph{font:700 15px var(--head);margin:0 4px 12px;color:var(--soft)}
+
+/* commission card */
+.com{position:relative;overflow:hidden;border-radius:var(--r-lg);padding:18px 16px 16px;border:1px solid transparent;background:linear-gradient(rgba(14,11,28,.88),rgba(14,11,28,.88)) padding-box,var(--holo) border-box}
+.com .st{display:inline-flex;align-items:center;gap:8px;font:700 13px var(--head);padding:4px 10px;border-radius:999px;background:rgba(62,224,143,.14);color:var(--ok)}
+.com .st.closed{background:rgba(255,255,255,.1);color:var(--soft)}
+.com .st i{width:8px;height:8px;border-radius:50%;background:currentColor;box-shadow:0 0 0 0 rgba(62,224,143,.6)}
+@media(prefers-reduced-motion:no-preference){.com .st:not(.closed) i{animation:pulse 2s infinite}}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(62,224,143,0)}100%{box-shadow:0 0 0 0 rgba(62,224,143,0)}}
+.com .num{display:block;margin-top:12px;font:900 44px/1 var(--head);letter-spacing:-.03em;background:var(--holo);-webkit-background-clip:text;background-clip:text;color:transparent}
+.com .lbl{display:block;font:600 14px var(--head);color:var(--soft);margin-top:2px}
+.com p{margin:10px 0 12px;font-size:14px;color:var(--soft)}
+.com .dm{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:46px;border-radius:var(--r-sm);font:700 15px var(--head)}
+.com .dm .si{width:18px;height:18px}
+
+/* sidebar lists */
 .list{display:flex;flex-direction:column;gap:2px}
 .item{display:flex;align-items:center;gap:12px;width:100%;min-height:48px;padding:5px 10px 5px 5px;border:1px solid transparent;border-radius:14px;background:none;text-align:start}
 .item:hover{background:var(--glass-2)}
 .item[aria-current=true]{background:var(--holo);color:#0a0714}
-.nm{display:flex;flex-direction:column;line-height:1.25;font-weight:600;font-size:15px}
-.nm small{font-weight:500;font-size:12px;color:var(--faint)}
-.item[aria-current=true] .nm small,.item[aria-current=true] .ct{color:rgba(10,7,20,.7)}
+.nm{display:flex;flex-direction:column;line-height:1.25;font:600 15px var(--head)}
+.nm small{font:500 12px var(--body);color:var(--faint)}
+.item[aria-current=true] .nm small,.item[aria-current=true] .ct{color:rgba(10,7,20,.72)}
 .ct{margin-inline-start:auto;font-size:13px;color:var(--faint);font-variant-numeric:tabular-nums}
-.ico{flex:none;width:38px;height:38px;border-radius:50%;position:relative;overflow:hidden;display:grid;place-items:center;background:#0d0b18;border:1px solid var(--edge);font:700 10px var(--wide);letter-spacing:.03em}
+.ico{flex:none;width:38px;height:38px;border-radius:50%;position:relative;overflow:hidden;display:grid;place-items:center;background:#0e0c1a;border:1px solid var(--edge);font:800 12px var(--head)}
 .ico img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .dot{flex:none;width:38px;display:grid;place-items:center}
 .dot i{width:9px;height:9px;border-radius:50%;background:var(--holo)}
 .item[aria-current=true] .dot i{background:#0a0714}
-.more{margin-top:6px;width:100%;min-height:44px;border-radius:var(--r-sm);border:1px dashed var(--edge-2);background:none;color:var(--soft);font-size:14px;font-weight:600}
+.more{margin-top:6px;width:100%;min-height:44px;border-radius:var(--r-sm);border:1px dashed var(--edge-2);background:none;color:var(--soft);font:600 14px var(--head)}
 .more:hover{background:var(--glass-2)}
-.side .ph+.list+.ph,.side .more+.ph{margin-top:22px}
+.side .list+.ph,.side .more+.ph{margin-top:22px}
 
-/* seasons */
-.season{margin-bottom:44px}
+/* profile banner (Discord style) */
+.profile{border-radius:var(--r-xl);overflow:hidden;margin-bottom:34px;position:relative}
+.banner{position:relative;aspect-ratio:3/1;background:var(--holo);overflow:hidden}
+.banner img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.banner::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(7,6,13,.55))}
+.banner .pat{position:absolute;inset:0;opacity:.35;background:repeating-linear-gradient(115deg,rgba(255,255,255,.14) 0 2px,transparent 2px 26px)}
+.pinfo{position:relative;padding:0 26px 22px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:6px 20px;align-items:end}
+.badge{width:108px;height:108px;margin-top:-54px;border-radius:50%;background:#0b0916;border:5px solid #0b0916;display:grid;place-items:center;box-shadow:0 0 0 2px rgba(146,119,255,.6),0 18px 40px -18px rgba(146,119,255,.9)}
+.badge .mark{width:70px;height:70px}
+.pname{padding-top:14px}
+.pname h1{font:900 clamp(32px,4.4vw,56px)/1 var(--head);letter-spacing:-.035em}
+.pname p{margin:6px 0 0;color:var(--soft);font-size:15px}
+.stats{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;padding-top:14px}
+.stat{min-width:96px;padding:8px 14px;border-radius:var(--r-md);background:rgba(255,255,255,.06);border:1px solid var(--edge);text-align:center}
+.stat b{display:block;font:800 22px/1.1 var(--head);font-variant-numeric:tabular-nums}
+.stat span{font-size:12px;color:var(--faint)}
+.skills{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;padding:0;list-style:none}
+.skills li{padding:7px 14px;border-radius:999px;font:600 14px var(--head);background:rgba(255,255,255,.07);border:1px solid var(--edge)}
+.skills li:first-child{background:var(--holo);color:#0a0714;border-color:transparent}
+@media(prefers-reduced-motion:no-preference){
+  .profile .banner img{animation:fade .8s var(--ease) both}
+  .skills li{animation:rise .5s var(--ease) both}
+  .skills li:nth-child(2){animation-delay:.05s}.skills li:nth-child(3){animation-delay:.1s}.skills li:nth-child(4){animation-delay:.15s}.skills li:nth-child(5){animation-delay:.2s}.skills li:nth-child(6){animation-delay:.25s}.skills li:nth-child(n+7){animation-delay:.3s}
+}
+@keyframes fade{from{opacity:0}}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}}
+
+/* season racks */
+.season{margin-bottom:44px;container-type:inline-size}
 .shead{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-bottom:16px}
-.shead h2{font:700 clamp(20px,2.2vw,28px)/1.1 var(--wide);letter-spacing:.03em}
-.season.lead .shead h2{font-size:clamp(34px,5.2vw,74px);background:var(--holo);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 26px rgba(70,205,255,.28));padding-bottom:.06em}
-.tag{font-size:13px;font-weight:700;padding:5px 12px;border-radius:999px;border:1px solid var(--edge-2);color:var(--soft);white-space:nowrap}
+.shead h2{font:800 clamp(24px,2.6vw,34px)/1.05 var(--head)}
+.season.lead .shead h2{font-size:clamp(40px,5.6vw,80px);font-weight:900;letter-spacing:-.04em;background:var(--holo);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.06em}
+.tag{font:700 13px var(--head);padding:5px 12px;border-radius:999px;border:1px solid var(--edge-2);color:var(--soft);white-space:nowrap}
 .tag.now{background:var(--holo);color:#0a0714;border-color:transparent}
 .count{font-size:14px;color:var(--faint);white-space:nowrap}
 .arrows{margin-inline-start:auto;display:flex;gap:8px}
@@ -114,46 +153,45 @@ h1,h2,h3{margin:0;line-height:1.1}
 .arrows button:hover:not(:disabled){border-color:var(--edge-2);background:var(--glass-2)}
 .arrows button:disabled{opacity:.35;cursor:default}
 .arrows svg{width:16px;height:16px}
-.railwrap{position:relative}
 .rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 12px;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.28) transparent}
-.rail:focus-visible{outline-offset:6px}
-.season{container-type:inline-size}
 .rail .card{flex:0 0 calc((100% - 64px)/5);scroll-snap-align:start}
 @container (max-width:1100px){.rail .card{flex-basis:calc((100% - 48px)/4)}}
 @container (max-width:860px){.rail .card{flex-basis:calc((100% - 32px)/3)}}
 @container (max-width:600px){.rail .card{flex-basis:calc((100% - 16px)/2)}}
 @container (max-width:420px){.rail .card{flex-basis:72%}}
-.morehead{display:flex;align-items:center;gap:14px;font:700 clamp(18px,1.8vw,22px) var(--wide);letter-spacing:.04em;margin:8px 0 24px;color:var(--soft)}
+.morehead{display:flex;align-items:center;gap:14px;font:800 clamp(22px,2.2vw,28px) var(--head);margin:8px 0 24px;color:var(--soft)}
 .morehead::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--edge-2),transparent)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(212px,1fr));gap:16px}
 .fhead{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin-bottom:20px}
-.fhead h2{font:700 clamp(26px,3.4vw,44px)/1.1 var(--wide)}
+.fhead h2{font:900 clamp(30px,3.8vw,52px)/1.05 var(--head);letter-spacing:-.03em}
 .fhead p{margin:0;color:var(--soft)}
-.back{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--edge);background:var(--glass);font-weight:600}
+.back{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--edge);background:var(--glass);font:600 15px var(--head)}
 .back:hover{background:var(--glass-2);border-color:var(--edge-2)}
 .back svg{width:14px;height:14px}
 
 /* product card */
-.card{border-radius:20px;overflow:hidden;display:flex;flex-direction:column;background:rgba(255,255,255,.06);border:1px solid var(--edge)}
+.card{border-radius:20px;overflow:hidden;display:flex;flex-direction:column;background:rgba(255,255,255,.06);border:1px solid var(--edge);position:relative}
 .card:hover{border-color:rgba(146,119,255,.7);box-shadow:0 0 0 1px rgba(70,205,255,.25),0 20px 50px -22px rgba(146,119,255,.65)}
-@media(prefers-reduced-motion:no-preference){.card{transition:border-color var(--t),box-shadow var(--t),transform var(--t) var(--ease)}.card:hover{transform:translateY(-3px)}}
-.thumb{position:relative;aspect-ratio:1/1;background:#0d0b18;overflow:hidden}
+@media(prefers-reduced-motion:no-preference){.card{transition:border-color var(--t),box-shadow var(--t),transform var(--t) var(--ease)}.card:hover{transform:translateY(-4px)}}
+.thumb{position:relative;aspect-ratio:1/1;background:#0e0c1a;overflow:hidden}
 .thumb::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.06) 50%,transparent 70%) 0 0/250% 100%}
 @media(prefers-reduced-motion:no-preference){.thumb::before{animation:shine 1.4s linear infinite}}
 @keyframes shine{to{background-position:-250% 0}}
 .thumb.done::before{display:none}
 .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0}
 .thumb.done img{opacity:1}
-@media(prefers-reduced-motion:no-preference){.thumb img{transition:opacity .3s}}
+@media(prefers-reduced-motion:no-preference){.thumb img{transition:opacity .3s,transform .4s var(--ease)}.card:hover .thumb img{transform:scale(1.04)}}
 .blank{position:absolute;inset:0;display:grid;place-items:center;color:var(--faint)}
 .blank svg{width:40%;height:40%}
-.free{position:absolute;top:10px;left:10px;background:var(--holo);color:#0a0714;font-weight:700;font-size:12px;padding:3px 10px;border-radius:999px}
+.flags{position:absolute;top:10px;left:10px;display:flex;gap:6px}
+.flag{font:700 12px var(--head);padding:3px 10px;border-radius:999px;background:var(--holo);color:#0a0714}
+.flag.new{background:#fff;color:#0a0714}
 .body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:6px;flex:1}
-.card h3{font:600 15px/1.35 Archivo,sans-serif;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.price{margin-top:auto;padding-top:4px;font:700 14px var(--wide);letter-spacing:.03em;white-space:nowrap}
-.price.ask{font:600 14px Archivo,sans-serif;color:var(--soft);letter-spacing:0}
+.card h3{font:600 16px/1.3 var(--head);letter-spacing:0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.price{margin-top:auto;padding-top:4px;font:800 20px var(--head);white-space:nowrap}
+.price.ask{font:500 14px var(--body);color:var(--soft)}
 .buy{display:grid;grid-template-columns:repeat(auto-fit,minmax(0,1fr));gap:8px;margin-top:6px}
-.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 8px;border-radius:var(--r-sm);text-decoration:none;font:700 10px var(--wide);letter-spacing:.04em;border:1px solid var(--edge-2)}
+.btn{display:flex;align-items:center;justify-content:center;gap:7px;min-height:44px;padding:0 8px;border-radius:var(--r-sm);text-decoration:none;font:700 14px var(--head);border:1px solid var(--edge-2)}
 .btn .si{width:15px;height:15px}
 .btn.j{background:var(--holo);color:#0a0714;border-color:transparent}
 .btn.j:hover{filter:brightness(1.1)}
@@ -161,30 +199,54 @@ h1,h2,h3{margin:0;line-height:1.1}
 .btn.g:hover{background:rgba(255,255,255,.14);border-color:var(--white)}
 .empty{padding:48px 20px;text-align:center;border-radius:20px;color:var(--soft)}
 
-/* coupon */
-.coupon .tt{font-weight:700;font-size:17px;margin:0 4px}
+/* reviews */
+.reviews{margin:10px 0 44px;container-type:inline-size}
+.rv{flex:0 0 calc((100% - 32px)/3);scroll-snap-align:start;border-radius:var(--r-lg);padding:18px;display:flex;flex-direction:column;gap:10px}
+@container (max-width:760px){.rv{flex-basis:calc((100% - 16px)/2)}}
+@container (max-width:480px){.rv{flex-basis:86%}}
+.stars{display:flex;gap:2px;color:#ffd166}
+.stars svg{width:16px;height:16px}
+.stars .off{color:rgba(255,255,255,.22)}
+.rv q{font-size:15px;color:var(--white);quotes:none;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;overflow:hidden}
+.rv .who{margin-top:auto;display:flex;align-items:center;gap:8px;font-size:13px;color:var(--faint)}
+.rv .who b{color:var(--soft);font-weight:600}
+.rv .who .si{width:14px;height:14px}
+.rv a{color:var(--soft);text-underline-offset:3px}
+
+/* idea box */
+.idea{border-radius:var(--r-xl);padding:24px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:20px;align-items:start;margin-bottom:20px}
+.idea h2{font:900 clamp(26px,3vw,38px)/1.05 var(--head);letter-spacing:-.03em}
+.idea p{margin:10px 0 0;color:var(--soft)}
+.field{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+.field label{font:600 14px var(--head)}
+.field input,.field textarea{width:100%;min-height:46px;padding:12px 14px;border-radius:var(--r-sm);border:1px solid var(--edge);background:rgba(0,0,0,.35);font-size:16px}
+.field textarea{min-height:110px;resize:vertical}
+.field input:focus,.field textarea:focus{outline:none;border-color:var(--b);box-shadow:0 0 0 3px rgba(70,205,255,.25)}
+.field small{color:var(--faint);font-size:13px}
+.send{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 20px;border-radius:var(--r-sm);font:700 15px var(--head)}
+.send .si{width:18px;height:18px}
+
+/* coupon + giveaway */
+.coupon .tt{font:800 19px var(--head);margin:0 4px}
 .coupon p{margin:4px 4px 12px;color:var(--soft);font-size:14px}
-.coupon{box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 0 60px -26px rgba(255,127,220,.7)}
-.code{display:flex;align-items:center;gap:8px;padding:6px 6px 6px 14px;border-radius:14px;border:1px solid transparent;background:linear-gradient(rgba(12,9,24,.9),rgba(12,9,24,.9)) padding-box,var(--holo) border-box}
-.code{flex-wrap:wrap}
-.code b{font:700 12px var(--wide);letter-spacing:.04em;white-space:nowrap;flex:1 1 auto;padding:6px 0}
-.code .copy{flex:1 0 84px}
-.copy{flex:none;display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:42px;min-width:84px;padding:0 14px;border-radius:10px;border:0;background:var(--holo);color:#0a0714;font:700 10px var(--wide);letter-spacing:.05em}
-.copy:hover{filter:brightness(1.1)}
+.code{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:6px 6px 6px 14px;border-radius:14px;border:1px solid transparent;background:linear-gradient(rgba(14,11,28,.92),rgba(14,11,28,.92)) padding-box,var(--holo) border-box}
+.code b{font:800 15px var(--head);letter-spacing:.04em;white-space:nowrap;flex:1 1 auto;padding:6px 0}
+.copy{flex:1 0 84px;display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:42px;padding:0 14px;border-radius:10px;font:700 14px var(--head)}
 .copy .si{width:14px;height:14px}
 .ends{display:block;margin:8px 4px 0;font-size:13px;color:var(--faint)}
-.coupon+.coupon{margin-top:16px}
+.coupon{box-shadow:inset 0 1px 0 rgba(255,255,255,.1),0 0 60px -26px rgba(255,127,220,.7)}
+.won .tt{font:900 24px var(--head);letter-spacing:-.02em}
 
 /* links */
 .soclist{display:flex;flex-direction:column;gap:6px}
 .soc{display:flex;align-items:center;gap:12px;min-height:52px;padding:6px 12px;border-radius:14px;border:1px solid var(--edge);background:rgba(255,255,255,.04);text-decoration:none;text-align:start;width:100%}
 .soc:hover{background:var(--glass-2);border-color:rgba(146,119,255,.7)}
 .soc .si{width:22px;height:22px}
-.soc .lb{font:700 11px var(--wide);letter-spacing:.03em}
-.soc small{display:block;font:500 12px Archivo,sans-serif;color:var(--faint);margin-top:3px}
-.soc .act{margin-inline-start:auto;font-size:12px;font-weight:600;color:var(--soft);display:flex;align-items:center;gap:6px}
-.soc .act .si{width:14px;height:14px}
-.soc .go{margin-inline-start:auto;width:14px;height:14px;color:var(--faint)}
+.soc .lb{font:700 15px var(--head)}
+.soc small{display:block;font:400 12px var(--body);color:var(--faint);margin-top:1px}
+.soc .act{margin-inline-start:auto;font:600 13px var(--head);color:var(--soft);display:flex;align-items:center;gap:6px}
+.soc .act .si,.soc .go{width:14px;height:14px}
+.soc .go{margin-inline-start:auto;color:var(--faint)}
 
 /* wip */
 .wipnote{margin:-4px 4px 12px;font-size:13px;color:var(--faint)}
@@ -194,48 +256,65 @@ h1,h2,h3{margin:0;line-height:1.1}
 .shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .shot.ph-tile{cursor:default;display:grid;place-items:center;color:var(--faint)}
 .shot.ph-tile svg{width:34%;height:34%}
-.join{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:12px;min-height:50px;border-radius:14px;text-decoration:none;background:#5865f2;color:#fff;font:700 10px var(--wide);letter-spacing:.04em;padding:0 12px;text-align:center}
+.join{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:12px;min-height:50px;border-radius:14px;text-decoration:none;background:#5865f2;color:#fff;font:700 15px var(--head);padding:0 12px;text-align:center}
 .join:hover{background:#4752c4}
 .join .si{width:22px;height:22px}
-.lbx{position:fixed;inset:0;z-index:40;background:rgba(4,3,10,.82);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);display:none;place-items:center;padding:20px}
-.lbx.on{display:grid}
-.lbx img{max-width:min(92vw,1000px);max-height:84vh;border-radius:16px;border:1px solid var(--edge)}
-.lbx button{position:absolute;top:16px;right:16px;width:46px;height:46px;border-radius:50%;border:1px solid var(--edge-2);background:var(--glass);display:grid;place-items:center}
-.lbx button svg{width:16px;height:16px}
+
+/* dialogs */
+.modal{position:fixed;inset:0;z-index:40;background:rgba(4,3,10,.8);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);display:none;place-items:center;padding:20px}
+.modal.on{display:grid}
+.modal>img{max-width:min(92vw,1000px);max-height:84vh;border-radius:16px;border:1px solid var(--edge)}
+.x{position:absolute;top:16px;right:16px;width:46px;height:46px;border-radius:50%;border:1px solid var(--edge-2);background:var(--glass);display:grid;place-items:center}
+.x svg{width:16px;height:16px}
+.winbox{position:relative;width:min(460px,100%);border-radius:var(--r-xl);padding:30px 26px 24px;text-align:center;border:1px solid transparent;background:linear-gradient(#100d22,#100d22) padding-box,var(--holo) border-box;box-shadow:0 30px 90px -30px rgba(146,119,255,.9)}
+.winbox .big{font:900 64px/1 var(--head);letter-spacing:-.04em;background:var(--holo);-webkit-background-clip:text;background-clip:text;color:transparent}
+.winbox h2{font:800 26px var(--head);margin-top:8px}
+.winbox p{color:var(--soft);margin:10px 0 18px}
+.winbox .code{text-align:start;margin-bottom:12px}
+.winbox .send{width:100%}
+.winbox .x{top:10px;right:10px}
 
 /* footer */
-footer{border-top:1px solid var(--edge);color:var(--soft);font-size:14px;background:rgba(6,5,12,.6)}
+footer{border-top:1px solid var(--edge);color:var(--soft);font-size:14px;background:rgba(7,6,13,.6)}
 footer .in{max-width:1760px;margin:0 auto;padding:22px max(3vw,14px);display:flex;flex-wrap:wrap;align-items:center;gap:12px 24px;justify-content:space-between}
+.visits{display:inline-flex;align-items:center;gap:8px}
+.visits b{font:800 16px var(--head);color:var(--white);font-variant-numeric:tabular-nums}
 .flinks{display:flex;flex-wrap:wrap;gap:6px}
 .flinks a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 12px;border-radius:999px;text-decoration:none;color:var(--soft)}
 .flinks a:hover{color:var(--white);background:var(--glass-2)}
 .flinks .si{width:16px;height:16px}
-
-.toast{position:fixed;left:50%;bottom:24px;translate:-50% 20px;z-index:45;padding:12px 18px;border-radius:999px;background:var(--white);color:#000;font-weight:700;font-size:14px;opacity:0;pointer-events:none}
+.toast{position:fixed;left:50%;bottom:24px;translate:-50% 20px;z-index:50;padding:12px 18px;border-radius:999px;background:var(--white);color:#000;font:700 15px var(--head);opacity:0;pointer-events:none;max-width:calc(100vw - 32px)}
 .toast.on{opacity:1;translate:-50% 0}
 @media(prefers-reduced-motion:no-preference){.toast{transition:opacity .2s,translate .25s var(--ease)}}
 
 /* tablet */
-@media(max-width:1260px){.shop{grid-template-columns:212px minmax(0,1fr) 256px}}
+@media(max-width:1260px){.shop{grid-template-columns:224px minmax(0,1fr) 260px}.stats .stat{min-width:84px}}
+@media(max-width:1100px){.pinfo{grid-template-columns:auto minmax(0,1fr)}.stats{grid-column:1/-1;justify-content:flex-start;padding-top:6px}}
 /* phones and small tablets */
 @media(max-width:960px){
-  .shop{display:flex;flex-direction:column;gap:18px;padding-top:16px}
-  .side,.aside{position:static;max-height:none;overflow:visible}
-  .aside{display:contents}
-  .side{order:1;width:100%}.coupons{order:2;width:100%}#main{order:3;width:100%}.wip{order:4;width:100%}.socials{order:5;width:100%}
-  .aside>*+*{margin-top:0}
-  .side.panel{padding:12px}
-  .side .list{flex-direction:row;overflow-x:auto;gap:8px;padding-bottom:4px;scroll-snap-type:x proximity;scrollbar-width:none}
-  .side .item{flex:none;width:auto;min-height:46px;border-color:var(--edge);border-radius:999px;padding:4px 14px 4px 4px;scroll-snap-align:start}
-  .side .item .ct,.side .item .nm small,.side .more{display:none}
-  .side .dot{width:22px}
-  .side .ph+.list+.ph{margin-top:16px}
+  .shop{display:flex;flex-direction:column;gap:18px;padding-top:14px}
+  .side,.aside{display:contents}
+  .com{order:1;width:100%}.browse{order:2;width:100%}#main{order:3;width:100%}.coupons{order:4;width:100%}.wonbox{order:4;width:100%}.wip{order:5;width:100%}.socials{order:6;width:100%}
+  .side>*+*,.aside>*+*{margin-top:0}
+  .browse{padding:12px}
+  .browse .list{flex-direction:row;overflow-x:auto;gap:8px;padding-bottom:4px;scroll-snap-type:x proximity;scrollbar-width:none}
+  .browse .item{flex:none;width:auto;min-height:46px;border-color:var(--edge);border-radius:999px;padding:4px 14px 4px 4px;scroll-snap-align:start}
+  .browse .item .ct,.browse .item .nm small,.browse .more{display:none}
+  .browse .dot{width:22px}
+  .browse .list+.ph{margin-top:16px}
+  .com{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 16px;align-items:center}
+  .com .st{grid-column:1/-1;justify-self:start}
+  .com .num{margin-top:6px}.com p{margin:0}.com .dm{grid-column:1/-1;margin-top:8px}
   .search{flex:1 1 100%;order:3}
   .search kbd{display:none}
   .shots{grid-template-columns:repeat(3,minmax(0,1fr))}
   .soclist{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+  .idea{grid-template-columns:minmax(0,1fr)}
+  .banner{aspect-ratio:5/2}
 }
-@media(max-width:520px){.shots{grid-template-columns:repeat(2,minmax(0,1fr))}.top .in{padding-block:10px;gap:10px}.mark{width:40px;height:40px}.brand .tag-line{display:none}.pill{padding:0 14px}.arrows button{width:44px;height:44px}}
+@media(max-width:520px){.shots{grid-template-columns:repeat(2,minmax(0,1fr))}.top .in{padding-block:8px;gap:10px}.pill{padding:0 14px}
+  .pinfo{padding:0 16px 18px;gap:4px 14px}.badge{width:84px;height:84px;margin-top:-42px;border-width:4px}.badge .mark{width:54px;height:54px}.pname{padding-top:8px}
+  .stat{min-width:0;flex:1}.idea{padding:18px}.banner{aspect-ratio:2/1}}
 @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.glass{background:rgba(24,20,40,.94)}}
 </style>
 </head>
@@ -244,7 +323,7 @@ footer .in{max-width:1760px;margin:0 auto;padding:22px max(3vw,14px);display:fle
 <div class="orbs" aria-hidden="true"></div>
 
 <header class="top glass"><div class="in">
-  <a class="brand" href="./" aria-label="Perfecto, home"><span class="mark" aria-hidden="true"></span><span><b>Perfecto</b><span class="tag-line">VRChat clothing, props and textures</span></span></a>
+  <a class="brand" href="./" aria-label="Perfecto, home"><span class="mark" aria-hidden="true"></span><b id="bname">Perfecto</b></a>
   <div class="search" role="search">
     <label class="sr" for="q">Search outfits or avatars</label>
     <span class="si" style="--i:var(--ic-search)" aria-hidden="true"></span>
@@ -252,24 +331,43 @@ footer .in{max-width:1760px;margin:0 auto;padding:22px max(3vw,14px);display:fle
     <kbd aria-hidden="true">/</kbd>
   </div>
   <nav class="stores" aria-label="Stores">
-    <a class="pill holo" href="https://jinxxy.com/perfecto/products" target="_blank" rel="noopener"><span class="si jx" style="--i:var(--ic-jinxxy)" aria-hidden="true"></span>Jinxxy</a>
+    <a class="pill btn-holo" href="https://jinxxy.com/perfecto/products" target="_blank" rel="noopener"><span class="si" style="--i:var(--ic-jinxxy)" aria-hidden="true"></span>Jinxxy</a>
     <a class="pill" href="https://perfectodoart.gumroad.com/" target="_blank" rel="noopener"><span class="si" style="--i:var(--ic-gumroad)" aria-hidden="true"></span>Gumroad</a>
   </nav>
 </div></header>
 
 <div class="shop">
-  <nav class="side panel glass" aria-label="Browse by avatar or outfit type">
-    <h2 class="ph">Avatars</h2>
-    <div class="list" id="avatars"></div>
-    <button class="more" id="moreav" hidden></button>
-    <h2 class="ph">Outfit types</h2>
-    <div class="list" id="types"></div>
-  </nav>
+  <div class="side">
+    <section class="com" id="com" aria-label="Commissions"></section>
+    <nav class="browse panel glass" aria-label="Browse by avatar or outfit type">
+      <h2 class="ph">Avatars</h2>
+      <div class="list" id="avatars"></div>
+      <button class="more" id="moreav" hidden></button>
+      <h2 class="ph">Outfit types</h2>
+      <div class="list" id="types"></div>
+    </nav>
+  </div>
 
-  <main id="main" tabindex="-1" aria-live="polite"></main>
+  <main id="main" tabindex="-1">
+    <section class="profile glass" id="profile" aria-label="About Perfecto"></section>
+    <div id="shopview" aria-live="polite"></div>
+    <section class="reviews" id="reviews" aria-labelledby="h-rv" hidden></section>
+    <section class="idea glass" aria-labelledby="h-idea">
+      <div>
+        <h2 id="h-idea">Got an outfit idea?</h2>
+        <p>Tell me what you'd love to wear and which avatar it's for. Your idea gets copied, then the Discord server opens so you can paste it in.</p>
+      </div>
+      <form id="ideaform" novalidate>
+        <div class="field"><label for="idea-av">Avatar base</label><input id="idea-av" maxlength="60" placeholder="e.g. Novabeast" autocomplete="off"></div>
+        <div class="field"><label for="idea-tx">Your idea</label><textarea id="idea-tx" maxlength="600" required aria-describedby="idea-help"></textarea><small id="idea-help">Up to 600 characters.</small></div>
+        <button class="send btn-holo" type="submit"><span class="si" style="--i:var(--ic-discord)" aria-hidden="true"></span>Copy idea and open Discord</button>
+      </form>
+    </section>
+  </main>
 
   <aside class="aside">
     <div class="coupons" id="coupons"></div>
+    <div class="wonbox" id="wonbox"></div>
     <section class="socials panel glass" aria-labelledby="h-links">
       <h2 class="ph" id="h-links">Follow &amp; contact</h2>
       <div class="soclist" id="soclist"></div>
@@ -278,78 +376,272 @@ footer .in{max-width:1760px;margin:0 auto;padding:22px max(3vw,14px);display:fle
       <h2 class="ph" id="h-wip">Work in progress</h2>
       <p class="wipnote" id="wipnote">New WIP shots from Discord will appear here.</p>
       <div class="shots" id="shots"></div>
-      <a class="join" href="https://discord.gg/PrbGGBWMS" target="_blank" rel="noopener"><span class="si" style="--i:var(--ic-discord)" aria-hidden="true"></span>Join the Discord for more WIP</a>
+      <a class="join" id="join" href="#" target="_blank" rel="noopener"><span class="si" style="--i:var(--ic-discord)" aria-hidden="true"></span>Join the Discord for more WIP</a>
     </section>
   </aside>
 </div>
 
-<div class="lbx" id="lbx" role="dialog" aria-modal="true" aria-label="Work in progress image"><button id="lbclose" aria-label="Close image"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3l10 10M13 3 3 13"/></svg></button><img id="lbimg" alt=""></div>
+<div class="modal" id="lbx" role="dialog" aria-modal="true" aria-label="Work in progress image"><button class="x" data-close aria-label="Close image"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3l10 10M13 3 3 13"/></svg></button><img id="lbimg" alt=""></div>
+<div class="modal" id="winmodal" role="dialog" aria-modal="true" aria-labelledby="win-h"><div class="winbox" id="winbox"></div></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <footer><div class="in">
-  <span>© Perfecto. Checkout happens on Jinxxy and Gumroad. Commissions open.</span>
+  <span class="visits" id="visits" hidden></span>
+  <span>© Perfecto. Checkout happens on Jinxxy and Gumroad.</span>
   <nav class="flinks" id="flinks" aria-label="Social links"></nav>
 </div></footer>
 
 <script>
 {
-/* ---------- outfit types ---------- */
-const COLS = {
-  winter:"Winter", christmas:"Christmas & New Year", valentine:"Valentine", summer:"Summer & beach", yoga:"Yoga",
-  halloween:"Halloween", school:"School & blazers", sports:"Sports jackets", wrestler:"Wrestler", robin:"Robinhood",
-  nurse:"Nurse", pride:"Pride", goth:"Cute & goth", anime:"Anime & Furality", special:"Memes & specials", fx:"Effects & art"
+const DEFAULT_CFG = {
+ "collections": [
+  {
+   "key": "winter",
+   "label": "Winter",
+   "season": {
+    "title": "Winter",
+    "start": "11-01",
+    "end": "02-28"
+   }
+  },
+  {
+   "key": "christmas",
+   "label": "Christmas & New Year",
+   "season": {
+    "title": "Christmas",
+    "start": "12-01",
+    "end": "01-05"
+   }
+  },
+  {
+   "key": "valentine",
+   "label": "Valentine",
+   "season": {
+    "title": "Valentine's",
+    "start": "02-01",
+    "end": "02-14"
+   }
+  },
+  {
+   "key": "summer",
+   "label": "Summer & beach",
+   "season": {
+    "title": "Summer",
+    "start": "04-01",
+    "end": "08-31"
+   }
+  },
+  {
+   "key": "yoga",
+   "label": "Yoga",
+   "season": {
+    "title": "Yoga",
+    "start": "01-01",
+    "end": "03-31"
+   }
+  },
+  {
+   "key": "halloween",
+   "label": "Halloween"
+  },
+  {
+   "key": "school",
+   "label": "School & blazers"
+  },
+  {
+   "key": "sports",
+   "label": "Sports jackets"
+  },
+  {
+   "key": "wrestler",
+   "label": "Wrestler"
+  },
+  {
+   "key": "robin",
+   "label": "Robinhood"
+  },
+  {
+   "key": "nurse",
+   "label": "Nurse"
+  },
+  {
+   "key": "pride",
+   "label": "Pride"
+  },
+  {
+   "key": "goth",
+   "label": "Cute & goth"
+  },
+  {
+   "key": "anime",
+   "label": "Anime & Furality"
+  },
+  {
+   "key": "special",
+   "label": "Memes & specials"
+  },
+  {
+   "key": "fx",
+   "label": "Effects & art"
+  }
+ ],
+ "assign": {},
+ "order": {},
+ "hidden": [],
+ "groups": [
+  [
+   "Winterpaw",
+   [
+    "MascCanine",
+    "Masc Canine",
+    "Femcanine",
+    "Fem Canine",
+    "Feline",
+    "Winterpaw Male",
+    "Winterpaw Female",
+    "Winterpaw Male & Female"
+   ],
+   "MascCanine, Femcanine, Feline"
+  ],
+  [
+   "Novabeast",
+   [
+    "Nova"
+   ],
+   ""
+  ],
+  [
+   "Nardoragon",
+   [
+    "Nardo"
+   ],
+   ""
+  ],
+  [
+   "Spaceyeen",
+   [
+    "Space Yeen"
+   ],
+   ""
+  ],
+  [
+   "Shawn The Shark",
+   [
+    "Shawn",
+    "Shawn The Shark (Darbi)"
+   ],
+   ""
+  ]
+ ],
+ "profile": {
+  "name": "Perfecto",
+  "tagline": "VRChat clothing, props and textures",
+  "skills": [
+   "Clothing",
+   "3D modeling",
+   "Textures",
+   "Refitting",
+   "2D art",
+   "Graphic design"
+  ],
+  "banner": {
+   "src": "",
+   "x": 50,
+   "y": 50
+  }
+ },
+ "commission": {
+  "open": true,
+  "count": 553,
+  "text": "DM me on Discord to start a commission.",
+  "discord": "perfecto1205"
+ },
+ "giveaway": {
+  "enabled": true,
+  "every": 100,
+  "discount": 70,
+  "namespace": "perfecto-doart-store",
+  "redeemed": []
+ },
+ "socials": [
+  {
+   "name": "Discord",
+   "sub": "DM me: perfecto1205",
+   "icon": "discord",
+   "copy": "perfecto1205"
+  },
+  {
+   "name": "Discord server",
+   "sub": "WIP and updates",
+   "icon": "discord",
+   "url": "https://discord.gg/PrbGGBWMS"
+  },
+  {
+   "name": "ArtStation",
+   "sub": "perfecto_doart",
+   "icon": "artstation",
+   "url": "https://www.artstation.com/perfecto_doart"
+  },
+  {
+   "name": "Bluesky",
+   "sub": "@perfectodoart.bsky.social",
+   "icon": "bluesky",
+   "url": "https://bsky.app/profile/perfectodoart.bsky.social"
+  },
+  {
+   "name": "Twitter / X",
+   "sub": "@Perfecto_doart",
+   "icon": "x",
+   "url": "https://twitter.com/Perfecto_doart"
+  }
+ ],
+ "discordInvite": "https://discord.gg/PrbGGBWMS",
+ "hiddenReviews": []
 };
-/* ---------- seasons: [type, title, start MM-DD, end MM-DD] ---------- */
-const SEASONS = [
-  ["winter","Winter","11-01","02-28"],
-  ["christmas","Christmas","12-01","01-05"],
-  ["valentine","Valentine's","02-01","02-14"],
-  ["yoga","Yoga","01-01","03-31"],
-  ["summer","Summer","04-01","08-31"]
-];
-/* ---------- avatar groups: [shown name, other names it covers, small note] ---------- */
-const GROUPS = [
-  ["Winterpaw", ["MascCanine","Masc Canine","Femcanine","Fem Canine","Feline","Winterpaw Male","Winterpaw Female","Winterpaw Male & Female"], "MascCanine, Femcanine, Feline"],
-  ["Novabeast", ["Nova"], ""],
-  ["Nardoragon", ["Nardo"], ""],
-  ["Spaceyeen", ["Space Yeen"], ""],
-  ["Shawn The Shark", ["Shawn","Shawn The Shark (Darbi)"], ""]
-];
-/* ---------- your links (leave url empty to hide) ---------- */
-const SOCIALS = [
-  { name: "Discord", sub: "DM me: perfecto1205", icon: "discord", copy: "perfecto1205" },
-  { name: "Discord server", sub: "WIP and updates", icon: "discord", url: "https://discord.gg/PrbGGBWMS" },
-  { name: "ArtStation", sub: "perfecto_doart", icon: "artstation", url: "https://www.artstation.com/perfecto_doart" },
-  { name: "Bluesky", sub: "@perfectodoart.bsky.social", icon: "bluesky", url: "https://bsky.app/profile/perfectodoart.bsky.social" },
-  { name: "Twitter / X", sub: "@Perfecto_doart", icon: "x", url: "https://twitter.com/Perfecto_doart" }
-];
-const JINXXY_STORE = "perfecto";
-/* avatar icons: images/avatars/<name>.png  ·  Jinxxy logo: images/icons/jinxxy.png (optional) */
 const FALLBACK = [{"name":"Winter Puffer Jacket Outfit For Druffle Avatar","collection":"winter","price":"$12–20","jinxxy":"https://jinxxy.com/perfecto/WinterPufferDruffle","gumroad":"https://perfectodoart.gumroad.com/l/WinterPufferDruffle","image":"","bases":["Druffle"]},{"name":"Winter Puffer Jacket Outfit For Novabeast 1.2 & KFN Avatar","collection":"winter","price":"$12–20","jinxxy":"https://jinxxy.com/perfecto/WinterPufferNovaKFN","gumroad":"","image":"","bases":["Novabeast 1.2","KFN"]},{"name":"Winter Puffer Jacket Outfit For Northern Aspil Avatar","collection":"winter","price":"$12–20","jinxxy":"https://jinxxy.com/perfecto/WinterPufferNorthenAspil","gumroad":"https://perfectodoart.gumroad.com/l/WinterPufferNorthenAspil","image":"","bases":["Northern Aspil"]},{"name":"Free Winter Outfit For Novabeast 1.2","collection":"winter","price":"Free","jinxxy":"","gumroad":"https://perfectodoart.gumroad.com/l/FreeWinterOutfitNova","image":"","bases":["Novabeast 1.2"]},{"name":"Snowfall Cloud Follower and Avatar Particle (Audiolink, any avatar)","collection":"winter","price":"$5","jinxxy":"https://jinxxy.com/perfecto/SnowfallCloud","gumroad":"https://perfectodoart.gumroad.com/l/SnowfallCloud","image":"","bases":["Any avatar"]},{"name":"Christmas Santa Outfit For Novabeast 1.2","collection":"christmas","price":"$18–22","jinxxy":"https://jinxxy.com/perfecto/SantaNova","gumroad":"https://perfectodoart.gumroad.com/l/SantaNova","image":"","bases":["Novabeast 1.2"]},{"name":"Christmas Santa Outfit For Shawn The Shark (Darbi)","collection":"christmas","price":"$18–22","jinxxy":"https://jinxxy.com/perfecto/SantaOutfitShawn","gumroad":"https://perfectodoart.gumroad.com/l/SantaOutfitShawn","image":"","bases":["Shawn The Shark"]},{"name":"Christmas Outfit For Novabeast (With Loafe's Thicc Addon)","collection":"christmas","price":"$16","jinxxy":"https://jinxxy.com/perfecto/NovabeastChristmasOutfit","gumroad":"","image":"","bases":["Novabeast"]},{"name":"Christmas New Year Party Outfit For Ashbeast","collection":"christmas","price":"$16–20","jinxxy":"https://jinxxy.com/perfecto/AshbeastChristmas","gumroad":"https://perfectodoart.gumroad.com/l/AshbeastChristmas","image":"","bases":["Ashbeast"]},{"name":"New Year Party Outfit For Legato Avatar","collection":"christmas","price":"$10–16","jinxxy":"https://jinxxy.com/perfecto/LegatoPartyNew","gumroad":"https://perfectodoart.gumroad.com/l/LegatoPartyNew","image":"","bases":["Legato"]},{"name":"New Year Party Outfit For Novabeast 1.2 & KFN Avatar","collection":"christmas","price":"$10–16","jinxxy":"https://jinxxy.com/perfecto/PartyOutfitNovaKFN","gumroad":"","image":"","bases":["Novabeast 1.2","KFN"]},{"name":"Valentine's Day Dress For Novabeast 1.2 & KFN","collection":"valentine","price":"$16–20","jinxxy":"https://jinxxy.com/perfecto/ValantineDress2026","gumroad":"","image":"","bases":["Novabeast 1.2","KFN"]},{"name":"Beach Outfit For Femcanine, MascCanine & Feline","collection":"summer","price":"$16–30","jinxxy":"https://jinxxy.com/perfecto/WinterpawBeachOutfit","gumroad":"https://perfectodoart.gumroad.com/l/WinterpawBeachOutfit","image":"","bases":["Femcanine","MascCanine","Feline"]},{"name":"Beach Outfit For Viwi","collection":"summer","price":"$16–22","jinxxy":"https://jinxxy.com/perfecto/BeachOutfitViwi","gumroad":"https://perfectodoart.gumroad.com/l/BeachOutfitViwi","image":"","bases":["Viwi"]},{"name":"Beach Outfit For Vulrix","collection":"summer","price":"$16–22","jinxxy":"https://jinxxy.com/perfecto/VulrixBeachOutfit","gumroad":"","image":"","bases":["Vulrix"]},{"name":"Beach Outfit For Druffle","collection":"summer","price":"$16–22","jinxxy":"https://jinxxy.com/perfecto/BeachOutfitDruffle","gumroad":"","image":"","bases":["Druffle"]},{"name":"Beach Outfit For Novabeast 1.2","collection":"summer","price":"$16–22","jinxxy":"https://jinxxy.com/perfecto/BeachOutfitNova","gumroad":"","image":"","bases":["Novabeast 1.2"]},{"name":"Summer Outfit For Foxmoth","collection":"summer","price":"$15–20","jinxxy":"https://jinxxy.com/perfecto/FoxmothSummer","gumroad":"","image":"","bases":["Foxmoth"]},{"name":"Summer Outfit For Novabeast","collection":"summer","price":"$15–20","jinxxy":"https://jinxxy.com/perfecto/SummerOutfitNovabeast","gumroad":"","image":"","bases":["Novabeast"]},{"name":"Yoga Outfit For Vulrix","collection":"yoga","price":"$10–16","jinxxy":"https://jinxxy.com/perfecto/YogaOutfitVulrix","gumroad":"https://perfectodoart.gumroad.com/l/YogaOutfitVulrix","image":"","bases":["Vulrix"]},{"name":"Yoga Outfit For Femcanine, MascCanine & Feline","collection":"yoga","price":"$10–25","jinxxy":"https://jinxxy.com/perfecto/WinterpawYogaOutfit","gumroad":"","image":"","bases":["Femcanine","MascCanine","Feline"]},{"name":"Yoga Outfit For Druffle","collection":"yoga","price":"$10–16","jinxxy":"https://jinxxy.com/perfecto/DruffleYogaOutfit","gumroad":"","image":"","bases":["Druffle"]},{"name":"Yoga Outfit For Fluffgan & Nyxian","collection":"yoga","price":"$10–22","jinxxy":"https://jinxxy.com/perfecto/FluffganNyxianYogaOutfit","gumroad":"","image":"","bases":["Fluffgan","Nyxian"]},{"name":"Yoga Outfit For Viwi","collection":"yoga","price":"$10–16","jinxxy":"https://jinxxy.com/perfecto/YogaOutfitViwi","gumroad":"","image":"","bases":["Viwi"]},{"name":"Yoga Outfit For Nardoragon 3.1","collection":"yoga","price":"$10–16","jinxxy":"https://jinxxy.com/perfecto/NardoYogaOutfit","gumroad":"https://perfectodoart.gumroad.com/l/NardoYogaOutfit","image":"","bases":["Nardoragon 3.1"]},{"name":"Yoga Outfit For Foxmoth, Shaienne & Shawn The Shark","collection":"yoga","price":"$10–25","jinxxy":"https://jinxxy.com/perfecto/YogaFoxmothShawn","gumroad":"","image":"","bases":["Foxmoth","Shaienne","Shawn The Shark"]},{"name":"Yoga Outfit For Novabeast 1.2, KFN & PsyFN","collection":"yoga","price":"$10–16","jinxxy":"https://jinxxy.com/perfecto/YogaOutfitNova","gumroad":"","image":"","bases":["Novabeast 1.2","KFN","PsyFN"]},{"name":"Flutty Pumpkin Outfit For Druffle","collection":"halloween","price":"$10–16","jinxxy":"https://jinxxy.com/perfecto/FluttyPumpkinDruffle","gumroad":"https://perfectodoart.gumroad.com/l/FluttyPumpkinDruffle","image":"","bases":["Druffle"]},{"name":"FREE Ghost Halloween Outfit For Novabeast 1.2","collection":"halloween","price":"Free–$10","jinxxy":"https://jinxxy.com/perfecto/GhostHalloweenOutfit","gumroad":"https://perfectodoart.gumroad.com/l/GhostHalloweenOutfit","image":"","bases":["Novabeast 1.2"]},{"name":"Halloween Fall Outfit For Novabeast 1.2","collection":"halloween","price":"$10–16","jinxxy":"https://jinxxy.com/perfecto/FallOutfitNova","gumroad":"","image":"","bases":["Novabeast 1.2"]},{"name":"Halloween Mummy Outfit For Foxmoth","collection":"halloween","price":"$16–20","jinxxy":"https://jinxxy.com/perfecto/FoxmothMummy","gumroad":"","image":"","bases":["Foxmoth"]},{"name":"Halloween Mummy Outfit For Novabeast 1.2 & KFN","collection":"halloween","price":"$16–20","jinxxy":"https://jinxxy.com/perfecto/MummyNovaKFN","gumroad":"","image":"","bases":["Novabeast 1.2","KFN"]},{"name":"School Outfit For Foxmoth & Shaienne","collection":"school","price":"$16–25","jinxxy":"https://jinxxy.com/perfecto/SchoolOutfitDarbi","gumroad":"","image":"","bases":["Foxmoth","Shaienne"]},{"name":"School Outfit For Novabeast 1.2","collection":"school","price":"$16–22","jinxxy":"https://jinxxy.com/perfecto/SchoolOutfitNova","gumroad":"","image":"","bases":["Novabeast 1.2"]},{"name":"Blazer Outfit For Nardo","collection":"school","price":"$10–16","jinxxy":"https://jinxxy.com/perfecto/NardoBlazerOutfit","gumroad":"","image":"","bases":["Nardoragon"]},{"name":"Blazer Outfit For Viwi","collection":"school","price":"$10–16","jinxxy":"https://jinxxy.com/perfecto/ViwiBlazerOutfit","gumroad":"","image":"","bases":["Viwi"]},{"name":"Blazer Outfit For Novabeast","collection":"school","price":"$10–16","jinxxy":"https://jinxxy.com/perfecto/BlazerOutfitNovabeast","gumroad":"","image":"","bases":["Novabeast"]},{"name":"Sports Jacket Outfit For Spaceyeen, Foxmoth & Legato","collection":"sports","price":"$15.99–35","jinxxy":"https://jinxxy.com/perfecto/SpaceyeenFoxmothLegatoSportsjacket","gumroad":"","image":"","bases":["Spaceyeen","Foxmoth","Legato"]},{"name":"Sports Jacket Outfit For Novabeast 1.2 & KFN","collection":"sports","price":"$16–20","jinxxy":"https://jinxxy.com/perfecto/SportsJacketNovaKFN","gumroad":"","image":"","bases":["Novabeast 1.2","KFN"]},{"name":"Wrestler Outfit For Druffle Avatar","collection":"wrestler","price":"$10–16","jinxxy":"https://jinxxy.com/perfecto/WrestlerDruffle","gumroad":"https://perfectodoart.gumroad.com/l/WrestlerDruffle","image":"","bases":["Druffle"]},{"name":"Wrestler Outfit For Novabeast 1.2 & KFN","collection":"wrestler","price":"$10–16","jinxxy":"https://jinxxy.com/perfecto/WrestlerNovaKFN","gumroad":"","image":"","bases":["Novabeast 1.2","KFN"]},{"name":"Wrestler Outfit For Northern Aspil Avatar","collection":"wrestler","price":"$10–16","jinxxy":"https://jinxxy.com/perfecto/WrestlerOutfitNA","gumroad":"","image":"","bases":["Northern Aspil"]},{"name":"Robinhood Outfit For Novabeast","collection":"robin","price":"$16–22","jinxxy":"https://jinxxy.com/perfecto/RobinhoodNovabeast","gumroad":"https://perfectodoart.gumroad.com/l/RobinhoodNovabeast","image":"","bases":["Novabeast"]},{"name":"Robinhood Outfit For Druffle","collection":"robin","price":"$16–22","jinxxy":"https://jinxxy.com/perfecto/RobinhoodOutfitDruffle","gumroad":"https://perfectodoart.gumroad.com/l/RobinhoodOutfitDruffle","image":"","bases":["Druffle"]},{"name":"Nurse Outfit For Winterpaw Male & Female","collection":"nurse","price":"$12–20","jinxxy":"https://jinxxy.com/perfecto/NurseWinterpaw","gumroad":"","image":"","bases":["Winterpaw"]},{"name":"Nurse Outfit For Nova, Foxmoth, Hyenid","collection":"nurse","price":"$12–25","jinxxy":"https://jinxxy.com/perfecto/NurseNovaFoxmothHyenid","gumroad":"","image":"","bases":["Novabeast","Foxmoth","Hyenid"]},{"name":"Nurse Outfit For Milyeena","collection":"nurse","price":"$16–20","jinxxy":"https://jinxxy.com/perfecto/NurseMilyeena","gumroad":"","image":"","bases":["Milyeena"]},{"name":"Pride Outfit For Masc Canine & Fem Canine","collection":"pride","price":"$10–18","jinxxy":"https://jinxxy.com/perfecto/WinterpawPrideMascFem","gumroad":"","image":"","bases":["MascCanine","Femcanine"]},{"name":"Pride Outfit For Novabeast & Foxmoth","collection":"pride","price":"$10–18","jinxxy":"https://jinxxy.com/perfecto/PrideOutfitNovaFox","gumroad":"","image":"","bases":["Novabeast","Foxmoth"]},{"name":"Outfit For Foxmoth (Cute and Goth Themed)","collection":"goth","price":"$16–20","jinxxy":"https://jinxxy.com/perfecto/CuteOutfitFoxmoth","gumroad":"","image":"","bases":["Foxmoth"]},{"name":"Laced Collar (Cute and Goth Themed) | VRChat Accessory","collection":"goth","price":"$7–10","jinxxy":"https://jinxxy.com/perfecto/LacedCollar","gumroad":"","image":"","bases":[]},{"name":"Maki JJK Outfit For Novabeast 1.2","collection":"anime","price":"$12–16","jinxxy":"https://jinxxy.com/perfecto/NovabeastMakiOutfit","gumroad":"","image":"","bases":["Novabeast 1.2"]},{"name":"Anime / Furality Dress For Foxmoth","collection":"anime","price":"$16–20","jinxxy":"https://jinxxy.com/perfecto/FoxmothJapaneseOutfit","gumroad":"","image":"","bases":["Foxmoth"]},{"name":"Cafe / Furality Apron For Novabeast","collection":"anime","price":"$7–12","jinxxy":"https://jinxxy.com/perfecto/CafeApronNova","gumroad":"","image":"","bases":["Novabeast"]},{"name":"Anime Sunglasses For Novabeast | VRChat Accessory","collection":"anime","price":"$7","jinxxy":"https://jinxxy.com/perfecto/AnimeGlasses","gumroad":"","image":"","bases":["Novabeast"]},{"name":"Brooklyn Sweater Meme Outfit For Novabeast","collection":"special","price":"$5–10","jinxxy":"https://jinxxy.com/perfecto/BrooklynNovabeast","gumroad":"","image":"","bases":["Novabeast"]},{"name":"Brooklyn Sweater Meme Outfit For Space Yeen","collection":"special","price":"$5–10","jinxxy":"https://jinxxy.com/perfecto/BrooklynSpaceYeen","gumroad":"","image":"","bases":["Spaceyeen"]},{"name":"Lidus Outfit For Shawn The Shark (Darbi)","collection":"special","price":"$18–22","jinxxy":"https://jinxxy.com/perfecto/LidusShawn","gumroad":"","image":"","bases":["Shawn The Shark"]},{"name":"Perfecto's Ultra FREE NovaRaider Outfit For Novabeast 1.2","collection":"special","price":"Free–$10","jinxxy":"https://jinxxy.com/perfecto/TombNova","gumroad":"https://perfectodoart.gumroad.com/l/TombNova","image":"","bases":["Novabeast 1.2"]},{"name":"Reference Sheet For Viwi","collection":"fx","price":"$10–20","jinxxy":"https://jinxxy.com/perfecto/ViwiRefSheet","gumroad":"","image":"","bases":["Viwi"]},{"name":"ShadowHeart Kimono Lineart","collection":"fx","price":"See Gumroad","jinxxy":"","gumroad":"https://perfectodoart.gumroad.com/l/ShadowHeartKimonoLineart","image":"","bases":[]},{"name":"Karlach Kimono Lineart","collection":"fx","price":"See Gumroad","jinxxy":"","gumroad":"https://perfectodoart.gumroad.com/l/KarlachKimono","image":"","bases":[]}];
+const ABACUS = "https://abacus.jasoncameron.dev";
 
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const safeUrl = u => /^(https:\/\/|wip\/|images\/)/.test(u || "") ? esc(u) : "";
 const slug = s => String(s).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
-const namedFree = p => /\bfree\b/i.test(p.name || "");
-/* "Free" only counts when the product is actually named free; anything else priced 0 is a data gap */
-const isFree = p => namedFree(p) && /^free/i.test(p.price || "free");
-const priceText = p => { const t = String(p.price || ""); if (/^free/i.test(t) && !namedFree(p)) return ""; return t; };
-const colOf = p => COLS[p.collection] ? p.collection : "special";
-const alias = {};
-GROUPS.forEach(([main, others]) => [main, ...others].forEach(n => alias[n.toLowerCase()] = main));
-const baseKey = a => { const b = String(a).trim().replace(/\s+\d[\d.]*$/, ""); return alias[b.toLowerCase()] || b; };
-const basesOf = p => [...new Set((p.bases || []).map(baseKey))];
-const note = b => (GROUPS.find(g => g[0] === b) || [])[2] || "";
-const initials = b => b.split(/\s+/).map(w => w[0]).join("").slice(0, 2).toUpperCase();
-const fixJ = u => { const m = /^https:\/\/([\w-]+)\/?$/.exec(u || ""); return m ? `https://jinxxy.com/${JINXXY_STORE}/${m[1]}` : u; };
+const ic = (name, cls = "") => `<span class="si ${cls}" style="--i:var(--ic-${esc(name)})" aria-hidden="true"></span>`;
+const n = (k, w) => `${Number(k).toLocaleString()} ${w}${k === 1 ? "" : "s"}`;
 const hanger = `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 18a5 5 0 1 1 5-5"/><path d="M32 18v4L6 40h52L32 22"/></svg>`;
-const ic = (name, cls = "") => `<span class="si ${cls}" style="--i:var(--ic-${name})" aria-hidden="true"></span>`;
-let P = [], WIP = [], COUPONS = [], BASES = [], counts = {}, q = "", showAll = false;
+const arrow = d => `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${d < 0 ? "M10 3 5 8l5 5" : "M6 3l5 5-5 5"}"/></svg>`;
+const store = { get(k) { try { return localStorage.getItem(k); } catch { return null; } }, set(k, v) { try { localStorage.setItem(k, v); return true; } catch { return false; } } };
 const mobile = () => matchMedia("(max-width:960px)").matches;
 
-/* toast (copy feedback) */
-let tt; const toast = msg => { const t = $("toast"); t.textContent = msg; t.classList.add("on"); clearTimeout(tt); tt = setTimeout(() => t.classList.remove("on"), 1800); };
+let CFG = DEFAULT_CFG, P = [], WIP = [], COUPONS = [], REVIEWS = [], BASES = [], counts = {}, q = "", showAll = false;
+let COLS = {}, COLKEYS = [], alias = {};
+
+/* products */
+const JINXXY_STORE = "perfecto";
+const fixJ = u => { const m = /^https:\/\/([\w-]+)\/?$/.exec(u || ""); return m ? `https://jinxxy.com/${JINXXY_STORE}/${m[1]}` : u; };
+const lastSeg = u => (String(u || "").split("?")[0].replace(/\/+$/, "").split("/").pop() || "").toLowerCase();
+const pkey = p => p.key || lastSeg(fixJ(p.jinxxy)) || lastSeg(p.gumroad) || slug(p.name);
+const namedFree = p => /\bfree\b/i.test(p.name || "");
+const isFree = p => namedFree(p) && /^free/i.test(p.price || "free");
+const priceText = p => { const t = String(p.price || ""); return /^free/i.test(t) && !namedFree(p) ? "" : t; };
+const colOf = p => { const c = CFG.assign?.[pkey(p)] || p.collection; return COLS[c] ? c : (COLS.special ? "special" : COLKEYS[COLKEYS.length - 1]); };
+const isNew = p => /^\d{4}-\d\d-\d\d$/.test(p.firstSeen || "") && (Date.now() - new Date(p.firstSeen)) < 21 * 864e5;
+const baseKey = a => { const b = String(a).trim().replace(/\s+\d[\d.]*$/, ""); return alias[b.toLowerCase()] || b; };
+const basesOf = p => [...new Set((p.bases || []).map(baseKey))];
+const note = b => ((CFG.groups || []).find(g => g[0] === b) || [])[2] || "";
+const initials = b => b.split(/\s+/).map(w => w[0]).join("").slice(0, 2).toUpperCase();
+/* admin-set order first, then the rest (newest first) */
+const ordered = (list, col) => {
+  const ord = CFG.order?.[col] || [], pos = new Map(ord.map((k, i) => [k, i]));
+  return [...list].sort((a, b) => {
+    const pa = pos.has(pkey(a)) ? pos.get(pkey(a)) : -1, pb = pos.has(pkey(b)) ? pos.get(pkey(b)) : -1;
+    if (pa === -1 && pb === -1) return (isNew(b) - isNew(a));
+    if (pa === -1) return -1; if (pb === -1) return 1; return pa - pb;
+  });
+};
+const inCol = k => ordered(P.filter(p => colOf(p) === k), k);
+
+/* toast + copy */
+let tt; const toast = msg => { const t = $("toast"); t.textContent = msg; t.classList.add("on"); clearTimeout(tt); tt = setTimeout(() => t.classList.remove("on"), 2000); };
 const copyText = async (text, label) => { try { await navigator.clipboard.writeText(text); toast(`${label} copied`); return true; } catch { toast(`Copy this: ${text}`); return false; } };
 
 /* card */
@@ -357,21 +649,21 @@ window.__imgDone = el => el.closest(".thumb").classList.add("done");
 window.__imgFail = el => { const t = el.closest(".thumb"); t.classList.add("done"); el.replaceWith(Object.assign(document.createElement("div"), { className: "blank", innerHTML: hanger })); };
 const card = p => {
   const img = safeUrl(p.image), j = safeUrl(fixJ(p.jinxxy)), g = safeUrl(p.gumroad), pr = priceText(p);
+  const flags = [isNew(p) ? `<span class="flag new">New</span>` : "", isFree(p) ? `<span class="flag">Free</span>` : ""].join("");
   return `<article class="card"><div class="thumb${img ? "" : " done"}">${img
       ? `<img src="${img}" alt="${esc(p.name)}" width="400" height="400" loading="lazy" decoding="async" onload="__imgDone(this)" onerror="__imgFail(this)">`
-      : `<div class="blank">${hanger}</div>`}
-      ${isFree(p) ? `<span class="free">Free</span>` : ""}</div>
+      : `<div class="blank">${hanger}</div>`}${flags ? `<div class="flags">${flags}</div>` : ""}</div>
     <div class="body"><h3 title="${esc(p.name)}">${esc(p.name)}</h3>
       ${pr ? `<span class="price">${esc(pr)}</span>` : `<span class="price ask">See price on store</span>`}
-      <div class="buy">${j ? `<a class="btn j" href="${j}" target="_blank" rel="noopener" aria-label="Buy ${esc(p.name)} on Jinxxy">${ic("jinxxy", "jx")}Jinxxy</a>` : ""}${g ? `<a class="btn g" href="${g}" target="_blank" rel="noopener" aria-label="Buy ${esc(p.name)} on Gumroad">${ic("gumroad")}Gumroad</a>` : ""}</div>
+      <div class="buy">${j ? `<a class="btn j" href="${j}" target="_blank" rel="noopener" aria-label="Buy ${esc(p.name)} on Jinxxy">${ic("jinxxy")}Jinxxy</a>` : ""}${g ? `<a class="btn g" href="${g}" target="_blank" rel="noopener" aria-label="Buy ${esc(p.name)} on Gumroad">${ic("gumroad")}Gumroad</a>` : ""}</div>
     </div></article>`;
 };
 
-/* season order: running now (ending soonest first), then upcoming (starting soonest first) */
+/* seasons: running now (ending soonest first), then upcoming (starting soonest first) */
 const DAY = 864e5;
 const seasonInfo = (s, now) => {
-  const y = now.getFullYear(), md = v => v.split("-").map(Number);
-  const [sm, sd] = md(s[2]), [em, ed] = md(s[3]);
+  const y = now.getFullYear(), md = v => String(v).split("-").map(Number);
+  const [sm, sd] = md(s.start), [em, ed] = md(s.end);
   for (const yy of [y - 1, y]) {
     const st = new Date(yy, sm - 1, sd), en = new Date(yy + (em < sm ? 1 : 0), em - 1, ed, 23, 59);
     if (now >= st && now <= en) return { live: true, key: en - now };
@@ -379,19 +671,40 @@ const seasonInfo = (s, now) => {
   let st = new Date(y, sm - 1, sd); if (st < now) st = new Date(y + 1, sm - 1, sd);
   return { live: false, key: st - now, days: Math.ceil((st - now) / DAY) };
 };
-const orderedSeasons = () => { const now = new Date(); return SEASONS.map(s => ({ s, ...seasonInfo(s, now) })).sort((a, b) => (b.live - a.live) || a.key - b.key); };
+const orderedSeasons = () => { const now = new Date(); return (CFG.collections || []).filter(c => c.season?.start && c.season?.end).map(c => ({ c, ...seasonInfo(c.season, now) })).sort((a, b) => (b.live - a.live) || a.key - b.key); };
 
-const arrow = d => `<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${d < 0 ? "M10 3 5 8l5 5" : "M6 3l5 5-5 5"}"/></svg>`;
-const n = (k, w) => `${k} ${w}${k === 1 ? "" : "s"}`;
 const rail = (title, badge, items, id, lead) => `<section class="season${lead ? " lead" : ""}" aria-labelledby="h${id}"><div class="shead"><h2 id="h${id}">${esc(title)}</h2>${badge}<span class="count">${n(items.length, "item")}</span>
     <div class="arrows"><button data-r="${id}" data-d="-1" aria-label="Scroll ${esc(title)} back">${arrow(-1)}</button><button data-r="${id}" data-d="1" aria-label="Scroll ${esc(title)} forward">${arrow(1)}</button></div></div>
-  <div class="rail" id="rail${id}" tabindex="0" role="region" aria-label="${esc(title)} outfits, scrollable">${items.map(card).join("")}</div></section>`;
+  <div class="rail" id="rail${id}" tabindex="0" role="region" aria-label="${esc(title)}, scrollable">${items.join("")}</div></section>`;
 const syncArrows = () => document.querySelectorAll(".rail").forEach(r => {
   const id = r.id.slice(4), max = r.scrollWidth - r.clientWidth - 2;
   const [b, f] = document.querySelectorAll(`[data-r="${id}"]`);
   if (b) b.disabled = r.scrollLeft <= 2; if (f) f.disabled = r.scrollLeft >= max;
-  if (b && max <= 0) b.closest(".arrows").hidden = true;
+  if (b) b.closest(".arrows").hidden = max <= 0;
 });
+
+/* commission + profile */
+const buildCom = () => {
+  const c = CFG.commission || {}, open = c.open !== false;
+  $("com").innerHTML = `<span class="st${open ? "" : " closed"}"><i></i>${open ? "Commissions open" : "Commissions closed"}</span>
+    <div><span class="num">${Number(c.count || 0).toLocaleString()}</span><span class="lbl">commissions completed</span></div>
+    <p>${esc(c.text || "")}</p>
+    ${open && c.discord ? `<button class="dm btn-holo" data-dm="${esc(c.discord)}">${ic("discord")}DM ${esc(c.discord)}</button>` : ""}`;
+};
+$("com").addEventListener("click", async e => {
+  const b = e.target.closest("[data-dm]"); if (!b) return;
+  await copyText(b.dataset.dm, "Discord username");
+  toast(`Copied ${b.dataset.dm}. Paste it in Discord's "Add Friend" to DM me`);
+});
+const buildProfile = () => {
+  const pr = CFG.profile || {}, bn = pr.banner || {}, src = safeUrl(bn.src);
+  $("bname").textContent = pr.name || "Perfecto";
+  $("profile").innerHTML = `<div class="banner">${src ? `<img src="${src}" alt="" style="object-position:${Number(bn.x ?? 50)}% ${Number(bn.y ?? 50)}%">` : `<div class="pat"></div>`}</div>
+    <div class="pinfo"><div class="badge"><span class="mark" aria-hidden="true"></span></div>
+      <div class="pname"><h1>${esc(pr.name || "Perfecto")}</h1><p>${esc(pr.tagline || "")}</p></div>
+      <div class="stats"><div class="stat"><b>${Number(CFG.commission?.count || 0).toLocaleString()}</b><span>commissions</span></div><div class="stat"><b>${P.length}</b><span>items</span></div><div class="stat" id="stat-v" hidden><b></b><span>visitors</span></div></div>
+      <ul class="skills" aria-label="Skills">${(pr.skills || []).map(s => `<li>${esc(s)}</li>`).join("")}</ul></div>`;
+};
 
 /* sidebar */
 const buildSide = () => {
@@ -400,66 +713,88 @@ const buildSide = () => {
   BASES = Object.keys(counts).sort((a, b) => counts[b] - counts[a] || a.localeCompare(b));
   const LIMIT = 10, list = showAll || mobile() ? BASES : BASES.slice(0, LIMIT);
   $("avatars").innerHTML = list.map(b => `<button class="item" data-h="a-${slug(b)}"><span class="ico" aria-hidden="true">${esc(initials(b))}<img src="images/avatars/${slug(b)}.png" alt="" onerror="this.remove()"></span>
-      <span class="nm">${esc(b)}${note(b) ? `<small>${esc(note(b))}</small>` : ""}</span><span class="ct" aria-label="${n(counts[b], "item")}">${counts[b]}</span></button>`).join("");
+      <span class="nm">${esc(b)}${note(b) ? `<small>${esc(note(b))}</small>` : ""}</span><span class="ct">${counts[b]}</span></button>`).join("");
   const more = $("moreav"); more.hidden = BASES.length <= LIMIT;
   more.textContent = showAll ? "Show fewer avatars" : `Show all ${BASES.length} avatars`;
   more.setAttribute("aria-expanded", showAll);
-  $("types").innerHTML = [["free", "Free outfits", P.filter(isFree).length],
-    ...Object.entries(COLS).map(([k, l]) => [k, l, P.filter(p => colOf(p) === k).length]).filter(x => x[2])]
-    .map(([k, l, c]) => `<button class="item" data-h="c-${k}"><span class="dot" aria-hidden="true"><i></i></span><span class="nm">${esc(l)}</span><span class="ct">${c}</span></button>`).join("");
+  const free = P.filter(isFree).length;
+  $("types").innerHTML = [...(free ? [["free", "Free outfits", free]] : []), ...COLKEYS.map(k => [k, COLS[k], P.filter(p => colOf(p) === k).length]).filter(x => x[2])]
+    .map(([k, l, c]) => `<button class="item" data-h="c-${esc(k)}"><span class="dot" aria-hidden="true"><i></i></span><span class="nm">${esc(l)}</span><span class="ct">${c}</span></button>`).join("");
   mark();
 };
 $("moreav").addEventListener("click", () => { showAll = !showAll; buildSide(); });
-const mark = () => { const h = location.hash.slice(1); document.querySelectorAll(".side .item").forEach(b => b.setAttribute("aria-current", b.dataset.h === h)); };
+const mark = () => { const h = location.hash.slice(1); document.querySelectorAll(".browse .item").forEach(b => b.setAttribute("aria-current", b.dataset.h === h)); };
 
-const main = $("main");
+const view = $("shopview");
 const render = () => {
   mark();
   const h = location.hash.slice(1);
   let list = null, title = "", sub = "";
   if (h.startsWith("a-")) { const b = BASES.find(x => "a-" + slug(x) === h); if (b) { list = P.filter(p => basesOf(p).includes(b)); title = b; sub = note(b) ? `Includes ${note(b)}` : ""; } }
-  if (h.startsWith("c-")) { const k = h.slice(2); if (k === "free") { list = P.filter(isFree); title = "Free outfits"; } else if (COLS[k]) { list = P.filter(p => colOf(p) === k); title = COLS[k]; } }
+  if (h.startsWith("c-")) { const k = h.slice(2); if (k === "free") { list = P.filter(isFree); title = "Free outfits"; } else if (COLS[k]) { list = inCol(k); title = COLS[k]; } }
   if (q) { const s = q.toLowerCase(); list = (list || P).filter(p => (p.name + " " + basesOf(p).join(" ") + " " + (p.bases || []).join(" ") + " " + COLS[colOf(p)]).toLowerCase().includes(s)); title = title ? `${title}: “${q}”` : `Results for “${q}”`; }
+  $("profile").hidden = !!list;
   if (list) {
-    main.innerHTML = `<div class="fhead"><h2>${esc(title)}</h2><p>${n(list.length, "item")}${sub ? ". " + esc(sub) : ""}</p><button class="back" data-back>${arrow(-1)}All seasons</button></div>
+    view.innerHTML = `<div class="fhead"><h2>${esc(title)}</h2><p>${n(list.length, "item")}${sub ? ". " + esc(sub) : ""}</p><button class="back" data-back>${arrow(-1)}All seasons</button></div>
       ${list.length ? `<div class="grid">${list.map(card).join("")}</div>` : `<div class="empty glass">No outfits match that yet. Try another avatar or clear the search.</div>`}`;
     return;
   }
-  const keys = SEASONS.map(s => s[0]);
-  const seasons = orderedSeasons().map(({ s, live, days }, i) => {
-    const items = P.filter(p => colOf(p) === s[0]);
-    if (!items.length) return "";
-    return rail(s[1], live ? `<span class="tag now">In season now</span>` : `<span class="tag">Starts in ${n(days, "day")}</span>`, items, i, i === 0);
+  const sk = new Set();
+  const seasons = orderedSeasons().map(({ c, live, days }, i) => {
+    sk.add(c.key); const items = inCol(c.key); if (!items.length) return "";
+    return rail(c.season.title || c.label, live ? `<span class="tag now">In season now</span>` : `<span class="tag">Starts in ${n(days, "day")}</span>`, items.map(card), i, i === 0);
   }).join("");
-  const more = Object.keys(COLS).filter(k => !keys.includes(k)).map((k, i) => { const items = P.filter(p => colOf(p) === k); return items.length ? rail(COLS[k], "", items, 100 + i) : ""; }).join("");
-  main.innerHTML = seasons + (more ? `<h2 class="morehead">More outfits</h2>${more}` : "");
+  const more = COLKEYS.filter(k => !sk.has(k)).map((k, i) => { const items = inCol(k); return items.length ? rail(COLS[k], "", items.map(card), 100 + i) : ""; }).join("");
+  view.innerHTML = seasons + (more ? `<h2 class="morehead">More outfits</h2>${more}` : "");
   requestAnimationFrame(syncArrows);
 };
 
-document.querySelector(".side").addEventListener("click", e => {
+document.querySelector(".browse").addEventListener("click", e => {
   const b = e.target.closest(".item"); if (!b) return;
   if (location.hash.slice(1) === b.dataset.h) { history.replaceState(null, "", location.pathname); render(); }
   else location.hash = b.dataset.h;
-  if (mobile()) main.scrollIntoView({ block: "start" });
+  view.scrollIntoView({ block: "start" });
 });
-main.addEventListener("click", e => {
-  if (e.target.closest("[data-back]")) { q = ""; $("q").value = ""; history.replaceState(null, "", location.pathname); render(); main.focus({ preventScroll: true }); return; }
+$("main").addEventListener("click", e => {
+  if (e.target.closest("[data-back]")) { q = ""; $("q").value = ""; history.replaceState(null, "", location.pathname); render(); $("main").focus({ preventScroll: true }); return; }
   const a = e.target.closest("[data-r]"); if (!a) return;
   const r = $("rail" + a.dataset.r);
   r.scrollBy({ left: Number(a.dataset.d) * r.clientWidth * 0.9 });
 });
-main.addEventListener("scroll", e => { if (e.target.classList?.contains("rail")) syncArrows(); }, true);
-main.addEventListener("keydown", e => {
+$("main").addEventListener("scroll", e => { if (e.target.classList?.contains("rail")) syncArrows(); }, true);
+$("main").addEventListener("keydown", e => {
   const r = e.target.closest(".rail"); if (!r || !/Arrow(Left|Right)/.test(e.key)) return;
   e.preventDefault(); r.scrollBy({ left: (e.key === "ArrowRight" ? 1 : -1) * r.clientWidth * 0.5 });
 });
 $("q").addEventListener("input", e => { q = e.target.value.trim(); render(); });
-document.addEventListener("keydown", e => {
-  if (e.key === "/" && !/input|textarea/i.test(document.activeElement.tagName)) { e.preventDefault(); $("q").focus(); }
-  if (e.key === "Escape") { if ($("lbx").classList.contains("on")) closeLb(); else if (document.activeElement === $("q") && q) { $("q").value = ""; q = ""; render(); } }
-});
 window.addEventListener("hashchange", render);
 addEventListener("resize", () => requestAnimationFrame(syncArrows));
+
+/* reviews */
+const star = on => `<svg class="${on ? "" : "off"}" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 1.5l2.6 5.6 6.1.7-4.5 4.2 1.2 6L10 15l-5.4 3 1.2-6L1.3 7.8l6.1-.7z"/></svg>`;
+const buildReviews = () => {
+  const hide = new Set(CFG.hiddenReviews || []);
+  const list = REVIEWS.filter(r => r && !hide.has(r.id) && (r.text || r.rating));
+  const el = $("reviews"); el.hidden = !list.length; if (!list.length) return;
+  const avg = list.filter(r => r.rating).reduce((s, r, _, a) => s + r.rating / a.length, 0);
+  el.innerHTML = `<div class="shead"><h2 id="h-rv">What customers say</h2>${avg ? `<span class="tag">${avg.toFixed(1)} out of 5</span>` : ""}<span class="count">${n(list.length, "review")}</span>
+      <div class="arrows"><button data-r="rv" data-d="-1" aria-label="Previous reviews">${arrow(-1)}</button><button data-r="rv" data-d="1" aria-label="Next reviews">${arrow(1)}</button></div></div>
+    <div class="rail" id="railrv" tabindex="0" role="region" aria-label="Customer reviews, scrollable">${list.map(r => `<article class="rv glass">
+      ${r.rating ? `<div class="stars" role="img" aria-label="${r.rating} out of 5 stars">${[1, 2, 3, 4, 5].map(i => star(i <= r.rating)).join("")}</div>` : ""}
+      ${r.text ? `<q>${esc(r.text)}</q>` : ""}
+      <div class="who">${ic(r.source === "jinxxy" ? "jinxxy" : "gumroad")}<span><b>${esc(r.name || "Verified buyer")}</b> on ${r.url ? `<a href="${safeUrl(r.url)}" target="_blank" rel="noopener">${esc(r.product)}</a>` : esc(r.product)}</span></div>
+    </article>`).join("")}</div>`;
+  requestAnimationFrame(syncArrows);
+};
+
+/* idea box */
+$("ideaform").addEventListener("submit", async e => {
+  e.preventDefault();
+  const tx = $("idea-tx"), av = $("idea-av").value.trim(), idea = tx.value.trim();
+  if (!idea) { tx.focus(); toast("Write your idea first"); return; }
+  await copyText(`Outfit idea${av ? ` for ${av}` : ""}: ${idea}`, "Idea");
+  const inv = CFG.discordInvite; if (inv) window.open(inv, "_blank", "noopener");
+});
 
 /* coupons */
 const buildCoupons = () => {
@@ -469,46 +804,93 @@ const buildCoupons = () => {
     const ends = c.ends ? new Date(c.ends + "T00:00:00").toLocaleDateString(undefined, { month: "short", day: "numeric" }) : "";
     return `<section class="coupon panel glass" aria-label="Discount code"><h2 class="ph">Code running now</h2>
       <p class="tt">${esc(c.title || "Discount")}</p>${c.details ? `<p>${esc(c.details)}</p>` : ""}
-      <div class="code"><b>${esc(c.code)}</b><button class="copy" data-code="${esc(c.code)}" aria-label="Copy code ${esc(c.code)}">${ic("copy")}Copy</button></div>
+      <div class="code"><b>${esc(c.code)}</b><button class="copy btn-holo" data-code="${esc(c.code)}" aria-label="Copy code ${esc(c.code)}">${ic("copy")}Copy</button></div>
       ${ends ? `<span class="ends">Ends ${esc(ends)}</span>` : ""}</section>`;
   }).join("");
 };
-$("coupons").addEventListener("click", e => { const b = e.target.closest(".copy"); if (b) copyText(b.dataset.code, "Code"); });
+document.addEventListener("click", e => { const b = e.target.closest(".copy[data-code]"); if (b) copyText(b.dataset.code, "Code"); });
 
 /* links */
-const live = SOCIALS.filter(x => x.url || x.copy);
-$("soclist").innerHTML = live.map(x => {
-  const inner = `${ic(x.icon)}<span><span class="lb">${esc(x.name)}</span><small>${esc(x.sub || "")}</small></span>`;
-  return x.copy
-    ? `<button class="soc" data-copy="${esc(x.copy)}" aria-label="Copy Discord username ${esc(x.copy)}">${inner}<span class="act">${ic("copy")}Copy</span></button>`
-    : `<a class="soc" href="${safeUrl(x.url)}" target="_blank" rel="noopener">${inner}${ic("out", "go")}</a>`;
-}).join("");
+const buildLinks = () => {
+  const live = (CFG.socials || []).filter(x => x.url || x.copy);
+  $("soclist").innerHTML = live.map(x => {
+    const inner = `${ic(x.icon)}<span><span class="lb">${esc(x.name)}</span><small>${esc(x.sub || "")}</small></span>`;
+    return x.copy
+      ? `<button class="soc" data-copy="${esc(x.copy)}" aria-label="Copy Discord username ${esc(x.copy)}">${inner}<span class="act">${ic("copy")}Copy</span></button>`
+      : `<a class="soc" href="${safeUrl(x.url)}" target="_blank" rel="noopener">${inner}${ic("out", "go")}</a>`;
+  }).join("");
+  $("flinks").innerHTML = live.filter(x => x.url).map(x => `<a href="${safeUrl(x.url)}" target="_blank" rel="noopener">${ic(x.icon)}${esc(x.name)}</a>`).join("");
+  const j = $("join"); if (CFG.discordInvite) j.href = CFG.discordInvite; else j.hidden = true;
+};
 $("soclist").addEventListener("click", e => { const b = e.target.closest("[data-copy]"); if (b) copyText(b.dataset.copy, "Discord username"); });
-$("flinks").innerHTML = live.filter(x => x.url).map(x => `<a href="${safeUrl(x.url)}" target="_blank" rel="noopener">${ic(x.icon)}${esc(x.name)}</a>`).join("");
-
-/* optional real Jinxxy logo: images/icons/jinxxy.png */
-{ const im = new Image(); im.onload = () => document.documentElement.style.setProperty("--ic-jinxxy", 'url("images/icons/jinxxy.png")'); im.src = "images/icons/jinxxy.png"; }
 
 /* WIP */
-const lbx = $("lbx"); let lastFocus = null;
-const openLb = src => { lastFocus = document.activeElement; $("lbimg").src = src; lbx.classList.add("on"); $("lbclose").focus(); };
-const closeLb = () => { lbx.classList.remove("on"); lastFocus?.focus(); };
+let lastFocus = null;
+const openModal = id => { lastFocus = document.activeElement; $(id).classList.add("on"); $(id).querySelector("[data-close]")?.focus(); };
+const closeModals = () => { document.querySelectorAll(".modal.on").forEach(m => m.classList.remove("on")); lastFocus?.focus(); };
+document.querySelectorAll(".modal").forEach(m => m.addEventListener("click", e => { if (e.target === m || e.target.closest("[data-close]")) closeModals(); }));
 const buildWip = () => {
   $("wipnote").hidden = WIP.length > 0;
   $("shots").innerHTML = WIP.length
     ? WIP.map((w, i) => `<button class="shot" data-i="${i}" aria-label="Open WIP image ${i + 1}"><img src="${safeUrl(w.src)}" alt="" width="300" height="300" loading="lazy" decoding="async"></button>`).join("")
     : Array(4).fill(`<div class="shot ph-tile" aria-hidden="true">${hanger}</div>`).join("");
 };
-$("shots").addEventListener("click", e => { const b = e.target.closest(".shot[data-i]"); if (b) openLb(safeUrl(WIP[Number(b.dataset.i)].src)); });
-lbx.addEventListener("click", e => { if (e.target === lbx || e.target.closest("#lbclose")) closeLb(); });
+$("shots").addEventListener("click", e => { const b = e.target.closest(".shot[data-i]"); if (!b) return; $("lbimg").src = safeUrl(WIP[Number(b.dataset.i)].src); openModal("lbx"); });
+
+/* visitor counter + every Nth visitor wins a code (one per browser) */
+const sha = async s => { const b = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s)); return [...new Uint8Array(b)].map(x => x.toString(16).padStart(2, "0")).join(""); };
+const winCode = async (num, g) => `PF${g.discount}-${num}-${(await sha(`${g.namespace}:${num}`)).slice(0, 5).toUpperCase()}`;
+const showWin = (code, num, g, popup) => {
+  const dm = CFG.commission?.discord || "perfecto1205";
+  const body = `<p class="tt">${esc(g.discount)}% off one product</p><p>You're visitor #${Number(num).toLocaleString()}. DM ${esc(dm)} on Discord with this code to claim it.</p>
+    <div class="code"><b>${esc(code)}</b><button class="copy btn-holo" data-code="${esc(code)}" aria-label="Copy code ${esc(code)}">${ic("copy")}Copy</button></div>`;
+  $("wonbox").innerHTML = `<section class="coupon won panel glass" aria-label="Your giveaway code"><h2 class="ph">Your prize</h2>${body}</section>`;
+  if (!popup) return;
+  $("winbox").innerHTML = `<button class="x" data-close aria-label="Close">${'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3l10 10M13 3 3 13"/></svg>'}</button>
+    <div class="big">${esc(g.discount)}% off</div><h2 id="win-h">You're visitor #${Number(num).toLocaleString()}!</h2>
+    <p>Every ${esc(g.every)}th visitor gets ${esc(g.discount)}% off one product. DM ${esc(dm)} on Discord with your code.</p>
+    <div class="code"><b>${esc(code)}</b><button class="copy btn-holo" data-code="${esc(code)}">${ic("copy")}Copy</button></div>
+    <button class="send btn-holo" data-dmwin="${esc(dm)}">${ic("discord")}Copy code and DM ${esc(dm)}</button>`;
+  openModal("winmodal");
+};
+$("winbox").addEventListener("click", async e => { const b = e.target.closest("[data-dmwin]"); if (!b) return; const c = $("winbox").querySelector(".code b").textContent; await copyText(c, "Code"); if (CFG.discordInvite) window.open(CFG.discordInvite, "_blank", "noopener"); });
+const showVisits = v => {
+  if (!v) return; const el = $("visits"); el.hidden = false; el.innerHTML = `<b>${Number(v).toLocaleString()}</b> visitors so far`;
+  const s = $("stat-v"); if (s) { s.hidden = false; s.querySelector("b").textContent = Number(v).toLocaleString(); }
+};
+const counter = async () => {
+  const g = CFG.giveaway || {}; const ns = encodeURIComponent(g.namespace || "perfecto-doart-store");
+  try {
+    const mine = store.get("pf_visit");
+    if (mine) {
+      const r = await fetch(`${ABACUS}/get/${ns}/visitors`); if (r.ok) showVisits((await r.json()).value);
+      const won = store.get("pf_won"); if (won && g.enabled !== false) showWin(won, mine, g, false);
+      return;
+    }
+    if (!store.set("pf_test", "1")) { const r = await fetch(`${ABACUS}/get/${ns}/visitors`); if (r.ok) showVisits((await r.json()).value); return; }
+    const r = await fetch(`${ABACUS}/hit/${ns}/visitors`); if (!r.ok) return;
+    const v = Number((await r.json()).value); store.set("pf_visit", String(v)); showVisits(v);
+    if (g.enabled !== false && g.every > 0 && v % g.every === 0) { const code = await winCode(v, g); store.set("pf_won", code); showWin(code, v, g, true); }
+  } catch { /* counter offline: page works without it */ }
+};
+
+document.addEventListener("keydown", e => {
+  if (e.key === "/" && !/input|textarea/i.test(document.activeElement.tagName)) { e.preventDefault(); $("q").focus(); }
+  if (e.key === "Escape") { if (document.querySelector(".modal.on")) closeModals(); else if (document.activeElement === $("q") && q) { $("q").value = ""; q = ""; render(); } }
+});
 
 const getJSON = async f => { try { const r = await fetch(f, { cache: "no-cache" }); return r.ok ? await r.json() : null; } catch { return null; } };
 (async () => {
-  const [prods, w, c] = await Promise.all([getJSON("data/products.json"), getJSON("data/wip.json"), getJSON("data/coupons.json")]);
-  P = (Array.isArray(prods) && prods.length ? prods : FALLBACK).filter(p => p && p.name && !p.hide);
+  const [cfg, prods, w, c, rv] = await Promise.all(["config", "products", "wip", "coupons", "reviews"].map(f => getJSON(`data/${f}.json`)));
+  CFG = cfg && Array.isArray(cfg.collections) ? cfg : DEFAULT_CFG;
+  COLS = Object.fromEntries(CFG.collections.map(c => [c.key, c.label])); COLKEYS = CFG.collections.map(c => c.key);
+  alias = {}; (CFG.groups || []).forEach(([m, o]) => [m, ...(o || [])].forEach(x => alias[String(x).toLowerCase()] = m));
+  const hidden = new Set(CFG.hidden || []);
+  P = (Array.isArray(prods) && prods.length ? prods : FALLBACK).filter(p => p && p.name && !p.hide && !hidden.has(pkey(p)));
   WIP = Array.isArray(w) ? w.filter(x => x && safeUrl(x.src)) : [];
   COUPONS = Array.isArray(c) ? c : [];
-  buildSide(); buildCoupons(); buildWip(); render();
+  REVIEWS = Array.isArray(rv) ? rv : [];
+  buildCom(); buildProfile(); buildSide(); buildCoupons(); buildLinks(); buildWip(); render(); buildReviews(); counter();
   let was = mobile();
   addEventListener("resize", () => { const m = mobile(); if (m !== was) { was = m; buildSide(); } });
 })();
