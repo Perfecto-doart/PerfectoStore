@@ -43,9 +43,9 @@ jobs:
         run: |
           git config user.name "store-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-                    mkdir -p wip && touch wip/.gitkeep
+          mkdir -p wip && touch wip/.gitkeep
           git add -A data wip
-          git diff --cached --quiet || (git commit -m "Update products and WIP images" && git push)
+          git diff --cached --quiet || (git commit -m "Update products and WIP images" && git pull --rebase && git push)
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
