@@ -19,12 +19,16 @@
    }
   },
   {
-   "key": "valentine",
-   "label": "Valentine",
+   "key": "robin",
+   "label": "Robinhood"
+  },
+  {
+   "key": "yoga",
+   "label": "Yoga",
    "season": {
-    "title": "Valentine's",
-    "start": "02-01",
-    "end": "02-14"
+    "title": "Yoga",
+    "start": "01-01",
+    "end": "03-31"
    }
   },
   {
@@ -37,33 +41,29 @@
    }
   },
   {
-   "key": "yoga",
-   "label": "Yoga",
-   "season": {
-    "title": "Yoga",
-    "start": "01-01",
-    "end": "03-31"
-   }
-  },
-  {
-   "key": "halloween",
-   "label": "Halloween"
+   "key": "wrestler",
+   "label": "Wrestler"
   },
   {
    "key": "school",
    "label": "School & blazers"
   },
   {
+   "key": "halloween",
+   "label": "Halloween"
+  },
+  {
+   "key": "valentine",
+   "label": "Valentine",
+   "season": {
+    "title": "Valentine's",
+    "start": "02-01",
+    "end": "02-14"
+   }
+  },
+  {
    "key": "sports",
    "label": "Sports jackets"
-  },
-  {
-   "key": "wrestler",
-   "label": "Wrestler"
-  },
-  {
-   "key": "robin",
-   "label": "Robinhood"
   },
   {
    "key": "nurse",
