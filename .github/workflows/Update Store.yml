@@ -35,6 +35,7 @@ jobs:
           GUMROAD_TOKEN: ${{ secrets.GUMROAD_TOKEN }}
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
           DISCORD_CHANNEL_ID: ${{ secrets.DISCORD_CHANNEL_ID }}
+          DISCORD_AUTHOR_ID: ${{ secrets.DISCORD_AUTHOR_ID }}
 
       - name: Save changes
         run: |
