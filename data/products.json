@@ -3,7 +3,7 @@
   "name": "Winter Puffer Jacket Outfit For Druffle Avatar",
   "collection": "winter",
   "price": "Free–$20",
-  "jinxxy": "WinterPufferDruffle",
+  "jinxxy": "https://WinterPufferDruffle",
   "gumroad": "https://perfectodoart.gumroad.com/l/WinterPufferDruffle",
   "image": "https://public-files.gumroad.com/5pomj17qmutzfc1mi6aunksjikt6",
   "bases": [
@@ -14,7 +14,7 @@
   "name": "Wrestler Outfit For Druffle Avatar",
   "collection": "wrestler",
   "price": "Free–$16",
-  "jinxxy": "WrestlerDruffle",
+  "jinxxy": "https://WrestlerDruffle",
   "gumroad": "https://perfectodoart.gumroad.com/l/WrestlerDruffle",
   "image": "https://public-files.gumroad.com/lsdco39ge829f3mi2a99wf0hd94w",
   "bases": [
@@ -25,7 +25,7 @@
   "name": "Beach Outfit For Femcanine, MascCanine & Feline",
   "collection": "summer",
   "price": "Free–$30",
-  "jinxxy": "WinterpawBeachOutfit",
+  "jinxxy": "https://WinterpawBeachOutfit",
   "gumroad": "https://perfectodoart.gumroad.com/l/WinterpawBeachOutfit",
   "image": "https://public-files.gumroad.com/zp8m1zxkjbfj4brim5o3kxn5u6bh",
   "bases": [
@@ -38,7 +38,7 @@
   "name": "Robinhood Outfit For Novabeast",
   "collection": "robin",
   "price": "Free–$22",
-  "jinxxy": "RobinhoodNovabeast",
+  "jinxxy": "https://RobinhoodNovabeast",
   "gumroad": "https://perfectodoart.gumroad.com/l/RobinhoodNovabeast",
   "image": "https://public-files.gumroad.com/20uzyo5bie9c0zkp5iv1f4ceyw0o",
   "bases": [
@@ -49,7 +49,7 @@
   "name": "Beach Outfit For Viwi",
   "collection": "summer",
   "price": "Free–$22",
-  "jinxxy": "BeachOutfitViwi",
+  "jinxxy": "https://BeachOutfitViwi",
   "gumroad": "https://perfectodoart.gumroad.com/l/BeachOutfitViwi",
   "image": "https://public-files.gumroad.com/kbxwty2ajldosjcl7a6pph0di7sn",
   "bases": [
@@ -60,7 +60,7 @@
   "name": "Robinhood Outfit For Druffle",
   "collection": "robin",
   "price": "Free–$22",
-  "jinxxy": "RobinhoodOutfitDruffle",
+  "jinxxy": "https://RobinhoodOutfitDruffle",
   "gumroad": "https://perfectodoart.gumroad.com/l/RobinhoodOutfitDruffle",
   "image": "https://public-files.gumroad.com/7s2luiiednip3rj5xk9od8y4uztf",
   "bases": [
@@ -71,7 +71,7 @@
   "name": "Flutty Pumpkin Outfit For Druffle",
   "collection": "halloween",
   "price": "Free–$16",
-  "jinxxy": "FluttyPumpkinDruffle",
+  "jinxxy": "https://FluttyPumpkinDruffle",
   "gumroad": "https://perfectodoart.gumroad.com/l/FluttyPumpkinDruffle",
   "image": "https://public-files.gumroad.com/nxom2m15g7kaai3p48aeyr2idk8i",
   "bases": [
@@ -82,7 +82,7 @@
   "name": "FREE Ghost Halloween Outfit For Novabeast 1.2",
   "collection": "halloween",
   "price": "Free–$10",
-  "jinxxy": "GhostHalloweenOutfit",
+  "jinxxy": "https://GhostHalloweenOutfit",
   "gumroad": "https://perfectodoart.gumroad.com/l/GhostHalloweenOutfit",
   "image": "https://public-files.gumroad.com/tu8j0dwmy6h0dtinuvu1khkzya24",
   "bases": [
@@ -93,7 +93,7 @@
   "name": "Yoga Outfit For Vulrix",
   "collection": "yoga",
   "price": "Free–$16",
-  "jinxxy": "YogaOutfitVulrix",
+  "jinxxy": "https://YogaOutfitVulrix",
   "gumroad": "https://perfectodoart.gumroad.com/l/YogaOutfitVulrix",
   "image": "https://public-files.gumroad.com/9aswepohjzlpi7c1oqwtmmud5okt",
   "bases": [
@@ -104,7 +104,7 @@
   "name": "Beach Outfit For Vulrix",
   "collection": "summer",
   "price": "Free–$22",
-  "jinxxy": "VulrixBeachOutfit",
+  "jinxxy": "https://VulrixBeachOutfit",
   "gumroad": "https://perfectodoart.gumroad.com/l/VulrixBeachOutfit",
   "image": "https://public-files.gumroad.com/4ueohpf2otwt11q7rdoiem6nheho",
   "bases": [
@@ -115,9 +115,9 @@
   "name": "Beach Outfit For Druffle",
   "collection": "summer",
   "price": "Free–$22",
-  "jinxxy": "BeachOutfitDruffle",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://BeachOutfitDruffle",
+  "gumroad": "https://perfectodoart.gumroad.com/l/BeachOutfitDruffle",
+  "image": "https://public-files.gumroad.com/bxzhualt1p0x38tr1dax6saa7qik",
   "bases": [
    "Druffle"
   ]
@@ -126,9 +126,9 @@
   "name": "Halloween Fall Outfit For Novabeast 1.2",
   "collection": "halloween",
   "price": "Free–$16",
-  "jinxxy": "FallOutfitNova",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://FallOutfitNova",
+  "gumroad": "https://perfectodoart.gumroad.com/l/FallOutfitNova",
+  "image": "https://public-files.gumroad.com/34f30sj7yn8ostknj2juipq0hnqm",
   "bases": [
    "Novabeast 1.2"
   ]
@@ -137,9 +137,9 @@
   "name": "Yoga Outfit For Femcanine, MascCanine & Feline",
   "collection": "yoga",
   "price": "Free–$25",
-  "jinxxy": "WinterpawYogaOutfit",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://WinterpawYogaOutfit",
+  "gumroad": "https://perfectodoart.gumroad.com/l/WinterpawYogaOutfit",
+  "image": "https://public-files.gumroad.com/yzlyz3kos78zfoumhb0jwe82xgzb",
   "bases": [
    "Femcanine",
    "MascCanine",
@@ -150,9 +150,9 @@
   "name": "Beach Outfit For Novabeast 1.2",
   "collection": "summer",
   "price": "Free–$22",
-  "jinxxy": "BeachOutfitNova",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://BeachOutfitNova",
+  "gumroad": "https://perfectodoart.gumroad.com/l/BeachOutfitNova",
+  "image": "https://public-files.gumroad.com/067ogh575jx4ya2mk4esjbgjtrlr",
   "bases": [
    "Novabeast 1.2"
   ]
@@ -161,9 +161,9 @@
   "name": "School Outfit For Foxmoth & Shaienne",
   "collection": "school",
   "price": "Free–$25",
-  "jinxxy": "SchoolOutfitDarbi",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://SchoolOutfitDarbi",
+  "gumroad": "https://perfectodoart.gumroad.com/l/SchoolOutfitDarbi",
+  "image": "https://public-files.gumroad.com/1fiiw1zqlxif3cdc4036bfjx1zqh",
   "bases": [
    "Foxmoth",
    "Shaienne"
@@ -173,9 +173,9 @@
   "name": "Yoga Outfit For Druffle",
   "collection": "yoga",
   "price": "Free–$16",
-  "jinxxy": "DruffleYogaOutfit",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://DruffleYogaOutfit",
+  "gumroad": "https://perfectodoart.gumroad.com/l/DruffleYogaOutfit",
+  "image": "https://public-files.gumroad.com/r2mhzzmh0xqp71ylzjenxaqxqbn3",
   "bases": [
    "Druffle"
   ]
@@ -184,9 +184,9 @@
   "name": "School Outfit For Novabeast 1.2",
   "collection": "school",
   "price": "Free–$22",
-  "jinxxy": "SchoolOutfitNova",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://SchoolOutfitNova",
+  "gumroad": "https://perfectodoart.gumroad.com/l/SchoolOutfitNova",
+  "image": "https://public-files.gumroad.com/df6zu4xp5w1vj79r7jvveyjwzeuo",
   "bases": [
    "Novabeast 1.2"
   ]
@@ -195,9 +195,9 @@
   "name": "Yoga Outfit For Fluffgan & Nyxian",
   "collection": "yoga",
   "price": "Free–$22",
-  "jinxxy": "FluffganNyxianYogaOutfit",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://FluffganNyxianYogaOutfit",
+  "gumroad": "https://perfectodoart.gumroad.com/l/FluffganNyxianYogaOutfit",
+  "image": "https://public-files.gumroad.com/kj6d9xhnrazw02q9cdolije8swfy",
   "bases": [
    "Fluffgan",
    "Nyxian"
@@ -207,9 +207,9 @@
   "name": "Yoga Outfit For Viwi",
   "collection": "yoga",
   "price": "Free–$16",
-  "jinxxy": "YogaOutfitViwi",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://YogaOutfitViwi",
+  "gumroad": "https://perfectodoart.gumroad.com/l/YogaOutfitViwi",
+  "image": "https://public-files.gumroad.com/9kso73s8l6sffzd249vb80iu9goj",
   "bases": [
    "Viwi"
   ]
@@ -218,9 +218,9 @@
   "name": "Yoga Outfit For Nardoragon 3.1",
   "collection": "yoga",
   "price": "Free–$16",
-  "jinxxy": "NardoYogaOutfit",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://NardoYogaOutfit",
+  "gumroad": "https://perfectodoart.gumroad.com/l/NardoYogaOutfit",
+  "image": "https://public-files.gumroad.com/6gffoshgqfo5qun18rqx6nfhqwtp",
   "bases": [
    "Nardoragon 3.1"
   ]
@@ -229,9 +229,9 @@
   "name": "Yoga Outfit For Foxmoth, Shaienne & Shawn The Shark",
   "collection": "yoga",
   "price": "Free–$25",
-  "jinxxy": "YogaFoxmothShawn",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://YogaFoxmothShawn",
+  "gumroad": "https://perfectodoart.gumroad.com/l/YogaFoxmothShawn",
+  "image": "https://public-files.gumroad.com/phkytubnaaqpvxbntuva28stwbs7",
   "bases": [
    "Foxmoth",
    "Shaienne",
@@ -242,9 +242,9 @@
   "name": "Yoga Outfit For Novabeast 1.2, KFN & PsyFN",
   "collection": "yoga",
   "price": "Free–$16",
-  "jinxxy": "YogaOutfitNova",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://YogaOutfitNova",
+  "gumroad": "https://perfectodoart.gumroad.com/l/YogaOutfitNova",
+  "image": "https://public-files.gumroad.com/p28ck8mjrtil6okb8b2vaw4h0e8i",
   "bases": [
    "Novabeast 1.2",
    "KFN",
@@ -255,9 +255,9 @@
   "name": "Lidus Outfit For Shawn The Shark (Darbi)",
   "collection": "special",
   "price": "Free–$22",
-  "jinxxy": "LidusShawn",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://LidusShawn",
+  "gumroad": "https://perfectodoart.gumroad.com/l/LidusShawn",
+  "image": "https://public-files.gumroad.com/xniorttuouywt3004cnb81h73jlj",
   "bases": [
    "Shawn The Shark"
   ]
@@ -266,9 +266,9 @@
   "name": "Refrence Sheet For Viwi | VRChat Art",
   "collection": "fx",
   "price": "Free–$20",
-  "jinxxy": "ViwiRefSheet",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://ViwiRefSheet",
+  "gumroad": "https://perfectodoart.gumroad.com/l/ViwiRefSheet",
+  "image": "https://public-files.gumroad.com/7rzc00rppmspurzvhaki4a44s49p",
   "bases": [
    "Viwi"
   ]
@@ -277,9 +277,9 @@
   "name": "Perfecto's Ultra FREE NovaRaider Outfit For Novabeast 1.2",
   "collection": "special",
   "price": "Free–$10",
-  "jinxxy": "TombNova",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://TombNova",
+  "gumroad": "https://perfectodoart.gumroad.com/l/TombNova",
+  "image": "https://public-files.gumroad.com/3htb4re4fbku9sqidbfdsuxg12qg",
   "bases": [
    "Novabeast 1.2"
   ]
@@ -288,9 +288,9 @@
   "name": "Sports Jacket Outfit For Spaceyeen, Foxmoth & Legato",
   "collection": "sports",
   "price": "Free–$35",
-  "jinxxy": "SpaceyeenFoxmothLegatoSportsjacket",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://SpaceyeenFoxmothLegatoSportsjacket",
+  "gumroad": "https://perfectodoart.gumroad.com/l/SpaceyeenFoxmothLegatoSportsjacket",
+  "image": "https://public-files.gumroad.com/dyd875t2q01foehmib4k51vdjfw9",
   "bases": [
    "Spaceyeen",
    "Foxmoth",
@@ -301,9 +301,9 @@
   "name": "Sports Jacket Outfit For Novabeast 1.2 & KFN",
   "collection": "sports",
   "price": "Free–$20",
-  "jinxxy": "SportsJacketNovaKFN",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://SportsJacketNovaKFN",
+  "gumroad": "https://perfectodoart.gumroad.com/l/SportsJacketNovaKFN",
+  "image": "https://public-files.gumroad.com/7kvy2u5aev1unerx3ybhk8ajr6iw",
   "bases": [
    "Novabeast 1.2",
    "KFN"
@@ -313,9 +313,9 @@
   "name": "Blazer Outfit For Nardo",
   "collection": "school",
   "price": "Free–$16",
-  "jinxxy": "NardoBlazerOutfit",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://NardoBlazerOutfit",
+  "gumroad": "https://perfectodoart.gumroad.com/l/NardoBlazerOutfit",
+  "image": "https://public-files.gumroad.com/ajqvlulnmycm4wszwvvmek37fvi4",
   "bases": [
    "Nardoragon"
   ]
@@ -324,9 +324,9 @@
   "name": "Maki JJK Outfit For Novabeast 1.2",
   "collection": "anime",
   "price": "Free–$16",
-  "jinxxy": "NovabeastMakiOutfit",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://NovabeastMakiOutfit",
+  "gumroad": "https://perfectodoart.gumroad.com/l/NovabeastMakiOutfit",
+  "image": "https://public-files.gumroad.com/e559gjp9cqssihxlohkj3cfgvoqn",
   "bases": [
    "Novabeast 1.2"
   ]
@@ -335,9 +335,9 @@
   "name": "Valentine’s Day Dress For Novabeast 1.2 & KFN",
   "collection": "valentine",
   "price": "Free–$20",
-  "jinxxy": "ValantineDress2026",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://ValantineDress2026",
+  "gumroad": "https://perfectodoart.gumroad.com/l/ValantineDress2026",
+  "image": "https://public-files.gumroad.com/a5prwfzai0f6rnph1enplcd9v6ay",
   "bases": [
    "Novabeast 1.2",
    "KFN"
@@ -347,9 +347,9 @@
   "name": "Brooklyn Sweater Meme Outfit For Novabeast",
   "collection": "special",
   "price": "Free–$10",
-  "jinxxy": "BrooklynNovabeast",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://BrooklynNovabeast",
+  "gumroad": "https://perfectodoart.gumroad.com/l/BrooklynNovabeast",
+  "image": "https://public-files.gumroad.com/cgagk5ew7h3yem3s45yfcmgisgre",
   "bases": [
    "Novabeast"
   ]
@@ -358,9 +358,9 @@
   "name": "Brooklyn Sweater Meme Outfit For Space Yeen",
   "collection": "special",
   "price": "Free–$10",
-  "jinxxy": "BrooklynSpaceYeen",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://BrooklynSpaceYeen",
+  "gumroad": "https://perfectodoart.gumroad.com/l/BrooklynSpaceYeen",
+  "image": "https://public-files.gumroad.com/psgxgh0iibgbvezskjmmhnp915m9",
   "bases": [
    "Spaceyeen"
   ]
@@ -369,9 +369,9 @@
   "name": "New Year Party Outfit For Legato Avatar",
   "collection": "christmas",
   "price": "Free–$16",
-  "jinxxy": "LegatoPartyNew",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://LegatoPartyNew",
+  "gumroad": "https://perfectodoart.gumroad.com/l/LegatoPartyNew",
+  "image": "https://public-files.gumroad.com/bzum4h5yvgh4ons1r466w7x6xub0",
   "bases": [
    "Legato"
   ]
@@ -380,7 +380,7 @@
   "name": "New Year Party Outfit For Novabeast 1.2 & KFN Avatar",
   "collection": "christmas",
   "price": "Free–$16",
-  "jinxxy": "PartyOutfitNovaKFN",
+  "jinxxy": "https://PartyOutfitNovaKFN",
   "gumroad": "",
   "image": "",
   "bases": [
@@ -392,9 +392,9 @@
   "name": "Christmas New Year Party Outfit For Ashbeast",
   "collection": "christmas",
   "price": "Free–$20",
-  "jinxxy": "AshbeastChristmas",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://AshbeastChristmas",
+  "gumroad": "https://perfectodoart.gumroad.com/l/AshbeastChristmas",
+  "image": "https://public-files.gumroad.com/jkyq51qwlfvnkyr13vjgz2xdodja",
   "bases": [
    "Ashbeast"
   ]
@@ -403,9 +403,9 @@
   "name": "Christmas Santa Outfit For Novabeast 1.2",
   "collection": "christmas",
   "price": "Free–$22",
-  "jinxxy": "SantaNova",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://SantaNova",
+  "gumroad": "https://perfectodoart.gumroad.com/l/SantaNova",
+  "image": "https://public-files.gumroad.com/rkceqxk4agial3ybm42ik2jgkh0m",
   "bases": [
    "Novabeast 1.2"
   ]
@@ -414,9 +414,9 @@
   "name": "Christmas Santa Outfit for Shawn The Shark (Darbi)",
   "collection": "christmas",
   "price": "Free–$22",
-  "jinxxy": "SantaOutfitShawn",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://SantaOutfitShawn",
+  "gumroad": "https://perfectodoart.gumroad.com/l/SantaOutfitShawn",
+  "image": "https://public-files.gumroad.com/17sc9mh2btoy4jaxmpr03euxqxht",
   "bases": [
    "Shawn The Shark"
   ]
@@ -425,7 +425,7 @@
   "name": "Winter Puffer Jacket Outfit For Novabeast 1.2 & KFN Avatar",
   "collection": "winter",
   "price": "Free–$20",
-  "jinxxy": "WinterPufferNovaKFN",
+  "jinxxy": "https://WinterPufferNovaKFN",
   "gumroad": "",
   "image": "",
   "bases": [
@@ -437,9 +437,9 @@
   "name": "Winter Puffer Jacket Outfit For Northern Aspil Avatar",
   "collection": "winter",
   "price": "Free–$20",
-  "jinxxy": "WinterPufferNorthenAspil",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://WinterPufferNorthenAspil",
+  "gumroad": "https://perfectodoart.gumroad.com/l/WinterPufferNorthenAspil",
+  "image": "https://public-files.gumroad.com/7gi1c51q7k8hym8ji7emqks6kkex",
   "bases": [
    "Northern Aspil"
   ]
@@ -448,9 +448,9 @@
   "name": "Halloween Mummy Outfit For Foxmoth",
   "collection": "halloween",
   "price": "Free–$20",
-  "jinxxy": "FoxmothMummy",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://FoxmothMummy",
+  "gumroad": "https://perfectodoart.gumroad.com/l/FoxmothMummy",
+  "image": "https://public-files.gumroad.com/gsqmxwemknwk0o6z7e9hc9shvght",
   "bases": [
    "Foxmoth"
   ]
@@ -459,9 +459,9 @@
   "name": "Halloween Mummy Outfit For Novabeast 1.2 & KFN",
   "collection": "halloween",
   "price": "Free–$20",
-  "jinxxy": "MummyNovaKFN",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://MummyNovaKFN",
+  "gumroad": "https://perfectodoart.gumroad.com/l/MummyNovaKFN",
+  "image": "https://public-files.gumroad.com/qviigr26ds6n9vzxseq4c2kzmtzl",
   "bases": [
    "Novabeast 1.2",
    "KFN"
@@ -471,9 +471,9 @@
   "name": "Wrestler Outfit For Novabeast 1.2 & KFN",
   "collection": "wrestler",
   "price": "Free–$16",
-  "jinxxy": "WrestlerNovaKFN",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://WrestlerNovaKFN",
+  "gumroad": "https://perfectodoart.gumroad.com/l/WrestlerNovaKFN",
+  "image": "https://public-files.gumroad.com/xk7iw14u9cca958pzk00xxa2jfct",
   "bases": [
    "Novabeast 1.2",
    "KFN"
@@ -482,10 +482,10 @@
  {
   "name": "Wrestler Outfit For Northern Aspil Avatar",
   "collection": "wrestler",
-  "price": "Free–$16",
-  "jinxxy": "WrestlerOutfitNA",
-  "gumroad": "",
-  "image": "",
+  "price": "$10–$16",
+  "jinxxy": "https://WrestlerOutfitNA",
+  "gumroad": "https://perfectodoart.gumroad.com/l/WrestlerOutfitNA",
+  "image": "https://public-files.gumroad.com/n6g6pnbt3wk03c9igc2uvd0hamny",
   "bases": [
    "Northern Aspil"
   ]
@@ -494,9 +494,9 @@
   "name": "Summer Outfit For Foxmoth",
   "collection": "summer",
   "price": "Free–$20",
-  "jinxxy": "FoxmothSummer",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://FoxmothSummer",
+  "gumroad": "https://perfectodoart.gumroad.com/l/FoxmothSummer",
+  "image": "https://public-files.gumroad.com/i9qsrhhchgesbddbjgtzf0jvit9m",
   "bases": [
    "Foxmoth"
   ]
@@ -504,10 +504,10 @@
  {
   "name": "Summer Outfit For Novabeast",
   "collection": "summer",
-  "price": "Free–$20",
-  "jinxxy": "SummerOutfitNovabeast",
-  "gumroad": "",
-  "image": "",
+  "price": "$15–$20",
+  "jinxxy": "https://SummerOutfitNovabeast",
+  "gumroad": "https://perfectodoart.gumroad.com/l/SummerOutfitNovabeast",
+  "image": "https://public-files.gumroad.com/3273jz14lzh406ng8a1494mbuyge",
   "bases": [
    "Novabeast"
   ]
@@ -516,9 +516,9 @@
   "name": "Nurse Outfit For Winterpaw Male & Female",
   "collection": "nurse",
   "price": "Free–$20",
-  "jinxxy": "NurseWinterpaw",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://NurseWinterpaw",
+  "gumroad": "https://perfectodoart.gumroad.com/l/NurseWinterpaw",
+  "image": "https://public-files.gumroad.com/2hz77ohrl09w9cyzcpr909j40otf",
   "bases": [
    "Winterpaw"
   ]
@@ -527,9 +527,9 @@
   "name": "Pride Outfit For Masc Canine & Fem Canine",
   "collection": "pride",
   "price": "Free–$18",
-  "jinxxy": "WinterpawPrideMascFem",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://WinterpawPrideMascFem",
+  "gumroad": "https://perfectodoart.gumroad.com/l/WinterpawPrideMascFem",
+  "image": "https://public-files.gumroad.com/vuxrky7c8oj582y5n4j8jx8xbccm",
   "bases": [
    "MascCanine",
    "Femcanine"
@@ -539,9 +539,9 @@
   "name": "Pride Outfit For Novabeast & Foxmoth",
   "collection": "pride",
   "price": "Free–$18",
-  "jinxxy": "PrideOutfitNovaFox",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://PrideOutfitNovaFox",
+  "gumroad": "https://perfectodoart.gumroad.com/l/PrideOutfitNovaFox",
+  "image": "https://public-files.gumroad.com/025xhr0k1wbsgkto170aov5ikwx1",
   "bases": [
    "Novabeast",
    "Foxmoth"
@@ -550,10 +550,10 @@
  {
   "name": "Blazer Outfit For Viwi",
   "collection": "school",
-  "price": "Free–$16",
-  "jinxxy": "ViwiBlazerOutfit",
-  "gumroad": "",
-  "image": "",
+  "price": "$10–$16",
+  "jinxxy": "https://ViwiBlazerOutfit",
+  "gumroad": "https://perfectodoart.gumroad.com/l/ViwiBlazerOutfit",
+  "image": "https://public-files.gumroad.com/vox2s6u7phz635u0l6jw4pj53unm",
   "bases": [
    "Viwi"
   ]
@@ -562,9 +562,9 @@
   "name": "Anime / Furality Dress For Foxmoth",
   "collection": "anime",
   "price": "Free–$20",
-  "jinxxy": "FoxmothJapaneseOutfit",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://FoxmothJapaneseOutfit",
+  "gumroad": "https://perfectodoart.gumroad.com/l/FoxmothJapaneseOutfit",
+  "image": "https://public-files.gumroad.com/vlk8o6yk9r1vnhr2tpfwlcdec0p9",
   "bases": [
    "Foxmoth"
   ]
@@ -572,10 +572,10 @@
  {
   "name": "Cafe / Furality Apron For Novabeast",
   "collection": "anime",
-  "price": "Free–$12",
-  "jinxxy": "CafeApronNova",
-  "gumroad": "",
-  "image": "",
+  "price": "$7–$12",
+  "jinxxy": "https://CafeApronNova",
+  "gumroad": "https://perfectodoart.gumroad.com/l/CafeApronNova",
+  "image": "https://public-files.gumroad.com/rnfkc7a8qp5kkf81i87ob4t3elpk",
   "bases": [
    "Novabeast"
   ]
@@ -584,9 +584,9 @@
   "name": "Nurse Outfit For Nova, Foxmoth, Hyenid",
   "collection": "nurse",
   "price": "Free–$25",
-  "jinxxy": "NurseNovaFoxmothHyenid",
-  "gumroad": "",
-  "image": "",
+  "jinxxy": "https://NurseNovaFoxmothHyenid",
+  "gumroad": "https://perfectodoart.gumroad.com/l/NurseNovaFoxmothHyenid",
+  "image": "https://public-files.gumroad.com/ex8x3aaw62ox06tjdwvl8k227zfn",
   "bases": [
    "Novabeast",
    "Foxmoth",
@@ -596,10 +596,10 @@
  {
   "name": "Nurse Outfit For Milyeena",
   "collection": "nurse",
-  "price": "Free–$20",
-  "jinxxy": "NurseMilyeena",
-  "gumroad": "",
-  "image": "",
+  "price": "$16–$20",
+  "jinxxy": "https://NurseMilyeena",
+  "gumroad": "https://perfectodoart.gumroad.com/l/NurseMilyeena",
+  "image": "https://public-files.gumroad.com/2a6cp5sg2if5w65bewo7wq0uluu0",
   "bases": [
    "Milyeena"
   ]
@@ -607,10 +607,10 @@
  {
   "name": "Blazer Outfit For Novabeast",
   "collection": "school",
-  "price": "Free–$16",
-  "jinxxy": "BlazerOutfitNovabeast",
-  "gumroad": "",
-  "image": "",
+  "price": "$10–$16",
+  "jinxxy": "https://BlazerOutfitNovabeast",
+  "gumroad": "https://perfectodoart.gumroad.com/l/BlazerOutfitNovabeast",
+  "image": "https://public-files.gumroad.com/dt090afnqfkfw9x1sharx0keir9z",
   "bases": [
    "Novabeast"
   ]
@@ -618,10 +618,10 @@
  {
   "name": "Outfit For Foxmoth (Cute and Goth Themed)",
   "collection": "goth",
-  "price": "Free–$20",
-  "jinxxy": "CuteOutfitFoxmoth",
-  "gumroad": "",
-  "image": "",
+  "price": "$16–$20",
+  "jinxxy": "https://CuteOutfitFoxmoth",
+  "gumroad": "https://perfectodoart.gumroad.com/l/CuteOutfitFoxmoth",
+  "image": "https://public-files.gumroad.com/ns746y09ffzbrx4x1my1veeczama",
   "bases": [
    "Foxmoth"
   ]
@@ -629,19 +629,19 @@
  {
   "name": "Laced Collar (Cute and Goth Themed) | VRChat Accessory",
   "collection": "goth",
-  "price": "Free–$10",
-  "jinxxy": "LacedCollar",
-  "gumroad": "",
-  "image": "",
+  "price": "$7–$10",
+  "jinxxy": "https://LacedCollar",
+  "gumroad": "https://perfectodoart.gumroad.com/l/LacedCollar",
+  "image": "https://public-files.gumroad.com/qj0b4s1lv6kt458rcuouhtxgowm3",
   "bases": []
  },
  {
   "name": "Snowfall Cloud Follower and Avatar Particle VRChat (Can be used on any avatar)",
   "collection": "winter",
-  "price": "Free",
-  "jinxxy": "SnowfallCloud",
-  "gumroad": "",
-  "image": "",
+  "price": "$5",
+  "jinxxy": "https://SnowfallCloud",
+  "gumroad": "https://perfectodoart.gumroad.com/l/SnowfallCloud",
+  "image": "https://public-files.gumroad.com/o20p299zghbq2c3i5zo6fov457j1",
   "bases": [
    "Any avatar"
   ]
@@ -649,10 +649,10 @@
  {
   "name": "Christmas Outfit For Novabeast | VRChat Outfit (With Loafe's Thicc Addon)",
   "collection": "christmas",
-  "price": "Free",
-  "jinxxy": "NovabeastChristmasOutfit",
-  "gumroad": "",
-  "image": "",
+  "price": "$16",
+  "jinxxy": "https://NovabeastChristmasOutfit",
+  "gumroad": "https://perfectodoart.gumroad.com/l/NovabeastChristmasOutfit",
+  "image": "https://public-files.gumroad.com/92qc7if1q5a18wnn4cblbre6i94u",
   "bases": [
    "Novabeast"
   ]
@@ -660,12 +660,152 @@
  {
   "name": "Anime Sunglasses For Novabeast | VRChat Accessory (Anime)",
   "collection": "anime",
-  "price": "Free",
-  "jinxxy": "AnimeGlasses",
-  "gumroad": "",
-  "image": "",
+  "price": "$7",
+  "jinxxy": "https://AnimeGlasses",
+  "gumroad": "https://perfectodoart.gumroad.com/l/Animesunglasses",
+  "image": "https://public-files.gumroad.com/m2ldd9lgvjw4qjwgq8dtzqlp1vir",
   "bases": [
    "Novabeast"
   ]
+ },
+ {
+  "name": "Football Outfit For Novabeast 1.2",
+  "collection": "special",
+  "price": "Free",
+  "jinxxy": "",
+  "gumroad": "https://perfectodoart.gumroad.com/l/FootballOutfitNova",
+  "image": "https://public-files.gumroad.com/44c6i1w7co8k9i5l22sd60qkstwe",
+  "bases": [
+   "Novabeast 1.2"
+  ]
+ },
+ {
+  "name": "FREE Uro JJK Outfit For Novabeast 1.2",
+  "collection": "anime",
+  "price": "Free",
+  "jinxxy": "",
+  "gumroad": "https://perfectodoart.gumroad.com/l/JJKUROOUTFITNOVA",
+  "image": "https://public-files.gumroad.com/gcshf73jnzkcvfpohdnmzoo2kbbh",
+  "bases": [
+   "Novabeast 1.2"
+  ]
+ },
+ {
+  "name": "Free Winter Outfit For Novabeast 1.2",
+  "collection": "winter",
+  "price": "Free",
+  "jinxxy": "",
+  "gumroad": "https://perfectodoart.gumroad.com/l/FreeWinterOutfitNova",
+  "image": "https://public-files.gumroad.com/im0q3y0dawarj5hkcnj1q3fgvuur",
+  "bases": [
+   "Novabeast 1.2"
+  ]
+ },
+ {
+  "name": "Wrestler Outfit For Milbase",
+  "collection": "wrestler",
+  "price": "Free",
+  "jinxxy": "",
+  "gumroad": "https://perfectodoart.gumroad.com/l/WrestlerMilbase",
+  "image": "https://public-files.gumroad.com/y10u5kpym9vm2jkbr0vntmmftg7z",
+  "bases": [
+   "Milbase"
+  ]
+ },
+ {
+  "name": "Free St Patrick's Day Outfit For Novabeast",
+  "collection": "special",
+  "price": "Free",
+  "jinxxy": "",
+  "gumroad": "https://perfectodoart.gumroad.com/l/StPatrickOufit",
+  "image": "https://public-files.gumroad.com/a83tzbipvdoz4qax8zfgs303bxj3",
+  "bases": [
+   "Novabeast"
+  ]
+ },
+ {
+  "name": "FREE Plumbob With Moods and Audiolink | VRChat Accessory",
+  "collection": "special",
+  "price": "Free",
+  "jinxxy": "",
+  "gumroad": "https://perfectodoart.gumroad.com/l/FreePlumbob",
+  "image": "https://public-files.gumroad.com/yd8s2kosxnm0ewnq6d19e2wo8ncm",
+  "bases": []
+ },
+ {
+  "name": "FREE Halo With Audiolink | VRChat Accessory",
+  "collection": "special",
+  "price": "Free",
+  "jinxxy": "",
+  "gumroad": "https://perfectodoart.gumroad.com/l/HaloFree",
+  "image": "https://public-files.gumroad.com/s34dxxoqyz3rxs26o3ok3kdeo0ow",
+  "bases": []
+ },
+ {
+  "name": "Maul Collar | VRChat",
+  "collection": "special",
+  "price": "$500+",
+  "jinxxy": "",
+  "gumroad": "https://perfectodoart.gumroad.com/l/MaulCollar",
+  "image": "https://public-files.gumroad.com/9s18ufnkosa3dmvrao20vph6pnzc",
+  "bases": []
+ },
+ {
+  "name": "Anime Collar For Novabeast | VRChat Accessory (Anime)",
+  "collection": "anime",
+  "price": "$5+",
+  "jinxxy": "",
+  "gumroad": "https://perfectodoart.gumroad.com/l/AnimeCollar",
+  "image": "https://public-files.gumroad.com/s0daj0b9bhhxrdpp72u2xo9ba3xs",
+  "bases": [
+   "Novabeast"
+  ]
+ },
+ {
+  "name": "FREE Naruto Headband For Novabeast | VRChat Accessory (Anime)",
+  "collection": "anime",
+  "price": "Free",
+  "jinxxy": "",
+  "gumroad": "https://perfectodoart.gumroad.com/l/NarutoHeadband",
+  "image": "https://public-files.gumroad.com/dbm7k2k8sxzl5wru27zjwvmaupww",
+  "bases": [
+   "Novabeast"
+  ]
+ },
+ {
+  "name": "Bat Particle Warframe Inspired Ephemera | Halloween-Themed Avatar Particle VRChat",
+  "collection": "halloween",
+  "price": "$2+",
+  "jinxxy": "",
+  "gumroad": "https://perfectodoart.gumroad.com/l/BatParticle",
+  "image": "https://public-files.gumroad.com/cvc3y1yobcr7y7i71ln2nf1cke4u",
+  "bases": []
+ },
+ {
+  "name": "Zombie Nova – VRChat Novabeast Texture (SDK3) | Novabeast Halloween Avatar Skin",
+  "collection": "halloween",
+  "price": "$5+",
+  "jinxxy": "",
+  "gumroad": "https://perfectodoart.gumroad.com/l/ZombieNova",
+  "image": "https://public-files.gumroad.com/x2yqxjqpr40it3tij1s9ahb252gn",
+  "bases": []
+ },
+ {
+  "name": "Karlach Kimono Lineart",
+  "collection": "fx",
+  "price": "Free",
+  "jinxxy": "",
+  "gumroad": "https://perfectodoart.gumroad.com/l/KarlachKimono",
+  "image": "https://public-files.gumroad.com/5px8ensr48llpl01zirg3hyulxbn",
+  "bases": []
+ },
+ {
+  "name": "ShadowHeart Kimono Lineart",
+  "collection": "fx",
+  "price": "Free",
+  "jinxxy": "",
+  "gumroad": "https://perfectodoart.gumroad.com/l/ShadowHeartKimonoLineart",
+  "image": "https://public-files.gumroad.com/hxrr25ut2xegn6tkqosgvenh5eyg",
+  "bases": []
  }
 ]
