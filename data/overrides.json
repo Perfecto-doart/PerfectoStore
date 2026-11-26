@@ -1,0 +1,10 @@
+{
+  "_example": {
+    "collection": "winter",
+    "bases": [
+      "Novabeast",
+      "KFN"
+    ],
+    "hide": false
+  }
+}

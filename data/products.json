@@ -1,0 +1,700 @@
+[
+ {
+  "name": "Winter Puffer Jacket Outfit For Druffle Avatar",
+  "collection": "winter",
+  "price": "$12–20",
+  "jinxxy": "https://jinxxy.com/perfecto/WinterPufferDruffle",
+  "gumroad": "https://perfectodoart.gumroad.com/l/WinterPufferDruffle",
+  "image": "",
+  "bases": [
+   "Druffle"
+  ]
+ },
+ {
+  "name": "Winter Puffer Jacket Outfit For Novabeast 1.2 & KFN Avatar",
+  "collection": "winter",
+  "price": "$12–20",
+  "jinxxy": "https://jinxxy.com/perfecto/WinterPufferNovaKFN",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Novabeast 1.2",
+   "KFN"
+  ]
+ },
+ {
+  "name": "Winter Puffer Jacket Outfit For Northern Aspil Avatar",
+  "collection": "winter",
+  "price": "$12–20",
+  "jinxxy": "https://jinxxy.com/perfecto/WinterPufferNorthenAspil",
+  "gumroad": "https://perfectodoart.gumroad.com/l/WinterPufferNorthenAspil",
+  "image": "",
+  "bases": [
+   "Northern Aspil"
+  ]
+ },
+ {
+  "name": "Free Winter Outfit For Novabeast 1.2",
+  "collection": "winter",
+  "price": "Free",
+  "jinxxy": "",
+  "gumroad": "https://perfectodoart.gumroad.com/l/FreeWinterOutfitNova",
+  "image": "",
+  "bases": [
+   "Novabeast 1.2"
+  ]
+ },
+ {
+  "name": "Snowfall Cloud Follower and Avatar Particle (Audiolink, any avatar)",
+  "collection": "winter",
+  "price": "$5",
+  "jinxxy": "https://jinxxy.com/perfecto/SnowfallCloud",
+  "gumroad": "https://perfectodoart.gumroad.com/l/SnowfallCloud",
+  "image": "",
+  "bases": [
+   "Any avatar"
+  ]
+ },
+ {
+  "name": "Christmas Santa Outfit For Novabeast 1.2",
+  "collection": "christmas",
+  "price": "$18–22",
+  "jinxxy": "https://jinxxy.com/perfecto/SantaNova",
+  "gumroad": "https://perfectodoart.gumroad.com/l/SantaNova",
+  "image": "",
+  "bases": [
+   "Novabeast 1.2"
+  ]
+ },
+ {
+  "name": "Christmas Santa Outfit For Shawn The Shark (Darbi)",
+  "collection": "christmas",
+  "price": "$18–22",
+  "jinxxy": "https://jinxxy.com/perfecto/SantaOutfitShawn",
+  "gumroad": "https://perfectodoart.gumroad.com/l/SantaOutfitShawn",
+  "image": "",
+  "bases": [
+   "Shawn The Shark"
+  ]
+ },
+ {
+  "name": "Christmas Outfit For Novabeast (With Loafe's Thicc Addon)",
+  "collection": "christmas",
+  "price": "$16",
+  "jinxxy": "https://jinxxy.com/perfecto/NovabeastChristmasOutfit",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Novabeast"
+  ]
+ },
+ {
+  "name": "Christmas New Year Party Outfit For Ashbeast",
+  "collection": "christmas",
+  "price": "$16–20",
+  "jinxxy": "https://jinxxy.com/perfecto/AshbeastChristmas",
+  "gumroad": "https://perfectodoart.gumroad.com/l/AshbeastChristmas",
+  "image": "",
+  "bases": [
+   "Ashbeast"
+  ]
+ },
+ {
+  "name": "New Year Party Outfit For Legato Avatar",
+  "collection": "christmas",
+  "price": "$10–16",
+  "jinxxy": "https://jinxxy.com/perfecto/LegatoPartyNew",
+  "gumroad": "https://perfectodoart.gumroad.com/l/LegatoPartyNew",
+  "image": "",
+  "bases": [
+   "Legato"
+  ]
+ },
+ {
+  "name": "New Year Party Outfit For Novabeast 1.2 & KFN Avatar",
+  "collection": "christmas",
+  "price": "$10–16",
+  "jinxxy": "https://jinxxy.com/perfecto/PartyOutfitNovaKFN",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Novabeast 1.2",
+   "KFN"
+  ]
+ },
+ {
+  "name": "Valentine's Day Dress For Novabeast 1.2 & KFN",
+  "collection": "valentine",
+  "price": "$16–20",
+  "jinxxy": "https://jinxxy.com/perfecto/ValantineDress2026",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Novabeast 1.2",
+   "KFN"
+  ]
+ },
+ {
+  "name": "Beach Outfit For Femcanine, MascCanine & Feline",
+  "collection": "summer",
+  "price": "$16–30",
+  "jinxxy": "https://jinxxy.com/perfecto/WinterpawBeachOutfit",
+  "gumroad": "https://perfectodoart.gumroad.com/l/WinterpawBeachOutfit",
+  "image": "",
+  "bases": [
+   "Femcanine",
+   "MascCanine",
+   "Feline"
+  ]
+ },
+ {
+  "name": "Beach Outfit For Viwi",
+  "collection": "summer",
+  "price": "$16–22",
+  "jinxxy": "https://jinxxy.com/perfecto/BeachOutfitViwi",
+  "gumroad": "https://perfectodoart.gumroad.com/l/BeachOutfitViwi",
+  "image": "",
+  "bases": [
+   "Viwi"
+  ]
+ },
+ {
+  "name": "Beach Outfit For Vulrix",
+  "collection": "summer",
+  "price": "$16–22",
+  "jinxxy": "https://jinxxy.com/perfecto/VulrixBeachOutfit",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Vulrix"
+  ]
+ },
+ {
+  "name": "Beach Outfit For Druffle",
+  "collection": "summer",
+  "price": "$16–22",
+  "jinxxy": "https://jinxxy.com/perfecto/BeachOutfitDruffle",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Druffle"
+  ]
+ },
+ {
+  "name": "Beach Outfit For Novabeast 1.2",
+  "collection": "summer",
+  "price": "$16–22",
+  "jinxxy": "https://jinxxy.com/perfecto/BeachOutfitNova",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Novabeast 1.2"
+  ]
+ },
+ {
+  "name": "Summer Outfit For Foxmoth",
+  "collection": "summer",
+  "price": "$15–20",
+  "jinxxy": "https://jinxxy.com/perfecto/FoxmothSummer",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Foxmoth"
+  ]
+ },
+ {
+  "name": "Summer Outfit For Novabeast",
+  "collection": "summer",
+  "price": "$15–20",
+  "jinxxy": "https://jinxxy.com/perfecto/SummerOutfitNovabeast",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Novabeast"
+  ]
+ },
+ {
+  "name": "Yoga Outfit For Vulrix",
+  "collection": "yoga",
+  "price": "$10–16",
+  "jinxxy": "https://jinxxy.com/perfecto/YogaOutfitVulrix",
+  "gumroad": "https://perfectodoart.gumroad.com/l/YogaOutfitVulrix",
+  "image": "",
+  "bases": [
+   "Vulrix"
+  ]
+ },
+ {
+  "name": "Yoga Outfit For Femcanine, MascCanine & Feline",
+  "collection": "yoga",
+  "price": "$10–25",
+  "jinxxy": "https://jinxxy.com/perfecto/WinterpawYogaOutfit",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Femcanine",
+   "MascCanine",
+   "Feline"
+  ]
+ },
+ {
+  "name": "Yoga Outfit For Druffle",
+  "collection": "yoga",
+  "price": "$10–16",
+  "jinxxy": "https://jinxxy.com/perfecto/DruffleYogaOutfit",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Druffle"
+  ]
+ },
+ {
+  "name": "Yoga Outfit For Fluffgan & Nyxian",
+  "collection": "yoga",
+  "price": "$10–22",
+  "jinxxy": "https://jinxxy.com/perfecto/FluffganNyxianYogaOutfit",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Fluffgan",
+   "Nyxian"
+  ]
+ },
+ {
+  "name": "Yoga Outfit For Viwi",
+  "collection": "yoga",
+  "price": "$10–16",
+  "jinxxy": "https://jinxxy.com/perfecto/YogaOutfitViwi",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Viwi"
+  ]
+ },
+ {
+  "name": "Yoga Outfit For Nardoragon 3.1",
+  "collection": "yoga",
+  "price": "$10–16",
+  "jinxxy": "https://jinxxy.com/perfecto/NardoYogaOutfit",
+  "gumroad": "https://perfectodoart.gumroad.com/l/NardoYogaOutfit",
+  "image": "",
+  "bases": [
+   "Nardoragon 3.1"
+  ]
+ },
+ {
+  "name": "Yoga Outfit For Foxmoth, Shaienne & Shawn The Shark",
+  "collection": "yoga",
+  "price": "$10–25",
+  "jinxxy": "https://jinxxy.com/perfecto/YogaFoxmothShawn",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Foxmoth",
+   "Shaienne",
+   "Shawn The Shark"
+  ]
+ },
+ {
+  "name": "Yoga Outfit For Novabeast 1.2, KFN & PsyFN",
+  "collection": "yoga",
+  "price": "$10–16",
+  "jinxxy": "https://jinxxy.com/perfecto/YogaOutfitNova",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Novabeast 1.2",
+   "KFN",
+   "PsyFN"
+  ]
+ },
+ {
+  "name": "Flutty Pumpkin Outfit For Druffle",
+  "collection": "halloween",
+  "price": "$10–16",
+  "jinxxy": "https://jinxxy.com/perfecto/FluttyPumpkinDruffle",
+  "gumroad": "https://perfectodoart.gumroad.com/l/FluttyPumpkinDruffle",
+  "image": "",
+  "bases": [
+   "Druffle"
+  ]
+ },
+ {
+  "name": "FREE Ghost Halloween Outfit For Novabeast 1.2",
+  "collection": "halloween",
+  "price": "Free–$10",
+  "jinxxy": "https://jinxxy.com/perfecto/GhostHalloweenOutfit",
+  "gumroad": "https://perfectodoart.gumroad.com/l/GhostHalloweenOutfit",
+  "image": "",
+  "bases": [
+   "Novabeast 1.2"
+  ]
+ },
+ {
+  "name": "Halloween Fall Outfit For Novabeast 1.2",
+  "collection": "halloween",
+  "price": "$10–16",
+  "jinxxy": "https://jinxxy.com/perfecto/FallOutfitNova",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Novabeast 1.2"
+  ]
+ },
+ {
+  "name": "Halloween Mummy Outfit For Foxmoth",
+  "collection": "halloween",
+  "price": "$16–20",
+  "jinxxy": "https://jinxxy.com/perfecto/FoxmothMummy",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Foxmoth"
+  ]
+ },
+ {
+  "name": "Halloween Mummy Outfit For Novabeast 1.2 & KFN",
+  "collection": "halloween",
+  "price": "$16–20",
+  "jinxxy": "https://jinxxy.com/perfecto/MummyNovaKFN",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Novabeast 1.2",
+   "KFN"
+  ]
+ },
+ {
+  "name": "School Outfit For Foxmoth & Shaienne",
+  "collection": "school",
+  "price": "$16–25",
+  "jinxxy": "https://jinxxy.com/perfecto/SchoolOutfitDarbi",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Foxmoth",
+   "Shaienne"
+  ]
+ },
+ {
+  "name": "School Outfit For Novabeast 1.2",
+  "collection": "school",
+  "price": "$16–22",
+  "jinxxy": "https://jinxxy.com/perfecto/SchoolOutfitNova",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Novabeast 1.2"
+  ]
+ },
+ {
+  "name": "Blazer Outfit For Nardo",
+  "collection": "school",
+  "price": "$10–16",
+  "jinxxy": "https://jinxxy.com/perfecto/NardoBlazerOutfit",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Nardoragon"
+  ]
+ },
+ {
+  "name": "Blazer Outfit For Viwi",
+  "collection": "school",
+  "price": "$10–16",
+  "jinxxy": "https://jinxxy.com/perfecto/ViwiBlazerOutfit",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Viwi"
+  ]
+ },
+ {
+  "name": "Blazer Outfit For Novabeast",
+  "collection": "school",
+  "price": "$10–16",
+  "jinxxy": "https://jinxxy.com/perfecto/BlazerOutfitNovabeast",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Novabeast"
+  ]
+ },
+ {
+  "name": "Sports Jacket Outfit For Spaceyeen, Foxmoth & Legato",
+  "collection": "sports",
+  "price": "$15.99–35",
+  "jinxxy": "https://jinxxy.com/perfecto/SpaceyeenFoxmothLegatoSportsjacket",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Spaceyeen",
+   "Foxmoth",
+   "Legato"
+  ]
+ },
+ {
+  "name": "Sports Jacket Outfit For Novabeast 1.2 & KFN",
+  "collection": "sports",
+  "price": "$16–20",
+  "jinxxy": "https://jinxxy.com/perfecto/SportsJacketNovaKFN",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Novabeast 1.2",
+   "KFN"
+  ]
+ },
+ {
+  "name": "Wrestler Outfit For Druffle Avatar",
+  "collection": "wrestler",
+  "price": "$10–16",
+  "jinxxy": "https://jinxxy.com/perfecto/WrestlerDruffle",
+  "gumroad": "https://perfectodoart.gumroad.com/l/WrestlerDruffle",
+  "image": "",
+  "bases": [
+   "Druffle"
+  ]
+ },
+ {
+  "name": "Wrestler Outfit For Novabeast 1.2 & KFN",
+  "collection": "wrestler",
+  "price": "$10–16",
+  "jinxxy": "https://jinxxy.com/perfecto/WrestlerNovaKFN",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Novabeast 1.2",
+   "KFN"
+  ]
+ },
+ {
+  "name": "Wrestler Outfit For Northern Aspil Avatar",
+  "collection": "wrestler",
+  "price": "$10–16",
+  "jinxxy": "https://jinxxy.com/perfecto/WrestlerOutfitNA",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Northern Aspil"
+  ]
+ },
+ {
+  "name": "Robinhood Outfit For Novabeast",
+  "collection": "robin",
+  "price": "$16–22",
+  "jinxxy": "https://jinxxy.com/perfecto/RobinhoodNovabeast",
+  "gumroad": "https://perfectodoart.gumroad.com/l/RobinhoodNovabeast",
+  "image": "",
+  "bases": [
+   "Novabeast"
+  ]
+ },
+ {
+  "name": "Robinhood Outfit For Druffle",
+  "collection": "robin",
+  "price": "$16–22",
+  "jinxxy": "https://jinxxy.com/perfecto/RobinhoodOutfitDruffle",
+  "gumroad": "https://perfectodoart.gumroad.com/l/RobinhoodOutfitDruffle",
+  "image": "",
+  "bases": [
+   "Druffle"
+  ]
+ },
+ {
+  "name": "Nurse Outfit For Winterpaw Male & Female",
+  "collection": "nurse",
+  "price": "$12–20",
+  "jinxxy": "https://jinxxy.com/perfecto/NurseWinterpaw",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Winterpaw"
+  ]
+ },
+ {
+  "name": "Nurse Outfit For Nova, Foxmoth, Hyenid",
+  "collection": "nurse",
+  "price": "$12–25",
+  "jinxxy": "https://jinxxy.com/perfecto/NurseNovaFoxmothHyenid",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Novabeast",
+   "Foxmoth",
+   "Hyenid"
+  ]
+ },
+ {
+  "name": "Nurse Outfit For Milyeena",
+  "collection": "nurse",
+  "price": "$16–20",
+  "jinxxy": "https://jinxxy.com/perfecto/NurseMilyeena",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Milyeena"
+  ]
+ },
+ {
+  "name": "Pride Outfit For Masc Canine & Fem Canine",
+  "collection": "pride",
+  "price": "$10–18",
+  "jinxxy": "https://jinxxy.com/perfecto/WinterpawPrideMascFem",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "MascCanine",
+   "Femcanine"
+  ]
+ },
+ {
+  "name": "Pride Outfit For Novabeast & Foxmoth",
+  "collection": "pride",
+  "price": "$10–18",
+  "jinxxy": "https://jinxxy.com/perfecto/PrideOutfitNovaFox",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Novabeast",
+   "Foxmoth"
+  ]
+ },
+ {
+  "name": "Outfit For Foxmoth (Cute and Goth Themed)",
+  "collection": "goth",
+  "price": "$16–20",
+  "jinxxy": "https://jinxxy.com/perfecto/CuteOutfitFoxmoth",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Foxmoth"
+  ]
+ },
+ {
+  "name": "Laced Collar (Cute and Goth Themed) | VRChat Accessory",
+  "collection": "goth",
+  "price": "$7–10",
+  "jinxxy": "https://jinxxy.com/perfecto/LacedCollar",
+  "gumroad": "",
+  "image": "",
+  "bases": []
+ },
+ {
+  "name": "Maki JJK Outfit For Novabeast 1.2",
+  "collection": "anime",
+  "price": "$12–16",
+  "jinxxy": "https://jinxxy.com/perfecto/NovabeastMakiOutfit",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Novabeast 1.2"
+  ]
+ },
+ {
+  "name": "Anime / Furality Dress For Foxmoth",
+  "collection": "anime",
+  "price": "$16–20",
+  "jinxxy": "https://jinxxy.com/perfecto/FoxmothJapaneseOutfit",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Foxmoth"
+  ]
+ },
+ {
+  "name": "Cafe / Furality Apron For Novabeast",
+  "collection": "anime",
+  "price": "$7–12",
+  "jinxxy": "https://jinxxy.com/perfecto/CafeApronNova",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Novabeast"
+  ]
+ },
+ {
+  "name": "Anime Sunglasses For Novabeast | VRChat Accessory",
+  "collection": "anime",
+  "price": "$7",
+  "jinxxy": "https://jinxxy.com/perfecto/AnimeGlasses",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Novabeast"
+  ]
+ },
+ {
+  "name": "Brooklyn Sweater Meme Outfit For Novabeast",
+  "collection": "special",
+  "price": "$5–10",
+  "jinxxy": "https://jinxxy.com/perfecto/BrooklynNovabeast",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Novabeast"
+  ]
+ },
+ {
+  "name": "Brooklyn Sweater Meme Outfit For Space Yeen",
+  "collection": "special",
+  "price": "$5–10",
+  "jinxxy": "https://jinxxy.com/perfecto/BrooklynSpaceYeen",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Spaceyeen"
+  ]
+ },
+ {
+  "name": "Lidus Outfit For Shawn The Shark (Darbi)",
+  "collection": "special",
+  "price": "$18–22",
+  "jinxxy": "https://jinxxy.com/perfecto/LidusShawn",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Shawn The Shark"
+  ]
+ },
+ {
+  "name": "Perfecto's Ultra FREE NovaRaider Outfit For Novabeast 1.2",
+  "collection": "special",
+  "price": "Free–$10",
+  "jinxxy": "https://jinxxy.com/perfecto/TombNova",
+  "gumroad": "https://perfectodoart.gumroad.com/l/TombNova",
+  "image": "",
+  "bases": [
+   "Novabeast 1.2"
+  ]
+ },
+ {
+  "name": "Reference Sheet For Viwi",
+  "collection": "fx",
+  "price": "$10–20",
+  "jinxxy": "https://jinxxy.com/perfecto/ViwiRefSheet",
+  "gumroad": "",
+  "image": "",
+  "bases": [
+   "Viwi"
+  ]
+ },
+ {
+  "name": "ShadowHeart Kimono Lineart",
+  "collection": "fx",
+  "price": "See Gumroad",
+  "jinxxy": "",
+  "gumroad": "https://perfectodoart.gumroad.com/l/ShadowHeartKimonoLineart",
+  "image": "",
+  "bases": []
+ },
+ {
+  "name": "Karlach Kimono Lineart",
+  "collection": "fx",
+  "price": "See Gumroad",
+  "jinxxy": "",
+  "gumroad": "https://perfectodoart.gumroad.com/l/KarlachKimono",
+  "image": "",
+  "bases": []
+ }
+]

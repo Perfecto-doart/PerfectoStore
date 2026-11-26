@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Perfecto Outfit Store</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* VOICE: playful boutique for VRChat avatar clothing, warm and confident
+   IDEA: a shop window that re-dresses itself each season; rails of hangers
+   PICTURE: season rails of outfit cards, the current season first
+   COLOUR and TYPE: tomato band, deep ink, sunflower accent, Gumroad pink; Fredoka + Nunito
+   LAYOUT: header band; avatar + category sidebar left, season rails centre, WIP image grid right */
+:root{color-scheme:light dark;
+--bg:light-dark(#ffffff,#141217);--ink:light-dark(#1d1a2e,#f4f0ea);--soft:light-dark(#5d5872,#b9b3c7);
+--panel:light-dark(#fff4ee,#201d26);--line:light-dark(#f1ded3,#322d3b);
+--tomato:#ff5a3c;--sun:#ffd23f;--pink:#ff90e8;--band-ink:#1d1a2e}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Nunito,system-ui,sans-serif;overflow-x:clip}
+h1,h2,h3{font-family:Fredoka,Nunito,sans-serif;margin:0;line-height:1.05;text-wrap:balance}
+a{color:inherit}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.wrap{max-width:1480px;margin:0 auto}
+/* header */
+.hero{background:var(--tomato);color:var(--band-ink);padding:22px max(4vw,16px)}
+.hero .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 28px}
+.hero h1{font-size:clamp(32px,4.4vw,48px);font-weight:700}
+.hero p{margin:6px 0 0;font-weight:700;font-size:16px}
+.links{display:flex;flex-wrap:wrap;gap:8px}
+.pill{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border-radius:999px;background:var(--band-ink);color:#fff;text-decoration:none;font-weight:800;font-size:15px}
+.pill.alt{background:#fff;color:var(--band-ink)}
+/* 3-column shop */
+.shop{display:grid;grid-template-columns:240px minmax(0,1fr) 300px;gap:28px;align-items:start;padding:28px max(4vw,16px) 48px}
+.side,.wip{position:sticky;top:16px;max-height:calc(100vh - 32px);overflow-y:auto;scrollbar-width:thin}
+.side h2,.wip h2{font-size:20px;margin:0 0 10px}
+.side h2+.list{margin-bottom:22px}
+.list{display:flex;flex-direction:column;gap:4px}
+.item{display:flex;align-items:center;gap:10px;min-height:44px;padding:4px 10px 4px 4px;border-radius:14px;border:0;background:none;text-align:start;cursor:pointer;font-weight:700;font-size:15px;width:100%}
+.item:hover{background:var(--panel)}
+.item[aria-current=true]{background:var(--ink);color:var(--bg)}
+.item small{margin-inline-start:auto;color:var(--soft);font-weight:700}
+.item[aria-current=true] small{color:inherit;opacity:.7}
+.ava{flex:none;width:40px;height:40px;border-radius:50%;overflow:hidden;position:relative;background:var(--c);display:grid;place-items:center;font:700 15px Fredoka,sans-serif;color:var(--band-ink);border:2px solid var(--bg);box-shadow:0 0 0 2px var(--c)}
+.ava img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.dot{flex:none;width:40px;height:28px;display:grid;place-items:center}
+.dot i{width:14px;height:14px;border-radius:50%;background:var(--c)}
+.search{width:100%;min-height:44px;font:16px Nunito,sans-serif;padding:0 14px;border-radius:12px;border:2px solid var(--line);background:var(--bg);color:var(--ink);margin-bottom:18px}
+/* seasons */
+.season{margin-bottom:34px}
+.shead{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-bottom:14px}
+.shead h2{font-size:clamp(26px,3vw,34px)}
+.when{font-size:13px;font-weight:800;padding:4px 12px;border-radius:999px;background:var(--panel);color:var(--soft);white-space:nowrap}
+.when.now{background:var(--sun);color:var(--band-ink)}
+.arrows{margin-inline-start:auto;display:flex;gap:6px}
+.arrows button{width:44px;height:44px;border-radius:50%;border:2px solid var(--line);background:var(--bg);cursor:pointer;font-size:18px;font-weight:800}
+.rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:thin}
+.rail .card{flex:0 0 220px;scroll-snap-align:start}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
+.card{background:var(--panel);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--line)}
+.thumb{position:relative;aspect-ratio:1/1;background:var(--c)}
+.thumb svg,.thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.free{position:absolute;top:10px;left:10px;background:var(--sun);color:var(--band-ink);font-weight:800;font-size:13px;padding:3px 10px;border-radius:999px}
+.body{padding:12px 14px 14px;display:flex;flex-direction:column;gap:4px;flex:1}
+.card h3{font-size:18px;font-weight:600}
+.av{margin:0;font-size:14px;color:var(--soft)}
+.price{font-weight:800;font-size:16px;white-space:nowrap;margin-top:auto;padding-top:6px}
+.buy{display:grid;grid-template-columns:repeat(auto-fit,minmax(0,1fr));gap:6px;margin-top:6px}
+.btn{min-height:44px;display:flex;align-items:center;justify-content:center;border-radius:12px;text-decoration:none;font-weight:800;font-size:14px}
+.btn.j{background:var(--ink);color:var(--bg)}
+.btn.g{background:var(--pink);color:var(--band-ink)}
+.fhead{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-bottom:16px}
+.fhead h2{font-size:34px}
+.fhead p{margin:0;color:var(--soft);font-weight:700}
+.back{min-height:44px;padding:0 16px;border-radius:999px;border:2px solid var(--line);background:var(--bg);cursor:pointer;font-weight:800}
+.empty{padding:40px 20px;text-align:center;background:var(--panel);border-radius:20px;color:var(--soft);font-weight:700}
+/* wip */
+.wip p{margin:-4px 0 12px;color:var(--soft);font-size:14px}
+.shots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.shot{position:relative;aspect-ratio:1/1;border-radius:12px;overflow:hidden;background:var(--c);border:0;padding:0;cursor:zoom-in}
+.shot svg,.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.lb{position:fixed;inset:0;background:rgb(10 8 14/.86);display:none;place-items:center;z-index:20;padding:24px;cursor:zoom-out}
+.lb.on{display:grid}
+.lb>div{width:min(90vw,720px);aspect-ratio:1/1;position:relative;border-radius:18px;overflow:hidden}
+.lb svg,.lb img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:var(--c)}
+footer{border-top:1px solid var(--line);color:var(--soft);font-size:14px;padding:20px max(4vw,16px)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+@media(max-width:1180px){.shop{grid-template-columns:220px minmax(0,1fr)}.wip{grid-column:1/-1;position:static;max-height:none}
+ .shots{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}}
+@media(max-width:760px){.shop{grid-template-columns:minmax(0,1fr)}.side{position:static;max-height:none}
+ .side .list{flex-direction:row;overflow-x:auto;gap:6px;padding-bottom:6px}
+ .side .item{flex:none;width:auto;border:2px solid var(--line);border-radius:999px;padding-inline-end:14px}
+ .side .item small{display:none}.rail .card{flex-basis:190px}}
+@media(prefers-reduced-motion:no-preference){.rail{scroll-behavior:smooth}.card{transition:transform .2s}.card:hover{transform:translateY(-3px)}}
+</style>
+</head>
+<body>
+
+<header class="hero"><div class="wrap">
+  <div><h1>Perfecto's outfit store</h1><p>VRChat clothing, props and textures. Buy on Jinxxy or Gumroad.</p></div>
+  <div class="links">
+    <a class="pill" href="https://jinxxy.com/perfecto/products">Jinxxy</a>
+    <a class="pill alt" href="https://perfectodoart.gumroad.com/">Gumroad</a>
+    <a class="pill alt" href="https://twitter.com/Perfecto_doart">Twitter</a>
+    <a class="pill alt" href="https://instagram.com/perfecto_bene">Instagram</a>
+  </div>
+</div></header>
+
+<div class="wrap shop">
+  <nav class="side" aria-label="Browse">
+    <label for="q" style="position:absolute;left:-9999px">Search outfits</label>
+    <input id="q" class="search" type="search" placeholder="Search outfits">
+    <h2>Shop by avatar</h2>
+    <div class="list" id="avatars"></div>
+    <h2>Outfit types</h2>
+    <div class="list" id="types"></div>
+  </nav>
+
+  <main id="main" aria-live="polite"></main>
+
+  <aside class="wip" aria-label="Work in progress">
+    <h2>Work in progress</h2>
+    <p id="wipnote">Sample tiles until your Discord channel is connected.</p>
+    <div class="shots" id="shots"></div>
+  </aside>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-label="WIP image"><div id="lbimg"></div></div>
+
+<footer><div class="wrap">
+  <span>© Perfecto. Purchases happen on Jinxxy and Gumroad.</span>
+  <span>Commissions open: Discord perfecto1205</span>
+</div></footer>
+
+<script>
+{
+/* ---------- outfit types (collections) ---------- */
+const COLS = {
+  winter:["Winter","#7cc6fe"], christmas:["Christmas & New Year","#e8484c"], valentine:["Valentine","#ff6f91"],
+  summer:["Summer & beach","#ffb347"], yoga:["Yoga","#9be3b5"], halloween:["Halloween","#ff8a3d"],
+  school:["School & blazers","#6c7bd9"], sports:["Sports jackets","#29b6a6"], wrestler:["Wrestler","#f2c14e"],
+  robin:["Robinhood","#5aa864"], nurse:["Nurse","#ff9fb5"], pride:["Pride","#c084fc"], goth:["Cute & goth","#5b4d6e"],
+  anime:["Anime & Furality","#ff6fa5"], special:["Memes & specials","#a3a0ff"], fx:["Effects & art","#58d0e8"]
+};
+/* ---------- seasons: [collection key, title, start month-day, end month-day] ---------- */
+const SEASONS = [
+  ["winter","Winter","11-01","02-28"],
+  ["christmas","Christmas","12-01","01-05"],
+  ["valentine","Valentine's","02-01","02-14"],
+  ["yoga","Yoga","01-01","03-31"],
+  ["summer","Summer","04-01","08-31"]
+];
+/* ---------- avatar preview images: "Base name": "images/avatars/file.png" ---------- */
+const AVATAR_IMG = {};
+const FALLBACK = [{"name":"Winter Puffer Jacket Outfit For Druffle Avatar","collection":"winter","price":"$12–20","jinxxy":"https://jinxxy.com/perfecto/WinterPufferDruffle","gumroad":"https://perfectodoart.gumroad.com/l/WinterPufferDruffle","image":"","bases":["Druffle"]},{"name":"Winter Puffer Jacket Outfit For Novabeast 1.2 & KFN Avatar","collection":"winter","price":"$12–20","jinxxy":"https://jinxxy.com/perfecto/WinterPufferNovaKFN","gumroad":"","image":"","bases":["Novabeast 1.2","KFN"]},{"name":"Winter Puffer Jacket Outfit For Northern Aspil Avatar","collection":"winter","price":"$12–20","jinxxy":"https://jinxxy.com/perfecto/WinterPufferNorthenAspil","gumroad":"https://perfectodoart.gumroad.com/l/WinterPufferNorthenAspil","image":"","bases":["Northern Aspil"]},{"name":"Free Winter Outfit For Novabeast 1.2","collection":"winter","price":"Free","jinxxy":"","gumroad":"https://perfectodoart.gumroad.com/l/FreeWinterOutfitNova","image":"","bases":["Novabeast 1.2"]},{"name":"Snowfall Cloud Follower and Avatar Particle (Audiolink, any avatar)","collection":"winter","price":"$5","jinxxy":"https://jinxxy.com/perfecto/SnowfallCloud","gumroad":"https://perfectodoart.gumroad.com/l/SnowfallCloud","image":"","bases":["Any avatar"]},{"name":"Christmas Santa Outfit For Novabeast 1.2","collection":"christmas","price":"$18–22","jinxxy":"https://jinxxy.com/perfecto/SantaNova","gumroad":"https://perfectodoart.gumroad.com/l/SantaNova","image":"","bases":["Novabeast 1.2"]},{"name":"Christmas Santa Outfit For Shawn The Shark (Darbi)","collection":"christmas","price":"$18–22","jinxxy":"https://jinxxy.com/perfecto/SantaOutfitShawn","gumroad":"https://perfectodoart.gumroad.com/l/SantaOutfitShawn","image":"","bases":["Shawn The Shark"]},{"name":"Christmas Outfit For Novabeast (With Loafe's Thicc Addon)","collection":"christmas","price":"$16","jinxxy":"https://jinxxy.com/perfecto/NovabeastChristmasOutfit","gumroad":"","image":"","bases":["Novabeast"]},{"name":"Christmas New Year Party Outfit For Ashbeast","collection":"christmas","price":"$16–20","jinxxy":"https://jinxxy.com/perfecto/AshbeastChristmas","gumroad":"https://perfectodoart.gumroad.com/l/AshbeastChristmas","image":"","bases":["Ashbeast"]},{"name":"New Year Party Outfit For Legato Avatar","collection":"christmas","price":"$10–16","jinxxy":"https://jinxxy.com/perfecto/LegatoPartyNew","gumroad":"https://perfectodoart.gumroad.com/l/LegatoPartyNew","image":"","bases":["Legato"]},{"name":"New Year Party Outfit For Novabeast 1.2 & KFN Avatar","collection":"christmas","price":"$10–16","jinxxy":"https://jinxxy.com/perfecto/PartyOutfitNovaKFN","gumroad":"","image":"","bases":["Novabeast 1.2","KFN"]},{"name":"Valentine's Day Dress For Novabeast 1.2 & KFN","collection":"valentine","price":"$16–20","jinxxy":"https://jinxxy.com/perfecto/ValantineDress2026","gumroad":"","image":"","bases":["Novabeast 1.2","KFN"]},{"name":"Beach Outfit For Femcanine, MascCanine & Feline","collection":"summer","price":"$16–30","jinxxy":"https://jinxxy.com/perfecto/WinterpawBeachOutfit","gumroad":"https://perfectodoart.gumroad.com/l/WinterpawBeachOutfit","image":"","bases":["Femcanine","MascCanine","Feline"]},{"name":"Beach Outfit For Viwi","collection":"summer","price":"$16–22","jinxxy":"https://jinxxy.com/perfecto/BeachOutfitViwi","gumroad":"https://perfectodoart.gumroad.com/l/BeachOutfitViwi","image":"","bases":["Viwi"]},{"name":"Beach Outfit For Vulrix","collection":"summer","price":"$16–22","jinxxy":"https://jinxxy.com/perfecto/VulrixBeachOutfit","gumroad":"","image":"","bases":["Vulrix"]},{"name":"Beach Outfit For Druffle","collection":"summer","price":"$16–22","jinxxy":"https://jinxxy.com/perfecto/BeachOutfitDruffle","gumroad":"","image":"","bases":["Druffle"]},{"name":"Beach Outfit For Novabeast 1.2","collection":"summer","price":"$16–22","jinxxy":"https://jinxxy.com/perfecto/BeachOutfitNova","gumroad":"","image":"","bases":["Novabeast 1.2"]},{"name":"Summer Outfit For Foxmoth","collection":"summer","price":"$15–20","jinxxy":"https://jinxxy.com/perfecto/FoxmothSummer","gumroad":"","image":"","bases":["Foxmoth"]},{"name":"Summer Outfit For Novabeast","collection":"summer","price":"$15–20","jinxxy":"https://jinxxy.com/perfecto/SummerOutfitNovabeast","gumroad":"","image":"","bases":["Novabeast"]},{"name":"Yoga Outfit For Vulrix","collection":"yoga","price":"$10–16","jinxxy":"https://jinxxy.com/perfecto/YogaOutfitVulrix","gumroad":"https://perfectodoart.gumroad.com/l/YogaOutfitVulrix","image":"","bases":["Vulrix"]},{"name":"Yoga Outfit For Femcanine, MascCanine & Feline","collection":"yoga","price":"$10–25","jinxxy":"https://jinxxy.com/perfecto/WinterpawYogaOutfit","gumroad":"","image":"","bases":["Femcanine","MascCanine","Feline"]},{"name":"Yoga Outfit For Druffle","collection":"yoga","price":"$10–16","jinxxy":"https://jinxxy.com/perfecto/DruffleYogaOutfit","gumroad":"","image":"","bases":["Druffle"]},{"name":"Yoga Outfit For Fluffgan & Nyxian","collection":"yoga","price":"$10–22","jinxxy":"https://jinxxy.com/perfecto/FluffganNyxianYogaOutfit","gumroad":"","image":"","bases":["Fluffgan","Nyxian"]},{"name":"Yoga Outfit For Viwi","collection":"yoga","price":"$10–16","jinxxy":"https://jinxxy.com/perfecto/YogaOutfitViwi","gumroad":"","image":"","bases":["Viwi"]},{"name":"Yoga Outfit For Nardoragon 3.1","collection":"yoga","price":"$10–16","jinxxy":"https://jinxxy.com/perfecto/NardoYogaOutfit","gumroad":"https://perfectodoart.gumroad.com/l/NardoYogaOutfit","image":"","bases":["Nardoragon 3.1"]},{"name":"Yoga Outfit For Foxmoth, Shaienne & Shawn The Shark","collection":"yoga","price":"$10–25","jinxxy":"https://jinxxy.com/perfecto/YogaFoxmothShawn","gumroad":"","image":"","bases":["Foxmoth","Shaienne","Shawn The Shark"]},{"name":"Yoga Outfit For Novabeast 1.2, KFN & PsyFN","collection":"yoga","price":"$10–16","jinxxy":"https://jinxxy.com/perfecto/YogaOutfitNova","gumroad":"","image":"","bases":["Novabeast 1.2","KFN","PsyFN"]},{"name":"Flutty Pumpkin Outfit For Druffle","collection":"halloween","price":"$10–16","jinxxy":"https://jinxxy.com/perfecto/FluttyPumpkinDruffle","gumroad":"https://perfectodoart.gumroad.com/l/FluttyPumpkinDruffle","image":"","bases":["Druffle"]},{"name":"FREE Ghost Halloween Outfit For Novabeast 1.2","collection":"halloween","price":"Free–$10","jinxxy":"https://jinxxy.com/perfecto/GhostHalloweenOutfit","gumroad":"https://perfectodoart.gumroad.com/l/GhostHalloweenOutfit","image":"","bases":["Novabeast 1.2"]},{"name":"Halloween Fall Outfit For Novabeast 1.2","collection":"halloween","price":"$10–16","jinxxy":"https://jinxxy.com/perfecto/FallOutfitNova","gumroad":"","image":"","bases":["Novabeast 1.2"]},{"name":"Halloween Mummy Outfit For Foxmoth","collection":"halloween","price":"$16–20","jinxxy":"https://jinxxy.com/perfecto/FoxmothMummy","gumroad":"","image":"","bases":["Foxmoth"]},{"name":"Halloween Mummy Outfit For Novabeast 1.2 & KFN","collection":"halloween","price":"$16–20","jinxxy":"https://jinxxy.com/perfecto/MummyNovaKFN","gumroad":"","image":"","bases":["Novabeast 1.2","KFN"]},{"name":"School Outfit For Foxmoth & Shaienne","collection":"school","price":"$16–25","jinxxy":"https://jinxxy.com/perfecto/SchoolOutfitDarbi","gumroad":"","image":"","bases":["Foxmoth","Shaienne"]},{"name":"School Outfit For Novabeast 1.2","collection":"school","price":"$16–22","jinxxy":"https://jinxxy.com/perfecto/SchoolOutfitNova","gumroad":"","image":"","bases":["Novabeast 1.2"]},{"name":"Blazer Outfit For Nardo","collection":"school","price":"$10–16","jinxxy":"https://jinxxy.com/perfecto/NardoBlazerOutfit","gumroad":"","image":"","bases":["Nardoragon"]},{"name":"Blazer Outfit For Viwi","collection":"school","price":"$10–16","jinxxy":"https://jinxxy.com/perfecto/ViwiBlazerOutfit","gumroad":"","image":"","bases":["Viwi"]},{"name":"Blazer Outfit For Novabeast","collection":"school","price":"$10–16","jinxxy":"https://jinxxy.com/perfecto/BlazerOutfitNovabeast","gumroad":"","image":"","bases":["Novabeast"]},{"name":"Sports Jacket Outfit For Spaceyeen, Foxmoth & Legato","collection":"sports","price":"$15.99–35","jinxxy":"https://jinxxy.com/perfecto/SpaceyeenFoxmothLegatoSportsjacket","gumroad":"","image":"","bases":["Spaceyeen","Foxmoth","Legato"]},{"name":"Sports Jacket Outfit For Novabeast 1.2 & KFN","collection":"sports","price":"$16–20","jinxxy":"https://jinxxy.com/perfecto/SportsJacketNovaKFN","gumroad":"","image":"","bases":["Novabeast 1.2","KFN"]},{"name":"Wrestler Outfit For Druffle Avatar","collection":"wrestler","price":"$10–16","jinxxy":"https://jinxxy.com/perfecto/WrestlerDruffle","gumroad":"https://perfectodoart.gumroad.com/l/WrestlerDruffle","image":"","bases":["Druffle"]},{"name":"Wrestler Outfit For Novabeast 1.2 & KFN","collection":"wrestler","price":"$10–16","jinxxy":"https://jinxxy.com/perfecto/WrestlerNovaKFN","gumroad":"","image":"","bases":["Novabeast 1.2","KFN"]},{"name":"Wrestler Outfit For Northern Aspil Avatar","collection":"wrestler","price":"$10–16","jinxxy":"https://jinxxy.com/perfecto/WrestlerOutfitNA","gumroad":"","image":"","bases":["Northern Aspil"]},{"name":"Robinhood Outfit For Novabeast","collection":"robin","price":"$16–22","jinxxy":"https://jinxxy.com/perfecto/RobinhoodNovabeast","gumroad":"https://perfectodoart.gumroad.com/l/RobinhoodNovabeast","image":"","bases":["Novabeast"]},{"name":"Robinhood Outfit For Druffle","collection":"robin","price":"$16–22","jinxxy":"https://jinxxy.com/perfecto/RobinhoodOutfitDruffle","gumroad":"https://perfectodoart.gumroad.com/l/RobinhoodOutfitDruffle","image":"","bases":["Druffle"]},{"name":"Nurse Outfit For Winterpaw Male & Female","collection":"nurse","price":"$12–20","jinxxy":"https://jinxxy.com/perfecto/NurseWinterpaw","gumroad":"","image":"","bases":["Winterpaw"]},{"name":"Nurse Outfit For Nova, Foxmoth, Hyenid","collection":"nurse","price":"$12–25","jinxxy":"https://jinxxy.com/perfecto/NurseNovaFoxmothHyenid","gumroad":"","image":"","bases":["Novabeast","Foxmoth","Hyenid"]},{"name":"Nurse Outfit For Milyeena","collection":"nurse","price":"$16–20","jinxxy":"https://jinxxy.com/perfecto/NurseMilyeena","gumroad":"","image":"","bases":["Milyeena"]},{"name":"Pride Outfit For Masc Canine & Fem Canine","collection":"pride","price":"$10–18","jinxxy":"https://jinxxy.com/perfecto/WinterpawPrideMascFem","gumroad":"","image":"","bases":["MascCanine","Femcanine"]},{"name":"Pride Outfit For Novabeast & Foxmoth","collection":"pride","price":"$10–18","jinxxy":"https://jinxxy.com/perfecto/PrideOutfitNovaFox","gumroad":"","image":"","bases":["Novabeast","Foxmoth"]},{"name":"Outfit For Foxmoth (Cute and Goth Themed)","collection":"goth","price":"$16–20","jinxxy":"https://jinxxy.com/perfecto/CuteOutfitFoxmoth","gumroad":"","image":"","bases":["Foxmoth"]},{"name":"Laced Collar (Cute and Goth Themed) | VRChat Accessory","collection":"goth","price":"$7–10","jinxxy":"https://jinxxy.com/perfecto/LacedCollar","gumroad":"","image":"","bases":[]},{"name":"Maki JJK Outfit For Novabeast 1.2","collection":"anime","price":"$12–16","jinxxy":"https://jinxxy.com/perfecto/NovabeastMakiOutfit","gumroad":"","image":"","bases":["Novabeast 1.2"]},{"name":"Anime / Furality Dress For Foxmoth","collection":"anime","price":"$16–20","jinxxy":"https://jinxxy.com/perfecto/FoxmothJapaneseOutfit","gumroad":"","image":"","bases":["Foxmoth"]},{"name":"Cafe / Furality Apron For Novabeast","collection":"anime","price":"$7–12","jinxxy":"https://jinxxy.com/perfecto/CafeApronNova","gumroad":"","image":"","bases":["Novabeast"]},{"name":"Anime Sunglasses For Novabeast | VRChat Accessory","collection":"anime","price":"$7","jinxxy":"https://jinxxy.com/perfecto/AnimeGlasses","gumroad":"","image":"","bases":["Novabeast"]},{"name":"Brooklyn Sweater Meme Outfit For Novabeast","collection":"special","price":"$5–10","jinxxy":"https://jinxxy.com/perfecto/BrooklynNovabeast","gumroad":"","image":"","bases":["Novabeast"]},{"name":"Brooklyn Sweater Meme Outfit For Space Yeen","collection":"special","price":"$5–10","jinxxy":"https://jinxxy.com/perfecto/BrooklynSpaceYeen","gumroad":"","image":"","bases":["Spaceyeen"]},{"name":"Lidus Outfit For Shawn The Shark (Darbi)","collection":"special","price":"$18–22","jinxxy":"https://jinxxy.com/perfecto/LidusShawn","gumroad":"","image":"","bases":["Shawn The Shark"]},{"name":"Perfecto's Ultra FREE NovaRaider Outfit For Novabeast 1.2","collection":"special","price":"Free–$10","jinxxy":"https://jinxxy.com/perfecto/TombNova","gumroad":"https://perfectodoart.gumroad.com/l/TombNova","image":"","bases":["Novabeast 1.2"]},{"name":"Reference Sheet For Viwi","collection":"fx","price":"$10–20","jinxxy":"https://jinxxy.com/perfecto/ViwiRefSheet","gumroad":"","image":"","bases":["Viwi"]},{"name":"ShadowHeart Kimono Lineart","collection":"fx","price":"See Gumroad","jinxxy":"","gumroad":"https://perfectodoart.gumroad.com/l/ShadowHeartKimonoLineart","image":"","bases":[]},{"name":"Karlach Kimono Lineart","collection":"fx","price":"See Gumroad","jinxxy":"","gumroad":"https://perfectodoart.gumroad.com/l/KarlachKimono","image":"","bases":[]}];
+
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const safeUrl = u => /^(https:\/\/|wip\/|images\/)/.test(u || "") ? esc(u) : "";
+const isFree = p => /^free/i.test(p.price || "");
+const baseKey = a => String(a).trim().replace(/\s+\d[\d.]*$/, "");
+const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+const colOf = p => COLS[p.collection] ? p.collection : "special";
+const basesOf = p => (p.bases || []).map(baseKey);
+const hue = s => { let h = 0; for (const c of s) h = (h * 31 + c.charCodeAt(0)) % 360; return `hsl(${h} 80% 72%)`; };
+let P = [], WIP = [], BASES = [], counts = {}, q = "";
+
+const garment = (col, i) => {
+  const body = i % 3 === 1
+    ? `M66 78 L42 92 L52 112 L62 106 L44 172 L156 172 L138 106 L148 112 L158 92 L134 78 Q100 96 66 78Z`
+    : `M70 76 L34 94 L44 124 L60 116 L60 170 L140 170 L140 116 L156 124 L166 94 L130 76 Q100 94 70 76Z`;
+  return `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <rect width="200" height="200" fill="${col}"/><rect y="144" width="200" height="56" fill="#000" opacity=".08"/>
+    <ellipse cx="100" cy="182" rx="56" ry="6" fill="#000" opacity=".15"/>
+    <path d="M100 52 q0 -14 10 -14 q10 0 10 10 q0 8 -10 12 v8" fill="none" stroke="#1d1a2e" stroke-width="4" stroke-linecap="round"/>
+    <path d="M100 68 L56 86 M100 68 L144 86" stroke="#1d1a2e" stroke-width="4" stroke-linecap="round"/>
+    <path d="${body}" fill="#fff" stroke="#1d1a2e" stroke-width="3.5" stroke-linejoin="round"/>
+    <path d="${body}" fill="${col}" opacity=".55"/>
+    <path d="M60 ${130 + (i % 4) * 6} h80" stroke="#1d1a2e" stroke-width="3" opacity=".35"/>
+    <path d="M74 82 q26 18 52 0" fill="none" stroke="#fff" stroke-width="3" opacity=".8"/></svg>`;
+};
+
+const card = p => {
+  const col = COLS[colOf(p)][1], img = safeUrl(p.image), j = safeUrl(p.jinxxy), g = safeUrl(p.gumroad);
+  return `<article class="card"><div class="thumb" style="--c:${col}">${garment(col, P.indexOf(p))}
+      ${img ? `<img src="${img}" alt="${esc(p.name)}" loading="lazy" onerror="this.remove()">` : ""}
+      ${isFree(p) ? `<span class="free">Free</span>` : ""}</div>
+    <div class="body"><h3>${esc(p.name)}</h3>
+      <span class="price">${esc(p.price || "")}</span>
+      <div class="buy">${j ? `<a class="btn j" href="${j}" target="_blank" rel="noopener">Jinxxy</a>` : ""}${g ? `<a class="btn g" href="${g}" target="_blank" rel="noopener">Gumroad</a>` : ""}</div>
+    </div></article>`;
+};
+
+/* season order: running now (ending soonest first), then upcoming (starting soonest first) */
+const DAY = 864e5;
+const seasonInfo = (s, now) => {
+  const y = now.getFullYear(), md = v => v.split("-").map(Number);
+  const [sm, sd] = md(s[2]), [em, ed] = md(s[3]);
+  for (const yy of [y - 1, y]) {
+    const st = new Date(yy, sm - 1, sd), en = new Date(yy + (em < sm ? 1 : 0), em - 1, ed, 23, 59);
+    if (now >= st && now <= en) return { live: true, key: en - now };
+  }
+  let st = new Date(y, sm - 1, sd); if (st < now) st = new Date(y + 1, sm - 1, sd);
+  return { live: false, key: st - now, days: Math.ceil((st - now) / DAY) };
+};
+const orderedSeasons = () => { const now = new Date(); return SEASONS.map(s => ({ s, ...seasonInfo(s, now) })).sort((a, b) => (b.live - a.live) || a.key - b.key); };
+
+const main = document.getElementById("main");
+const buildSide = () => {
+  counts = {};
+  P.forEach(p => basesOf(p).forEach(b => counts[b] = (counts[b] || 0) + 1));
+  BASES = Object.keys(counts).sort((a, b) => counts[b] - counts[a] || a.localeCompare(b));
+  document.getElementById("avatars").innerHTML = BASES.map(b => {
+    const src = safeUrl(AVATAR_IMG[b]);
+    return `<button class="item" data-h="a-${slug(b)}"><span class="ava" style="--c:${hue(b)}">${esc(b.slice(0, 2))}${src ? `<img src="${src}" alt="" onerror="this.remove()">` : ""}</span>${esc(b)}<small>${counts[b]}</small></button>`;
+  }).join("");
+  document.getElementById("types").innerHTML = [["free", "Free picks", "var(--sun)", P.filter(isFree).length],
+    ...Object.entries(COLS).map(([k, [l, c]]) => [k, l, c, P.filter(p => colOf(p) === k).length]).filter(x => x[3])]
+    .map(([k, l, c, n]) => `<button class="item" data-h="c-${k}"><span class="dot" style="--c:${c}"><i></i></span>${esc(l)}<small>${n}</small></button>`).join("");
+};
+
+const render = () => {
+  const h = location.hash.slice(1);
+  document.querySelectorAll(".side .item").forEach(b => b.setAttribute("aria-current", b.dataset.h === h));
+  let list = null, title = "", sub = "";
+  if (h.startsWith("a-")) { const b = BASES.find(x => "a-" + slug(x) === h); if (b) { list = P.filter(p => basesOf(p).includes(b)); title = b; sub = "outfits for this avatar"; } }
+  if (h.startsWith("c-")) { const k = h.slice(2); if (k === "free") { list = P.filter(isFree); title = "Free picks"; } else if (COLS[k]) { list = P.filter(p => colOf(p) === k); title = COLS[k][0]; } }
+  if (q) { const s = q.toLowerCase(); list = (list || P).filter(p => (p.name + " " + (p.bases || []).join(" ") + " " + COLS[colOf(p)][0]).toLowerCase().includes(s)); title = title || "Search"; }
+  if (list) {
+    main.innerHTML = `<div class="fhead"><h2>${esc(title)}</h2><p>${list.length} item${list.length === 1 ? "" : "s"} ${esc(sub)}</p><button class="back" data-back>Back to seasons</button></div>
+      ${list.length ? `<div class="grid">${list.map(card).join("")}</div>` : `<div class="empty">Nothing matches that yet.</div>`}`;
+    return;
+  }
+  main.innerHTML = orderedSeasons().map(({ s, live, days }, i) => {
+    const items = P.filter(p => colOf(p) === s[0]);
+    if (!items.length) return "";
+    const when = live ? `<span class="when now">In season now</span>` : `<span class="when">Starts in ${days} day${days === 1 ? "" : "s"}</span>`;
+    return `<section class="season"><div class="shead"><h2>${esc(s[1])}</h2>${when}
+        <div class="arrows"><button data-r="${i}" data-d="-1" aria-label="Previous ${esc(s[1])} outfits">‹</button><button data-r="${i}" data-d="1" aria-label="Next ${esc(s[1])} outfits">›</button></div></div>
+      <div class="rail" id="rail${i}" tabindex="0" aria-label="${esc(s[1])} outfits">${items.map(card).join("")}</div></section>`;
+  }).join("");
+};
+
+document.querySelector(".side").addEventListener("click", e => {
+  const b = e.target.closest(".item"); if (!b) return;
+  if (location.hash.slice(1) === b.dataset.h) { history.replaceState(null, "", location.pathname); render(); }
+  else location.hash = b.dataset.h;
+});
+main.addEventListener("click", e => {
+  if (e.target.closest("[data-back]")) { q = ""; document.getElementById("q").value = ""; history.replaceState(null, "", location.pathname); render(); return; }
+  const a = e.target.closest("[data-r]"); if (!a) return;
+  const r = document.getElementById("rail" + a.dataset.r);
+  r.scrollBy({ left: Number(a.dataset.d) * r.clientWidth * 0.8 });
+});
+main.addEventListener("keydown", e => {
+  const r = e.target.closest(".rail"); if (!r || !/Arrow(Left|Right)/.test(e.key)) return;
+  e.preventDefault(); r.scrollBy({ left: (e.key === "ArrowRight" ? 1 : -1) * 236 });
+});
+document.getElementById("q").addEventListener("input", e => { q = e.target.value.trim(); render(); });
+window.addEventListener("hashchange", render);
+
+/* WIP grid + lightbox */
+const shades = ["#ffd23f", "#7cc6fe", "#ff9fb5", "#9be3b5", "#c084fc", "#ffb347"];
+const shotsEl = document.getElementById("shots"), lb = document.getElementById("lb"), lbimg = document.getElementById("lbimg");
+const shotHTML = (src, i) => `${garment(shades[i % 6], i + 2)}${src ? `<img src="${src}" alt="Work in progress ${i + 1}" loading="lazy" onerror="this.remove()">` : ""}`;
+const buildWip = () => {
+  const list = WIP.length ? WIP.map(w => safeUrl(w.src)) : Array(8).fill("");
+  document.getElementById("wipnote").hidden = WIP.length > 0;
+  shotsEl.innerHTML = list.map((src, i) => `<button class="shot" data-i="${i}" style="--c:${shades[i % 6]}" aria-label="Open WIP image ${i + 1}">${shotHTML(src, i)}</button>`).join("");
+  shotsEl.onclick = e => {
+    const b = e.target.closest(".shot"); if (!b) return;
+    const i = Number(b.dataset.i); lbimg.style.setProperty("--c", shades[i % 6]); lbimg.innerHTML = shotHTML(list[i], i); lb.classList.add("on");
+  };
+};
+lb.addEventListener("click", () => lb.classList.remove("on"));
+document.addEventListener("keydown", e => { if (e.key === "Escape") lb.classList.remove("on"); });
+
+const getJSON = async f => { try { const r = await fetch(f, { cache: "no-cache" }); return r.ok ? await r.json() : null; } catch { return null; } };
+(async () => {
+  const prods = await getJSON("data/products.json");
+  P = Array.isArray(prods) && prods.length ? prods.filter(p => p && p.name && !p.hide) : FALLBACK;
+  const w = await getJSON("data/wip.json");
+  WIP = Array.isArray(w) ? w.filter(x => x && x.src) : [];
+  buildSide(); buildWip(); render();
+})();
+}
+</script>
+</body>
+</html>
