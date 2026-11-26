@@ -49,6 +49,7 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html _site/
+          [ -f admin.html ] && cp admin.html _site/ || true
           for d in data images wip fonts; do [ -d "$d" ] && cp -r "$d" _site/; done; true
 
       - uses: actions/configure-pages@v5
