@@ -41,7 +41,8 @@ The keys you pasted into the chat earlier are no longer safe. Make new ones:
 1. Go to https://discord.com/developers/applications → **New Application** and name it something like "Store WIP".
 2. **Bot** tab → **Reset Token** → copy the token.
 3. Still on the Bot tab, turn on **Message Content Intent** and click Save. (The bot needs this to see images in messages.)
-4. **OAuth2 → URL Generator** → tick **bot**, then under permissions tick **View Channels** and **Read Message History**. Open the link it gives you and add the bot to your server.
+4. **Installation** tab: set the install link to **None**. Then **Bot** tab: turn **Public Bot** off, so only you can add it.
+5. **OAuth2 → URL Generator** → tick **bot**, then under permissions tick **View Channels** and **Read Message History**. Open the link it gives you and add the bot to your server.
 5. In your server, make sure the bot can see your WIP channel.
 6. Get the channel ID: in Discord, go to User Settings → Advanced → turn on **Developer Mode**. Then right-click your WIP channel → **Copy Channel ID**.
 
@@ -54,6 +55,7 @@ In the repo: **Settings → Secrets and variables → Actions → New repository
 | `GUMROAD_TOKEN` | your new Gumroad access token |
 | `DISCORD_BOT_TOKEN` | the bot token from step 4 |
 | `DISCORD_CHANNEL_ID` | the WIP channel ID |
+| `DISCORD_AUTHOR_ID` | **your own** Discord user ID (right-click your name → Copy User ID). Only your posts get used |
 
 ### 6. Run it
 **Actions** tab → **Update store** → **Run workflow**. Once it's green, your site is live at
@@ -96,3 +98,11 @@ for example `winterpaw.png`, `novabeast.png`, `shawn-the-shark.png`. Until a pic
 Upload your licensed font file to a `fonts/` folder named `microgramma.woff2`, `microgramma.otf` or `microgramma.ttf`.
 
 **Logo:** `images/logo.png` (white on transparent). The site fills it with the holo gradient automatically.
+
+**Which WIP posts show:** only posts by you (`DISCORD_AUTHOR_ID`) that have an image attached. Posts with any link, posts by other people or bots, spoiler images and non-image files are skipped. The newest 12 show.
+
+**Links box (Follow & contact):** edit `SOCIALS` near the top of the script in `index.html`. Paste your ArtStation link into its empty `url: ""` to make it appear.
+
+**Jinxxy logo:** there is no free Jinxxy icon, so a shopping-bag icon stands in. Save Jinxxy's logo as `images/icons/jinxxy.png` (square, transparent background) and the site uses it on every Jinxxy button automatically.
+
+**Prices:** each card shows the Standard price only. A product only shows as Free when its name says "Free". A $0 base price with paid versions shows the Standard version's price.

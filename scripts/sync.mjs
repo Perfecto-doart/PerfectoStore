@@ -3,7 +3,7 @@
 // Runs in GitHub Actions. Keys come from repository secrets, never from this file.
 import fs from "node:fs/promises";
 
-const { JINXXY_API_KEY, GUMROAD_TOKEN, DISCORD_BOT_TOKEN, DISCORD_CHANNEL_ID } = process.env;
+const { JINXXY_API_KEY, GUMROAD_TOKEN, DISCORD_BOT_TOKEN, DISCORD_CHANNEL_ID, DISCORD_AUTHOR_ID } = process.env;
 const JINXXY_STORE = "perfecto";            // jinxxy.com/<this>/...
 const GUMROAD_STORE = "perfectodoart";      // <this>.gumroad.com
 const WIP_COUNT = 12;                       // how many WIP images to show
@@ -139,6 +139,27 @@ async function fetchJinxxy() {
 }
 
 /* ---------- Gumroad ---------- */
+// Standard price only. A $0 base with priced versions/tiers is NOT free: use the "Standard" option
+// (or the cheapest paid one). Only products named "Free ..." show as Free.
+function gumroadPrice(p) {
+  const cur = String(p.currency || "usd").toUpperCase();
+  const base = typeof p.price === "number" ? p.price : NaN;
+  const opts = (p.variants || []).flatMap(v => v.options || []).map(o => ({ n: String(o.name || ""), d: Number(o.price_difference ?? o.price_difference_cents ?? 0) }));
+  const named = /^\s*free\b/i.test(p.name || "");
+  if (base > 0) {
+    const std = opts.find(o => /standard/i.test(o.n));
+    return money(base + (std ? std.d : 0), cur);
+  }
+  if (named) return "Free";
+  const paid = opts.filter(o => o.d > 0);
+  const std = paid.find(o => /standard/i.test(o.n)) || paid.sort((a, b) => a.d - b.d)[0];
+  if (std) return money(std.d, cur);
+  const sug = Number(p.suggested_price_cents ?? p.suggested_price ?? 0);
+  if (sug > 0) return money(sug, cur);
+  if (p.formatted_price && !/^\D*0(\.00)?\+?$/.test(p.formatted_price)) return p.formatted_price.replace(/\+$/, "");
+  return "Name your price";
+}
+
 async function fetchGumroad() {
   if (!GUMROAD_TOKEN) { console.log("No GUMROAD_TOKEN, skipping Gumroad"); return null; }
   let next = "https://api.gumroad.com/v2/products", all = [];
@@ -151,13 +172,15 @@ async function fetchGumroad() {
     next = j.next_page_url ? new URL(j.next_page_url, "https://api.gumroad.com").href : null;
   }
   console.log("Gumroad products from API (incl. unpublished):", all.length);
+  const z = all.find(p => p.price === 0 && !/^\s*free/i.test(p.name || ""));
+  if (z) console.log("Gumroad $0 sample:", JSON.stringify({ name: z.name, price: z.price, formatted_price: z.formatted_price, customizable_price: z.customizable_price, suggested_price_cents: z.suggested_price_cents, variants: z.variants }).slice(0, 900));
   const j = { products: all };
   const out = (j.products || []).filter(p => p.published !== false && !p.deleted).map(p => {
     const perma = p.custom_permalink || slugOf(p.short_url);
     return {
       name: p.name,
       url: perma ? `https://${GUMROAD_STORE}.gumroad.com/l/${perma}` : p.short_url,
-      price: p.price === 0 ? "Free" : (typeof p.price === "number" ? money(p.price, (p.currency || "usd").toUpperCase()) : (p.formatted_price || null)),
+      price: gumroadPrice(p),
       image: p.thumbnail_url || p.preview_url || ""
     };
   });
@@ -173,10 +196,18 @@ async function fetchDiscord() {
   if (!r.ok) throw new Error(`Discord -> ${r.status} ${(await r.text()).slice(0, 300)}`);
   const msgs = await r.json(); // newest first
   const imgs = [];
-  for (const m of msgs) for (const a of m.attachments || []) {
+  if (!DISCORD_AUTHOR_ID) console.log("No DISCORD_AUTHOR_ID set: taking images from everyone in the channel");
+  const hasLink = t => /https?:\/\/|discord\.gg\/|www\./i.test(t || "");
+  for (const m of msgs) {
+    if (m.author?.bot) continue;                                          // never other bots
+    if (DISCORD_AUTHOR_ID && m.author?.id !== DISCORD_AUTHOR_ID) continue; // only your posts
+    if (hasLink(m.content) || (m.embeds || []).some(e => e.url)) continue; // skip posts with links
+    for (const a of m.attachments || []) {
     const ext = ((a.filename || "").match(/\.(png|jpe?g|webp|gif)$/i) || [])[1];
     if (!ext && !(a.content_type || "").startsWith("image/")) continue;
+    if (a.spoiler || /^SPOILER_/i.test(a.filename || "")) continue;
     imgs.push({ id: a.id, url: a.url, ext: (ext || "png").toLowerCase().replace("jpeg", "jpg") });
+    }
   }
   const keep = imgs.slice(0, WIP_COUNT);
   await fs.mkdir("wip", { recursive: true });
