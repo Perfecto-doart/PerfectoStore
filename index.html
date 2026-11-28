@@ -854,24 +854,40 @@ const showWin = (code, num, g, popup) => {
   openModal("winmodal");
 };
 $("winbox").addEventListener("click", async e => { const b = e.target.closest("[data-dmwin]"); if (!b) return; const c = $("winbox").querySelector(".code b").textContent; await copyText(c, "Code"); if (CFG.discordInvite) window.open(CFG.discordInvite, "_blank", "noopener"); });
+/* Counting starts the moment the script runs (not after the data loads), never uses a cached number,
+   and retries once. Each browser is counted once. */
+const fresh = { cache: "no-store" };
+const abacus = async (kind, ns, tries = 2) => {
+  for (let i = 0; i < tries; i++) {
+    try { const r = await fetch(`${ABACUS}/${kind}/${ns}/visitors?t=${Date.now()}`, { ...fresh, keepalive: true }); if (r.ok) return Number((await r.json()).value); } catch {}
+    if (i < tries - 1) await new Promise(res => setTimeout(res, 1200));
+  }
+  return null;
+};
+const NS = encodeURIComponent(DEFAULT_CFG.giveaway?.namespace || "perfecto-doart-store");
+const visitP = (async () => {
+  const mine = store.get("pf_visit");
+  if (mine) return { v: await abacus("get", NS), mine: Number(mine), first: false };
+  if (!store.set("pf_test", "1")) return { v: await abacus("get", NS), first: false };   // storage blocked: show count, don't count
+  if (store.get("pf_counting") && Date.now() - Number(store.get("pf_counting")) < 15000) return { v: await abacus("get", NS), first: false };
+  store.set("pf_counting", String(Date.now()));                                               // guard against double counting on fast reloads
+  const v = await abacus("hit", NS, 3);
+  if (v) { store.set("pf_visit", String(v)); }
+  return { v, mine: v, first: !!v };
+})();
+let visitsShown = null;
 const showVisits = v => {
-  if (!v) return; const el = $("visits"); el.hidden = false; el.innerHTML = `<b>${Number(v).toLocaleString()}</b> visitors so far`;
+  if (!v) return; visitsShown = v; const el = $("visits"); el.hidden = false; el.innerHTML = `<b>${Number(v).toLocaleString()}</b> visitors so far`;
   const s = $("stat-v"); if (s) { s.hidden = false; s.querySelector("b").textContent = Number(v).toLocaleString(); }
 };
+visitP.then(r => showVisits(r.v));
 const counter = async () => {
-  const g = CFG.giveaway || {}; const ns = encodeURIComponent(g.namespace || "perfecto-doart-store");
-  try {
-    const mine = store.get("pf_visit");
-    if (mine) {
-      const r = await fetch(`${ABACUS}/get/${ns}/visitors`); if (r.ok) showVisits((await r.json()).value);
-      const won = store.get("pf_won"); if (won && g.enabled !== false) showWin(won, mine, g, false);
-      return;
-    }
-    if (!store.set("pf_test", "1")) { const r = await fetch(`${ABACUS}/get/${ns}/visitors`); if (r.ok) showVisits((await r.json()).value); return; }
-    const r = await fetch(`${ABACUS}/hit/${ns}/visitors`); if (!r.ok) return;
-    const v = Number((await r.json()).value); store.set("pf_visit", String(v)); showVisits(v);
-    if (g.enabled !== false && g.every > 0 && v % g.every === 0) { const code = await winCode(v, g); store.set("pf_won", code); showWin(code, v, g, true); }
-  } catch { /* counter offline: page works without it */ }
+  const g = CFG.giveaway || {};
+  const r = await visitP; showVisits(r.v || visitsShown);
+  if (g.enabled === false) return;
+  const won = store.get("pf_won");
+  if (won) { showWin(won, r.mine, g, false); return; }
+  if (r.first && g.every > 0 && r.v % g.every === 0) { const code = await winCode(r.v, g); store.set("pf_won", code); showWin(code, r.v, g, true); }
 };
 
 document.addEventListener("keydown", e => {

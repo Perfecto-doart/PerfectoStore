@@ -515,7 +515,7 @@ const sha = async s => { const b = await crypto.subtle.digest("SHA-256", new Tex
 const paneGiveaway = async () => {
   const g = CFG.giveaway;
   $("pane").innerHTML = `<div class="card"><h2>Giveaway</h2><p class="lead">Every ${esc(g.every)}th visitor sees a ${esc(g.discount)}% off code and is asked to DM you. Check a code here before honouring it. Each winning number can only be redeemed once.</p>
-    <div class="row" style="align-items:center;margin-bottom:6px"><div><div class="big" id="vcount">…</div><small style="color:var(--faint)">visitors so far</small></div><div><div class="big" id="vnext">…</div><small style="color:var(--faint)">visitors until the next winner</small></div></div></div>
+    <button class="btn sm" id="vrefresh" style="margin-bottom:12px">Refresh count</button><div class="row" style="align-items:center;margin-bottom:6px"><div><div class="big" id="vcount">…</div><small style="color:var(--faint)">visitors so far</small></div><div><div class="big" id="vnext">…</div><small style="color:var(--faint)">visitors until the next winner</small></div></div></div>
     <div class="card"><h2>Check a code</h2>
       <form id="chk" class="row" style="align-items:end"><div class="field"><label for="code">Code from the winner</label><input id="code" type="text" placeholder="PF70-1300-ABCDE" autocomplete="off" style="text-transform:uppercase"></div><div class="field"><button class="btn pri" type="submit">Check code</button></div></form>
       <div id="chkres"></div></div>
@@ -527,8 +527,9 @@ const paneGiveaway = async () => {
     <div class="card"><h2>Redeemed codes</h2>${g.redeemed.length ? `<table><thead><tr><th>Code</th><th>Visitor</th><th>Redeemed</th><th>Note</th><th></th></tr></thead><tbody>${g.redeemed.map((r, i) => `<tr><td>${esc(r.code)}</td><td class="num">#${Number(r.num).toLocaleString()}</td><td>${esc(r.date)}</td><td>${esc(r.note || "")}</td><td><button class="btn sm" data-undo="${i}">Undo</button></td></tr>`).join("")}</tbody></table>` : `<div class="empty">No codes redeemed yet.</div>`}</div>`;
   const ns = encodeURIComponent(g.namespace || "perfecto-doart-store");
   let current = null;
-  try { const r = await fetch(`${ABACUS}/get/${ns}/visitors`); if (r.ok) { current = Number((await r.json()).value); $("vcount").textContent = current.toLocaleString(); $("vnext").textContent = (g.every - (current % g.every)).toLocaleString(); } else throw 0; }
+  try { const r = await fetch(`${ABACUS}/get/${ns}/visitors?t=${Date.now()}`, { cache: "no-store" }); if (r.ok) { current = Number((await r.json()).value); $("vcount").textContent = current.toLocaleString(); $("vnext").textContent = (g.every - (current % g.every)).toLocaleString(); } else throw 0; }
   catch { $("vcount").textContent = "0"; $("vnext").textContent = g.every; }
+  $("vrefresh").onclick = () => paneGiveaway();
   $("gen").onchange = e => { g.enabled = e.target.checked; touch(); };
   $("gev").oninput = e => { g.every = Math.max(10, parseInt(e.target.value || "100", 10)); touch(); };
   $("gdi").oninput = e => { g.discount = Math.min(100, Math.max(1, parseInt(e.target.value || "70", 10))); touch(); };
