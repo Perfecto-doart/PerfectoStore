@@ -33,6 +33,7 @@
   --ic-jinxxy:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 7h12l1 14H5L6 7z'/%3E%3Cpath d='M9 7a3 3 0 0 1 6 0'/%3E%3C/svg%3E");
   --ic-search:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E");
   --ic-copy:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='9' y='9' width='11' height='11' rx='2'/%3E%3Cpath d='M5 15V5a2 2 0 0 1 2-2h10'/%3E%3C/svg%3E");
+  --ic-clock:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M12 7v5l3 2'/%3E%3C/svg%3E");
   --ic-out:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17 17 7'/%3E%3Cpath d='M8 7h9v9'/%3E%3C/svg%3E")}
 *{box-sizing:border-box;min-width:0}
 html{scroll-padding-top:96px}
@@ -263,7 +264,11 @@ h1,h2,h3{margin:0;font-family:var(--head);line-height:1.05;letter-spacing:-.01em
 /* dialogs */
 .modal{position:fixed;inset:0;z-index:40;background:rgba(4,3,10,.8);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);display:none;place-items:center;padding:20px}
 .modal.on{display:grid}
-.modal>img{max-width:min(92vw,1000px);max-height:84vh;border-radius:16px;border:1px solid var(--edge)}
+.lbfig{margin:0;display:flex;flex-direction:column;align-items:center;gap:12px;max-width:min(92vw,1000px)}
+.lbfig img{max-width:100%;max-height:78vh;border-radius:16px;border:1px solid var(--edge)}
+.lbdate{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid var(--edge);font:600 15px var(--head)}
+.lbdate .si{width:15px;height:15px;color:var(--b)}
+.wdate{position:absolute;right:6px;bottom:6px;padding:2px 7px;border-radius:999px;background:rgba(7,6,13,.72);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);font:600 11px/1.4 var(--head);color:#fff;pointer-events:none;white-space:nowrap}
 .x{position:absolute;top:16px;right:16px;width:46px;height:46px;border-radius:50%;border:1px solid var(--edge-2);background:var(--glass);display:grid;place-items:center}
 .x svg{width:16px;height:16px}
 .winbox{position:relative;width:min(460px,100%);border-radius:var(--r-xl);padding:30px 26px 24px;text-align:center;border:1px solid transparent;background:linear-gradient(#100d22,#100d22) padding-box,var(--holo) border-box;box-shadow:0 30px 90px -30px rgba(146,119,255,.9)}
@@ -381,7 +386,7 @@ footer .in{max-width:1760px;margin:0 auto;padding:22px max(3vw,14px);display:fle
   </aside>
 </div>
 
-<div class="modal" id="lbx" role="dialog" aria-modal="true" aria-label="Work in progress image"><button class="x" data-close aria-label="Close image"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3l10 10M13 3 3 13"/></svg></button><img id="lbimg" alt=""></div>
+<div class="modal" id="lbx" role="dialog" aria-modal="true" aria-labelledby="lbdate"><button class="x" data-close aria-label="Close image"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 3l10 10M13 3 3 13"/></svg></button><figure class="lbfig"><figcaption class="lbdate" id="lbdate">Work in progress</figcaption><img id="lbimg" alt=""></figure></div>
 <div class="modal" id="winmodal" role="dialog" aria-modal="true" aria-labelledby="win-h"><div class="winbox" id="winbox"></div></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
@@ -829,13 +834,26 @@ let lastFocus = null;
 const openModal = id => { lastFocus = document.activeElement; $(id).classList.add("on"); $(id).querySelector("[data-close]")?.focus(); };
 const closeModals = () => { document.querySelectorAll(".modal.on").forEach(m => m.classList.remove("on")); lastFocus?.focus(); };
 document.querySelectorAll(".modal").forEach(m => m.addEventListener("click", e => { if (e.target === m || e.target.closest("[data-close]")) closeModals(); }));
+/* Discord ids carry their upload time, so the picture's file name (wip/<id>.png) tells us when it was posted */
+const wipDate = w => {
+  if (w.date) { const d = new Date(w.date); if (!isNaN(d)) return d; }
+  const m = /(\d{15,21})\.\w+$/.exec(w.src || ""); if (!m) return null;
+  try { return new Date(Number(BigInt(m[1]) >> 22n) + 1420070400000); } catch { return null; }
+};
+const short = d => d.toLocaleDateString(undefined, { day: "numeric", month: "short" });
+const long = d => d.toLocaleString(undefined, { weekday: "short", day: "numeric", month: "long", year: "numeric", hour: "numeric", minute: "2-digit" });
 const buildWip = () => {
   $("wipnote").hidden = WIP.length > 0;
   $("shots").innerHTML = WIP.length
-    ? WIP.map((w, i) => `<button class="shot" data-i="${i}" aria-label="Open WIP image ${i + 1}"><img src="${safeUrl(w.src)}" alt="" width="300" height="300" loading="lazy" decoding="async"></button>`).join("")
+    ? WIP.map((w, i) => { const d = wipDate(w); return `<button class="shot" data-i="${i}" aria-label="Open WIP image ${i + 1}${d ? `, posted ${esc(long(d))}` : ""}"><img src="${safeUrl(w.src)}" alt="" width="300" height="300" loading="lazy" decoding="async">${d ? `<time class="wdate" datetime="${d.toISOString()}">${esc(short(d))}</time>` : ""}</button>`; }).join("")
     : Array(4).fill(`<div class="shot ph-tile" aria-hidden="true">${hanger}</div>`).join("");
 };
-$("shots").addEventListener("click", e => { const b = e.target.closest(".shot[data-i]"); if (!b) return; $("lbimg").src = safeUrl(WIP[Number(b.dataset.i)].src); openModal("lbx"); });
+$("shots").addEventListener("click", e => {
+  const b = e.target.closest(".shot[data-i]"); if (!b) return;
+  const w = WIP[Number(b.dataset.i)], d = wipDate(w);
+  $("lbdate").innerHTML = d ? `${ic("clock")}<span>Posted <time datetime="${d.toISOString()}">${esc(long(d))}</time></span>` : "Work in progress";
+  $("lbimg").src = safeUrl(w.src); $("lbimg").alt = d ? `Work in progress, posted ${long(d)}` : "Work in progress"; openModal("lbx");
+});
 
 /* visitor counter + every Nth visitor wins a code (one per browser) */
 const sha = async s => { const b = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s)); return [...new Uint8Array(b)].map(x => x.toString(16).padStart(2, "0")).join(""); };
