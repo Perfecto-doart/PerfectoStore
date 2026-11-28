@@ -244,10 +244,16 @@ async function fetchDiscord() {
       if (!isImg(a)) { stat.nonImage++; continue; }
       if (a.spoiler || /^SPOILER_/i.test(a.filename || "")) { stat.spoilers++; continue; }
       const ext = (((a.filename || "").match(/\.(png|jpe?g|webp|gif)$/i) || [])[1] || "png").toLowerCase().replace("jpeg", "jpg");
-      imgs.push({ id: a.id, url: a.url, ext });
+      imgs.push({ id: a.id, url: a.url, ext, mid: m.id });
     }
   }
   console.log("Discord check:", JSON.stringify(stat));
+  const ist = id => new Date(Number(BigInt(id) >> 22n) + 1420070400000).toISOString().replace("T", " ").slice(0, 16) + " UTC";
+  console.log("Newest 8 messages the bot can see:");
+  for (const m of msgs.slice(0, 8)) {
+    const a = attsOf(m);
+    console.log(`  ${ist(m.id)} | ${m.author?.username}${m.author?.bot ? " (bot)" : ""} | ${(m.message_snapshots || []).length ? "forwarded | " : ""}text: ${JSON.stringify((textOf(m) || "").trim().slice(0, 40))} | attachments: ${a.length ? a.map(x => `${x.filename} [${x.content_type || "no type"}]`).join(", ") : "none"}${(m.embeds || []).length ? ` | embeds: ${m.embeds.map(e => e.type).join(",")}` : ""}`);
+  }
   console.log("People who posted attachments (id: name):", JSON.stringify(authors));
   if (msgs.length && !msgs.some(m => attsOf(m).length || m.content)) {
     console.log("HINT: messages arrive empty. Turn ON 'Message Content Intent' on the Bot page of the Discord Developer Portal.");
@@ -266,8 +272,8 @@ async function fetchDiscord() {
     if (r.ok) { await fs.writeFile(f, Buffer.from(await r.arrayBuffer())); console.log("saved", f); }
   }
   if (keep.length) for (const f of await fs.readdir("wip")) if (f !== ".gitkeep" && !wanted.has(f)) await fs.unlink(`wip/${f}`);
-  console.log("WIP images:", keep.length);
-  return keep.length ? keep.map(i => ({ src: `wip/${i.id}.${i.ext}` })) : null;
+  console.log("WIP images:", keep.length, keep.length ? `(newest from ${ist(keep[0].mid)})` : "");
+  return keep.length ? keep.map(i => ({ src: `wip/${i.id}.${i.ext}`, date: new Date(Number(BigInt(i.mid) >> 22n) + 1420070400000).toISOString() })) : null;
 }
 
 /* ---------- reviews (Gumroad + Jinxxy) ---------- */
@@ -368,14 +374,14 @@ try {
   if (jx || gr) {
     const merged = merge(jx || [], gr || [], old, overrides, seed);
     console.log(`Cards: ${merged.length} | with Jinxxy link: ${merged.filter(p => p.jinxxy).length} | with Gumroad link: ${merged.filter(p => p.gumroad).length} | with picture: ${merged.filter(p => p.image).length}`);
-    if (merged.length) await writeIfChanged("data/products.json", merged);
+    if (!merged.length) console.log("Got 0 products, keeping the old list");
+    else await writeIfChanged("data/products.json", merged);
     const hour = new Date().getUTCHours();
     const haveReviews = await fs.access("data/reviews.json").then(() => true, () => false);
     if (!haveReviews || hour % 6 === 0 || process.env.FORCE_REVIEWS) {
       try { const rv = await fetchReviews(merged); if (rv.length || !haveReviews) await writeIfChanged("data/reviews.json", rv); }
       catch (e) { console.log("Reviews skipped:", e.message); }
     }
-    else console.log("Got 0 products, keeping the old list");
   }
 } catch (e) { failed = true; console.error("Store sync failed, keeping the old product list:\n", e.message); }
 try {
